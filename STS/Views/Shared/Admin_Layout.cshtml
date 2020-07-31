@@ -1,0 +1,44 @@
+﻿@using STS.Resources.Layouts
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - STS</title>
+    @Styles.Render("~/bundles/Styles")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">
+            <img src="@Url.Content("~/Content/logo.png")" alt="logo" style="width:90px;">
+        </a>
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/Locations">@AdminLayout.Locations</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Locations/New">@AdminLayout.NewLocation </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Employees/New">@AdminLayout.NewEmployee</a>
+            </li>
+        </ul>
+        @Html.Partial("_LoginPartial")
+        @Html.Partial("_ChangeLanguagePartial")
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        @Html.Partial("_FooterPartial")
+    </div>
+    <script src="/Language/ScriptsLocale/Locations"></script>
+    <script src="/Language/ScriptsLocale/Employees"></script>
+    @Scripts.Render("~/bundles/Scripts")
+    @Scripts.Render("~/bundles/AdminScripts")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

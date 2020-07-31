@@ -1,0 +1,13 @@
+﻿@using System.Collections
+@using System.Globalization
+@using System.Resources
+@using STS.Resources.Scripts
+@{
+    Layout = null;
+    ResourceSet resourceSet = Shipments.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+}
+Shipments = {};
+@foreach (DictionaryEntry res in resourceSet)
+{
+    @:Shipments.@res.Key = '@Html.Raw(HttpUtility.JavaScriptStringEncode(res.Value.ToString()))'
+}

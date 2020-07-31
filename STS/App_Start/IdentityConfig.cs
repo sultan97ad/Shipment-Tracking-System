@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Net.Mail;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -18,7 +19,22 @@ namespace STS
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
+            var SmtpClient = new SmtpClient
+            {
+                Host = Credentials.SmtpClientHost,
+                Port = Credentials.SmtpClientPort,
+                EnableSsl = true,
+                UseDefaultCredentials = false,
+                Credentials = new System.Net.NetworkCredential(Credentials.EmailAddress, Credentials.EmailPassword),
+                DeliveryMethod = SmtpDeliveryMethod.Network
+            };
+            MailMessage MailMessage = new MailMessage();
+            MailMessage.From = new MailAddress(Credentials.EmailAddress);
+            MailMessage.To.Add(message.Destination);
+            MailMessage.Subject = message.Subject;
+            MailMessage.Body = message.Body;
+            MailMessage.IsBodyHtml = true;
+            SmtpClient.Send(MailMessage);
             return Task.FromResult(0);
         }
     }
@@ -105,5 +121,7 @@ namespace STS
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
+
+        
     }
 }

@@ -1,0 +1,53 @@
+﻿@model STS.ViewModels.ShipmentFormViewModel
+@using STS.Resources.Views
+@{
+    bool IsNew = Model.TrackingNumber == null;
+    string FixErrors = Shipments.FixErrors;
+    string ButtonText = IsNew ? Shipments.NewShipmentButtonText : Shipments.UpdateShipmentButtonText;
+    ViewBag.Title = IsNew ? Shipments.NewShipmentTitle : Shipments.UpdateShipmentTitle;
+}
+<h2>@ViewBag.Title</h2>
+<br />
+@using (Html.BeginForm("Save", "Shipments"))
+{
+    @Html.ValidationSummary(true, FixErrors)
+    <div class="form-group">
+        @Html.LabelFor(m => m.SenderName)
+        @Html.TextBoxFor(m => m.SenderName, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SenderName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.SenderPhoneNumber)
+        @Html.TextBoxFor(m => m.SenderPhoneNumber, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.SenderPhoneNumber)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReceiverName)
+        @Html.TextBoxFor(m => m.ReceiverName, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ReceiverName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.ReceiverPhoneNumber)
+        @Html.TextBoxFor(m => m.ReceiverPhoneNumber, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ReceiverPhoneNumber)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.WeightKG)
+        @Html.TextBoxFor(m => m.WeightKG, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.WeightKG)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.DestinationLocationId)
+        @Html.DropDownListFor(m => m.DestinationLocationId, new SelectList(Model.Locations, "Value", "Text"), Shipments.DestinationListDefaultOption, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DestinationLocationId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.TextAreaFor(m => m.Description, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Description)
+    </div>
+    @Html.HiddenFor(c => c.TrackingNumber)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">@ButtonText</button>
+}
+

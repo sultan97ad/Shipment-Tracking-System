@@ -1,0 +1,39 @@
+﻿@model STS.ViewModels.TrackShipmentViewModel
+@using STS.Resources.Views
+@{
+    ViewBag.Title = Main.TrackShipmentTitle;
+    Layout = "~/Views/Shared/Main_Layout.cshtml";
+}
+<br />
+<br />
+<div class="form-group">
+    @Html.LabelFor(m => m.TrackingNumber) <br />
+    @Html.DisplayFor(m => m.TrackingNumber, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Source) <br />
+    @Html.DisplayFor(m => m.Source, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Destination) <br />
+    @Html.DisplayFor(m => m.Destination, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Status) <br />
+    @Html.DisplayFor(m => m.Status, new { @Class = "form-control" })
+</div>
+@if (Model.CurrentLocation != null)
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.CurrentLocation) <br />
+        @Html.DisplayFor(m => m.CurrentLocation, new { @Class = "form-control" })
+    </div>
+}
+<table id="TrackingRecords" TrackingNumber="@Model.TrackingNumber" class="table table-bordered table-hover ">
+    <thead>
+        <tr>
+            <th>-</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>

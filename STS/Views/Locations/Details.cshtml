@@ -1,0 +1,39 @@
+﻿@model STS.ViewModels.LocationDetailsViewModel
+@using STS.Resources.Views
+@{
+    ViewBag.Title = Locations.LocationDetailsTitle;
+}
+<h2>@ViewBag.Title</h2>
+<br />
+<div class="form-group">
+    @Html.LabelFor(m => m.LocationName) <br />
+    @Html.DisplayFor(m => m.LocationName, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.City) <br />
+    @Html.DisplayFor(m => m.City, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.CanBeDestination) <br />
+    @Html.DisplayFor(m => m.CanBeDestination, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.NumberOfEmployees) <br />
+    @Html.DisplayFor(m => m.NumberOfEmployees, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.NumberOfShipments) <br />
+    @Html.DisplayFor(m => m.NumberOfShipments, new { @Class = "form-control" })
+</div>
+@Html.ActionLink(Locations.BackToLocationsButton, "Index", "Shipments", new { @class = "btn btn-primary" })
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+﻿@model STS.ViewModels.EmployeeFormViewModel
+@using STS.Resources.Views
+@{
+    bool IsNew = Model.id == null;
+    string FixErrors = Employees.FixErrors;
+    string ButtonText = IsNew ? Employees.NewEmployeeButtonText : Employees.UpdateEmployeeButtonText;
+    ViewBag.Title = IsNew ? Employees.NewEmployeeTitle : Employees.UpdateEmployeeTitle;
+}
+<h2>@ViewBag.Title</h2>
+<br />
+@using (Html.BeginForm("Save", "Employees"))
+{
+    @Html.ValidationSummary(true, FixErrors)
+    if (IsNew)
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @Class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+    }
+    <div class="form-group">
+        @Html.LabelFor(m => m.EmployeeName)
+        @Html.TextBoxFor(m => m.EmployeeName, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.EmployeeName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.EmployeeLocationId)
+        @Html.DropDownListFor(m => m.EmployeeLocationId, new SelectList(Model.Locations, "Value", "Text"), Employees.DestinationListDefaultOption, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.EmployeeLocationId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.PhoneNumber)
+        @Html.TextBoxFor(m => m.PhoneNumber, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.PhoneNumber)
+    </div>
+    if (!IsNew)
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Enabled)
+            @Html.CheckBoxFor(m => m.Enabled, new { @Class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Enabled)
+        </div>
+        @Html.HiddenFor(m => m.Email)
+        @Html.HiddenFor(m => m.id)
+    }
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">@ButtonText</button>
+}
+

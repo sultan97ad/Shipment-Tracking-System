@@ -1,0 +1,62 @@
+﻿@model STS.ViewModels.ShipmentDetailsViewModel
+@using STS.Resources.Views
+@{
+    ViewBag.Title = Shipments.ShipmentDetailsTitle;
+}
+<h2>@ViewBag.Title</h2>
+<br />
+<div class="form-group">
+    @Html.LabelFor(m => m.TrackingNumber) <br />
+    @Html.DisplayFor(m => m.TrackingNumber, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.DateAdded) <br />
+    @Html.DisplayFor(m => m.DateAdded, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.SenderName) <br />
+    @Html.DisplayFor(m => m.SenderName, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.SenderPhoneNumber) <br />
+    @Html.DisplayFor(m => m.SenderPhoneNumber, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.ReceiverName) <br />
+    @Html.DisplayFor(m => m.ReceiverName, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.ReceiverPhoneNumber) <br />
+    @Html.DisplayFor(m => m.ReceiverPhoneNumber, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.WeightKG) <br />
+    @Html.DisplayFor(m => m.WeightKG, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Description) <br />
+    @Html.DisplayFor(m => m.Description, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Source) <br />
+    @Html.DisplayFor(m => m.Source, new { @Class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.Destination) <br />
+    @Html.DisplayFor(m => m.Destination, new { @Class = "form-control" })
+</div>
+@Html.ActionLink(Shipments.BackToShipmentsButton, "Index", "Shipments", new { @class = "btn btn-primary" })
+<button class="btn btn-primary" onclick=Print('BarcodeLabel') >@Shipments.PrintBarcode</button>
+<div id="BarcodeLabel" style="display:none;">
+    <h1 style="text-align:center">STS</h1>
+    <img style="display: block;margin-left: auto;margin-right: auto;width: 60%;" src="@Url.Action("Barcode" , "Shipments" , new { TrackingNumber = Model.TrackingNumber})" />
+</div>
+
+
+
+
+
+
+
+
+

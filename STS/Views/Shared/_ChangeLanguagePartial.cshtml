@@ -1,0 +1,14 @@
+﻿
+@using System.Threading;
+@{
+    string CurrentCulture = Thread.CurrentThread.CurrentUICulture.Name;
+}
+@if (CurrentCulture == "en-US")
+{
+    @Html.ActionLink("عربي", "change", "Language", new { Language = "Ar", RtnUrl = Request.Path.ToString() }, new { @class = "btn btn-primary" })
+}
+else
+{
+    @Html.ActionLink("English", "change", "Language", new { Language = "En", RtnUrl = Request.Path.ToString() }, new { @class = "btn btn-primary" })
+}
+

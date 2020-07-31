@@ -1,0 +1,13 @@
+﻿@using System.Collections
+@using System.Globalization
+@using System.Resources
+@using STS.Resources.Scripts
+@{
+    Layout = null;
+    ResourceSet resourceSet = Locations.ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+}
+Locations = {};
+@foreach (DictionaryEntry res in resourceSet)
+{
+    @:Locations.@res.Key = '@Html.Raw(HttpUtility.JavaScriptStringEncode(res.Value.ToString()))'
+}

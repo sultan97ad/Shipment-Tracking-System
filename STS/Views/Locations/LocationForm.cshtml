@@ -1,0 +1,33 @@
+﻿@model STS.ViewModels.LocationFormViewModel
+@using STS.Resources.Views
+@{
+    bool IsNew = Model.LocationId == 0;
+    string FixErrors = Locations.FixErrors;
+    string ButtonText = IsNew ? Locations.NewLocationButtonText : Locations.UpdateLocationButtonText;
+    ViewBag.Title = IsNew ? Locations.NewLocationTitle : Locations.UpdateLocationTitle;
+}
+<h2>@ViewBag.Title</h2>
+<br />
+@using (Html.BeginForm("Save", "Locations"))
+{
+    @Html.ValidationSummary(true, FixErrors)
+    <div class="form-group">
+        @Html.LabelFor(m => m.LocationName)
+        @Html.TextBoxFor(m => m.LocationName, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.LocationName)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.City)
+        @Html.TextBoxFor(m => m.City, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.City)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CanBeDestination)
+        @Html.CheckBoxFor(m => m.CanBeDestination, new { @Class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CanBeDestination)
+    </div>
+    @Html.HiddenFor(c => c.LocationId)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">@ButtonText</button>
+}
+
