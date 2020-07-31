@@ -179,6 +179,14 @@ function PromptBox(Title, NoInputcallback, callback, Param = null) {
 
     bootbox.prompt({
         title: Title,
+        buttons: {
+            cancel: {
+                label: Shipments.CancelButton
+            },
+            confirm: {
+                label: Shipments.SubmitButton
+            }
+        },
         centerVertical: true,
         callback: function (Input) {
             if (Input != null) {

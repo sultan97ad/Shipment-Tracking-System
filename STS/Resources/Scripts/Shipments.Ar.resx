@@ -207,4 +207,7 @@
   <data name="TrackingNumber" xml:space="preserve">
     <value>رقم التتبع</value>
   </data>
+  <data name="SubmitButton" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
 </root>
