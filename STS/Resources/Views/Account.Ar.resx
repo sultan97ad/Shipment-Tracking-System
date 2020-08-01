@@ -193,7 +193,7 @@
     <value>تذكرني ؟</value>
   </data>
   <data name="Required" xml:space="preserve">
-    <value>{0} مطلوب</value>
+    <value> {0} مطلوب/ ـة</value>
   </data>
   <data name="ResetPassword" xml:space="preserve">
     <value>اعادة تعيين</value>

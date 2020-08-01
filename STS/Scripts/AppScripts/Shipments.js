@@ -7,7 +7,6 @@
         loadingRecords: Shipments.ShipmentsTableLoadingRecords,
         processing: Shipments.ShipmentsTableProcessing,
         search: Shipments.ShipmentsTableSearchLabel,
-        
         zeroRecords: Shipments.ShipmentsEmptyTable,
         paginate: {
             first: Shipments.ShipmentsTableFirst,

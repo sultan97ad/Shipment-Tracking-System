@@ -166,7 +166,7 @@
     <value>رقم الجوال</value>
   </data>
   <data name="Required" xml:space="preserve">
-    <value>{0} مطلوب</value>
+    <value>{0} مطلوب/ ـة</value>
   </data>
   <data name="Status" xml:space="preserve">
     <value>الحالة</value>

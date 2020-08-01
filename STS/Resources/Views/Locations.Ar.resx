@@ -154,7 +154,7 @@
     <value>عدد الشحنات</value>
   </data>
   <data name="Required" xml:space="preserve">
-    <value>{0} مطلوب</value>
+    <value>{0} مطلوب/ ـة</value>
   </data>
   <data name="StringLength" xml:space="preserve">
     <value>يجب ان يكون {0} اقل من {1} خانة</value>
