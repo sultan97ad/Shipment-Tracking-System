@@ -252,6 +252,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Resources\ErrorPages.Ar.Designer.cs">
+      <DependentUpon>ErrorPages.Ar.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ErrorPages.Designer.cs">
+      <DependentUpon>ErrorPages.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\Layouts\EmployeeLayout.Designer.cs">
       <DependentUpon>EmployeeLayout.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -616,6 +626,15 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Employees.Ar.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ErrorPages.Ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorPages.Ar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ErrorPages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ErrorPages.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Layouts\EmployeeLayout.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

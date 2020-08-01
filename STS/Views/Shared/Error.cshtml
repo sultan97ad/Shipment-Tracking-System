@@ -1,9 +1,13 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
-
+@using STS.Resources
 @{
-    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/Main_Layout.cshtml";
+    ViewBag.Title = @ErrorPages.Error;
 }
-
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
+<br />
+<br />
+Img
+<h2 class="text-danger">@ErrorPages.AnErrorOccurred</h2>
+<br />
+<br />
 
