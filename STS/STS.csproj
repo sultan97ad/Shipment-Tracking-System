@@ -204,7 +204,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\LanguageController.cs" />
+    <Compile Include="Controllers\AppController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\Operations-api\EmployeesController.cs" />
     <Compile Include="Controllers\Operations-api\LocationsController.cs" />
@@ -629,7 +629,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ErrorPages.Ar.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ErrorPages.Ar.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ErrorPages.resx">
@@ -871,6 +870,7 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <None Include="Views\App\PageNotFound.cshtml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -992,21 +992,21 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\language\ShipmentsScriptLocale.cshtml" />
+    <Content Include="Views\App\ShipmentsScriptLocale.cshtml" />
     <Content Include="Views\Shared\Main_Layout.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\Main\TrackShipment.cshtml" />
-    <Content Include="Views\language\MainScriptLocale.cshtml" />
+    <Content Include="Views\App\MainScriptLocale.cshtml" />
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
     <Content Include="Views\Locations\LocationForm.cshtml" />
     <Content Include="Views\Shared\Admin_Layout.cshtml" />
-    <Content Include="Views\language\LocationsScriptLocale.cshtml" />
+    <Content Include="Views\App\LocationsScriptLocale.cshtml" />
     <Content Include="Views\Shared\_ChangeLanguagePartial.cshtml" />
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Employees\EmployeeForm.cshtml" />
-    <Content Include="Views\language\EmployeesScriptLocale.cshtml" />
+    <Content Include="Views\App\EmployeesScriptLocale.cshtml" />
     <Content Include="Views\Shared\Account_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>

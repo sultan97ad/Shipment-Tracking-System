@@ -123,4 +123,10 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>Not Found</value>
+  </data>
+  <data name="ThisPageIsNotAvailable" xml:space="preserve">
+    <value>Sorry, This Page Is Not Available </value>
+  </data>
 </root>

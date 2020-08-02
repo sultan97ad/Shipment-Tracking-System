@@ -8,9 +8,10 @@ using System.Web.Mvc;
 
 namespace STS.Controllers
 {
-    public class LanguageController : Controller
+    public class AppController : Controller
     {
         // GET: Language/Change?Language=Ar&RtnUrl=xxx
+        [Route("Language/Change")]
         public ActionResult Change(string Language , string RtnUrl)
         {
             HttpCookie cookie = new HttpCookie("language");
@@ -44,6 +45,12 @@ namespace STS.Controllers
                 return View(ScriptName + "ScriptLocale");
             }
             return HttpNotFound();
+        }
+
+        [Route("PageNotFound")]
+        public ActionResult PageNotFound()
+        {
+           return View();
         }
     }
 }

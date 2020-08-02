@@ -77,5 +77,23 @@ namespace STS.Resources {
                 return ResourceManager.GetString("Error", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Not Found.
+        /// </summary>
+        public static string NotFound {
+            get {
+                return ResourceManager.GetString("NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sorry, This Page Is Not Available .
+        /// </summary>
+        public static string ThisPageIsNotAvailable {
+            get {
+                return ResourceManager.GetString("ThisPageIsNotAvailable", resourceCulture);
+            }
+        }
     }
 }
