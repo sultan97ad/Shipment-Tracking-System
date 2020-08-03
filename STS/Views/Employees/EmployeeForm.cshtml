@@ -37,9 +37,9 @@
     if (!IsNew)
     {
         <div class="form-group">
-            @Html.LabelFor(m => m.Enabled)
-            @Html.CheckBoxFor(m => m.Enabled, new { @Class = "form-control" })
-            @Html.ValidationMessageFor(m => m.Enabled)
+            @Html.LabelFor(m => m.LockedOut)
+            @Html.CheckBoxFor(m => m.LockedOut, new { @Class = "form-control" })
+            @Html.ValidationMessageFor(m => m.LockedOut)
         </div>
         @Html.HiddenFor(m => m.Email)
         @Html.HiddenFor(m => m.id)

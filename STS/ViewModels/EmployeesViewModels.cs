@@ -26,8 +26,8 @@ namespace STS.ViewModels
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.Views.Employees))]
         [Display(Name = "PhoneNumber", ResourceType = typeof(Resources.Views.Employees))]
         public string PhoneNumber { get; set; }
-        [Display(Name = "Enabled", ResourceType = typeof(Resources.Views.Employees))]
-        public bool Enabled { get; set; }
+        [Display(Name = "Disabled", ResourceType = typeof(Resources.Views.Employees))]
+        public bool LockedOut { get; set; }
     }
 
     public class EmployeeDetailsViewModel
