@@ -257,6 +257,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Resources\ErrorPages.Ar1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ErrorPages.Ar.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\ErrorPages.Designer.cs">
       <DependentUpon>ErrorPages.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -630,6 +635,7 @@
     <EmbeddedResource Include="Resources\ErrorPages.Ar.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
+      <LastGenOutput>ErrorPages.Ar1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\ErrorPages.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

@@ -1,10 +1,12 @@
 ﻿@model System.Web.Mvc.HandleErrorInfo
-
+@using STS.Resources
 @{
-    ViewBag.Title = "Locked Out";
+    Layout = "~/Views/Shared/Main_Layout.cshtml";
+    ViewBag.Title = ErrorPages.LockedOut;
 }
-
-<hgroup>
-    <h1 class="text-danger">Locked out.</h1>
-    <h2 class="text-danger">This account has been locked out, please try again later.</h2>
-</hgroup>
+<br />
+<br />
+Img
+<h2 class="text-danger">@ErrorPages.HasBeenLockedOut</h2>
+<br />
+<br />

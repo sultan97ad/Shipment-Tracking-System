@@ -123,6 +123,12 @@
   <data name="Error" xml:space="preserve">
     <value>خطأ</value>
   </data>
+  <data name="HasBeenLockedOut" xml:space="preserve">
+    <value>هذا الحساب معطل حالياً , حاول مرة اخرى لاحقا</value>
+  </data>
+  <data name="LockedOut" xml:space="preserve">
+    <value>معطل</value>
+  </data>
   <data name="NotFound" xml:space="preserve">
     <value>غير متوفر</value>
   </data>
