@@ -88,11 +88,29 @@ namespace STS.Resources.Scripts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Days.
+        /// </summary>
+        public static string Days {
+            get {
+                return ResourceManager.GetString("Days", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Destination.
         /// </summary>
         public static string Destination {
             get {
                 return ResourceManager.GetString("Destination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hold Since.
+        /// </summary>
+        public static string HoldSince {
+            get {
+                return ResourceManager.GetString("HoldSince", resourceCulture);
             }
         }
         

@@ -73,6 +73,7 @@ function ShipmentsDataTableRenderFunction(data, type, Shipment) {
              Shipments.ReceiverName + ' : ' + Shipment.ReceiverName + '<br>' +
              Shipments.Destination + ' : ' + Shipment.Destination + '<br>' +
              Shipments.Status + ' : ' + Shipment.Status + '<br>' +
+             Shipments.HoldSince + ' : ' + Shipment.HoldSince + ' ' + Shipments.Days + '<br>' +
             '<br>' +
             '<div class="btn-group drop">' +
             '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' +

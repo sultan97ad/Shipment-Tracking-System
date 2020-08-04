@@ -334,7 +334,8 @@ namespace STS.Controllers
                 TrackingNumber = Shipment.TrackingNumber,
                 ReceiverName = Shipment.ReceiverName,
                 Destination = Shipment.Destination.City,
-                Status = StatusToString((Status)Shipment.Status)
+                Status = StatusToString((Status)Shipment.Status),
+                HoldSince = (DateTime.Now - Shipment.ArrivalDate).Days.ToString()
             });
             return FilteredShipmentsData;
         }

@@ -13,6 +13,7 @@ namespace STS.Dtos
         public string ReceiverName { set; get; }
         public string Destination { set; get; }
         public string Status { set; get; }
+        public string HoldSince { set; get; }
 
     }
 }

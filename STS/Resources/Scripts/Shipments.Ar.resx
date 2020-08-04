@@ -210,4 +210,10 @@
   <data name="SubmitButton" xml:space="preserve">
     <value>إرسال</value>
   </data>
+  <data name="Days" xml:space="preserve">
+    <value>أيام</value>
+  </data>
+  <data name="HoldSince" xml:space="preserve">
+    <value>متواجدة منذ</value>
+  </data>
 </root>
