@@ -219,8 +219,6 @@ function PromptBox(Title, NoInputcallback, callback, Param = null) {
 
 }
 
-
-
 function Print(printSectionId) {
     var innerContents = document.getElementById(printSectionId).innerHTML;
     var popupWinindow = window.open();

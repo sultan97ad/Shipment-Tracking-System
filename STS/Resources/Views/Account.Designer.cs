@@ -205,6 +205,15 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Here.
+        /// </summary>
+        public static string Here {
+            get {
+                return ResourceManager.GetString("Here", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email Address Or Password Is Incorrect.
         /// </summary>
         public static string InvalidLoginAttempt {
@@ -273,6 +282,15 @@ namespace STS.Resources.Views {
         public static string PasswordHasBeenChanged {
             get {
                 return ResourceManager.GetString("PasswordHasBeenChanged", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please reset your password by clicking.
+        /// </summary>
+        public static string PleaseResetYourPasswordByClicking {
+            get {
+                return ResourceManager.GetString("PleaseResetYourPasswordByClicking", resourceCulture);
             }
         }
         

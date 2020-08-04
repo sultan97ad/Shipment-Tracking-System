@@ -162,6 +162,9 @@
   <data name="ForgotYourPassword" xml:space="preserve">
     <value>نسيت كلمة المرور ؟</value>
   </data>
+  <data name="Here" xml:space="preserve">
+    <value>هنا</value>
+  </data>
   <data name="InvalidLoginAttempt" xml:space="preserve">
     <value>البريد الالكتروني أو كلمة المرور غير صحيحة</value>
   </data>
@@ -185,6 +188,9 @@
   </data>
   <data name="PasswordHasBeenChanged" xml:space="preserve">
     <value>تم تغيير كلمة المرور بنجاح</value>
+  </data>
+  <data name="PleaseResetYourPasswordByClicking" xml:space="preserve">
+    <value>لإعادة تعيين كلمة المرور اضغط</value>
   </data>
   <data name="ProfileTitle" xml:space="preserve">
     <value>الملف الشخصي</value>

@@ -165,6 +165,9 @@
   <data name="ForgotYourPassword" xml:space="preserve">
     <value>Forgot your password?</value>
   </data>
+  <data name="Here" xml:space="preserve">
+    <value>Here</value>
+  </data>
   <data name="InvalidLoginAttempt" xml:space="preserve">
     <value>Email Address Or Password Is Incorrect</value>
   </data>
@@ -188,6 +191,9 @@
   </data>
   <data name="PasswordHasBeenChanged" xml:space="preserve">
     <value>Your password has been changed.</value>
+  </data>
+  <data name="PleaseResetYourPasswordByClicking" xml:space="preserve">
+    <value>Please reset your password by clicking</value>
   </data>
   <data name="ProfileTitle" xml:space="preserve">
     <value>Profile</value>
