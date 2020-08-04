@@ -161,19 +161,14 @@ namespace STS.Controllers
                 Location = LocationToString(GetLocation(Employee.EmployeeLocationId)),
                 DateAdded = Employee.EmployeeDateAdded.ToShortDateString(),
                 PhoneNumber = Employee.PhoneNumber,
-                Status = GetAccountStatusString(Employee)
+                Status = GetAccountStatus(Employee)
             };
             return ViewModel;
         }
 
-        private string GetAccountStatusString(ApplicationUser Employee)
+        private string GetAccountStatus(ApplicationUser Employee)
         {
-            return Employee.LockoutEndDateUtc == null ? Employees.Enabled : Employees.Disabled;
-        }
-
-        private bool IsLockedOut(ApplicationUser Employee)
-        {
-            return Employee.LockoutEndDateUtc != null;
+            return Employee.LockoutEnabled ? Employees.Disabled : Employees.Enabled;
         }
 
         private Location GetLocation(int employeeLocationId)
@@ -201,7 +196,8 @@ namespace STS.Controllers
                 EmployeeName = ViewModel.EmployeeName,
                 PhoneNumber = ViewModel.PhoneNumber,
                 EmployeeDateAdded = DateTime.Now,
-                LockoutEnabled = true
+                LockoutEndDateUtc = new DateTime(3000,1,1),
+                LockoutEnabled = false
             };
             return Employee;
         }
@@ -211,17 +207,8 @@ namespace STS.Controllers
             Employee.EmployeeName = ViewModel.EmployeeName;
             Employee.EmployeeLocationId = ViewModel.EmployeeLocationId;
             Employee.PhoneNumber = ViewModel.PhoneNumber;
-            Employee.LockoutEndDateUtc = GetAccountNewLockoutEndDateUtc(ViewModel.LockedOut);
+            Employee.LockoutEnabled = ViewModel.LockedOut;
             return Employee;
-        }
-
-        private DateTime? GetAccountNewLockoutEndDateUtc(bool LockedOut)
-        {
-            if(LockedOut)
-            {
-                return new DateTime(3000,1,1);
-            }
-            return null;
         }
 
         private EmployeeFormViewModel GenerateEmployeeFormViewModel(ApplicationUser Employee)
@@ -234,7 +221,7 @@ namespace STS.Controllers
                 EmployeeName = Employee.EmployeeName,
                 EmployeeLocationId = Employee.EmployeeLocationId,
                 PhoneNumber = Employee.PhoneNumber,
-                LockedOut = IsLockedOut(Employee)
+                LockedOut = Employee.LockoutEnabled
             };
             return ViewModel;
         }
