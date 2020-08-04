@@ -23,6 +23,7 @@ namespace STS.Models
         [StringLength(255)]
         public string Description { set; get; }
         public DateTime DateAdded { set; get; }
+        public DateTime ArrivalDate { set; get; }
         public byte Status { set; get; }
         public Location CurrentLocation { set; get; }
         public Location Source { set; get; }

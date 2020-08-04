@@ -240,6 +240,10 @@
     <Compile Include="Migrations\202007101129591_Migration_4.Designer.cs">
       <DependentUpon>202007101129591_Migration_4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008041002327_Migration_5.cs" />
+    <Compile Include="Migrations\202008041002327_Migration_5.Designer.cs">
+      <DependentUpon>202008041002327_Migration_5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Resources\Api\Employees.Designer.cs">
@@ -622,6 +626,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202007101129591_Migration_4.resx">
       <DependentUpon>202007101129591_Migration_4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008041002327_Migration_5.resx">
+      <DependentUpon>202008041002327_Migration_5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Api\Employees.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

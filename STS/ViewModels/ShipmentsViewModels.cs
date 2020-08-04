@@ -62,5 +62,7 @@ namespace STS.ViewModels
         public string Source { set; get; }
         [Display(Name = "Destination", ResourceType = typeof(Resources.Views.Shipments))]
         public string Destination { set; get; }
+        [Display(Name = "ArrivalDate", ResourceType = typeof(Resources.Views.Shipments))]
+        public string ArrivalDate { set; get; }
     }
 }

@@ -204,4 +204,7 @@
   <data name="PrintBarcode" xml:space="preserve">
     <value>طباعة باركود</value>
   </data>
+  <data name="ArrivalDate" xml:space="preserve">
+    <value>تاريخ الوصول</value>
+  </data>
 </root>

@@ -89,6 +89,7 @@ namespace STS.Controllers.Operations_api
                 {
                     var EmployeeLocation = GetEmployeeLocation(User.Identity.GetUserId());
                     Shipment.CurrentLocation = EmployeeLocation;
+                    Shipment.ArrivalDate = DateTime.Now;
                     Shipment.Status = (byte)UpdateArrivedShipmentStatus(Shipment, EmployeeLocation);
                     DbContext.TrackingRecords.Add(GenerateTrackingRecord(Shipment , TrackingRecordType.Arrived));
                     if (IsWaitingCollection(Shipment))

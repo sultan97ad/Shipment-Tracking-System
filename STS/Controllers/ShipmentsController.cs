@@ -207,6 +207,7 @@ namespace STS.Controllers
             {
                 TrackingNumber = Shipment.TrackingNumber,
                 DateAdded = Shipment.DateAdded.ToString(),
+                ArrivalDate = Shipment.ArrivalDate.ToString(),
                 ReceiverName = Shipment.ReceiverName,
                 ReceiverPhoneNumber = Shipment.ReceiverPhoneNumber,
                 SenderName = Shipment.SenderName,
@@ -247,9 +248,11 @@ namespace STS.Controllers
             Shipment.Description = ViewModel.Description;
             Shipment.Status = (byte)Status.WaitingShipping;
             Shipment.DateAdded = DateTime.Now;
+            Shipment.ArrivalDate = DateTime.Now;
             Shipment.Destination = DbContext.Locations.SingleOrDefault(Location => Location.Id == ViewModel.DestinationLocationId);
             Shipment.CurrentLocation = EmployeeLocation;
             Shipment.Source = EmployeeLocation;
+
             return Shipment;
         }
 

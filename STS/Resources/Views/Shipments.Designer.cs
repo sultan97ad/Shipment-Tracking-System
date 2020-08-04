@@ -61,6 +61,15 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Arrival Date.
+        /// </summary>
+        public static string ArrivalDate {
+            get {
+                return ResourceManager.GetString("ArrivalDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back To Shipments.
         /// </summary>
         public static string BackToShipmentsButton {
