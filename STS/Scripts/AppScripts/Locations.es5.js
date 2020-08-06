@@ -1,4 +1,6 @@
-﻿$(document).ready(function () {
+﻿"use strict";
+
+$(document).ready(function () {
     var LocationsDataTableLocale = {
         emptyTable: Locations.LocationsEmptyTable,
         sInfo: Locations.LocationsTableInfo,
@@ -22,27 +24,23 @@
         datatype: "json"
     };
 
-    var LocationsDataTableColumnDefinition = [
-        {
-            targets: [0],
-            orderable: false,
-            searchable: false
-        }
-    ];
+    var LocationsDataTableColumnDefinition = [{
+        targets: [0],
+        orderable: false,
+        searchable: false
+    }];
 
-    var LocationsDataTableColumn = [
-        {
-            data: "Address",
-            render: LocationsDataTableRenderFunction
-        }
-    ];
+    var LocationsDataTableColumn = [{
+        data: "Address",
+        render: LocationsDataTableRenderFunction
+    }];
 
     $("#Locations").DataTable({
         language: LocationsDataTableLocale,
         proccessing: true,
         serverSide: true,
         ajax: LocationsDataTableAjaxInfo,
-        columnDefs:LocationsDataTableColumnDefinition,
+        columnDefs: LocationsDataTableColumnDefinition,
         columns: LocationsDataTableColumn
     });
 
@@ -53,8 +51,8 @@
     });
 
     var InitialLocation = {
-        latitude: $('#latitude').val(),
-        longitude: $('#longitude').val()
+        latitude: $('#latitude').text(),
+        longitude: $('#longitude').text()
     };
 
     var inputBinding = {
@@ -63,38 +61,26 @@
     };
 
     $('#FormMapPlaceHolder').locationpicker({
-        location:InitialLocation ,
+        location: InitialLocation,
         radius: 20,
-        inputBinding:inputBinding,
+        inputBinding: inputBinding,
         enableAutocomplete: true
     });
 
     $('#DetailsMapPlaceHolder').locationpicker({
         location: InitialLocation,
-        radius: 20,
-        markerDraggable: false
+        radius: 20
     });
 });
 
 function LocationsDataTableRenderFunction(data, type, Location) {
-  Col = Locations.LocationId + ' : ' + Location.LocationId + '<br>' +
-        Locations.Address + ' : ' + Location.Address + '<br>' +
-        '<br>' +
-        '<div class="btn-group drop" >' +
-        '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' +
-        '<div class="dropdown-menu">' +
-        '<a class="dropdown-item" href="/Locations/Update/' + Location.LocationId + '">' + Locations.LocationsTableUpdateInformationLabel + '</a>' +
-        '<a class="dropdown-item" href="/Locations/Details/' + Location.LocationId + '">' + Locations.LocationsTableDetailsLabel + '</a>' +
-        '<a class="dropdown-item" href="Employees?LocationId=' + Location.LocationId + '">' + Locations.LocationsTableEmployeesLabel + '</a>' +
-        '<a class="dropdown-item Remove" href="#" LocationId="' + Location.LocationId + '" Address="' + Location.Address + '" >' + Locations.LocationsTableRemoveLocationLabel + '</a>' +
-        '</div>' +
-        '</div>';
+    Col = Locations.LocationId + ' : ' + Location.LocationId + '<br>' + Locations.Address + ' : ' + Location.Address + '<br>' + '<br>' + '<div class="btn-group drop" >' + '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' + '<div class="dropdown-menu">' + '<a class="dropdown-item" href="/Locations/Update/' + Location.LocationId + '">' + Locations.LocationsTableUpdateInformationLabel + '</a>' + '<a class="dropdown-item" href="/Locations/Details/' + Location.LocationId + '">' + Locations.LocationsTableDetailsLabel + '</a>' + '<a class="dropdown-item" href="Employees?LocationId=' + Location.LocationId + '">' + Locations.LocationsTableEmployeesLabel + '</a>' + '<a class="dropdown-item Remove" href="#" LocationId="' + Location.LocationId + '" Address="' + Location.Address + '" >' + Locations.LocationsTableRemoveLocationLabel + '</a>' + '</div>' + '</div>';
     return Col;
 }
 
 function RemoveLocationAjaxRequest(LocationId) {
     $.ajax({
-        url: '/Operations-api/Locations/Remove/' + LocationId ,
+        url: '/Operations-api/Locations/Remove/' + LocationId,
         method: "POST",
         success: AjaxRequestOperationSuccess,
         error: AjaxRequestError
@@ -109,14 +95,13 @@ function AjaxRequestOperationSuccess(Message) {
 function AjaxRequestError(xhr) {
     if (xhr.status == 404) {
         toastr.error(Locations.LocationIdNotFound);
-    }
-    else {
+    } else {
         var Message = $.parseJSON(xhr.responseText).Message;
         toastr.error(Message);
     }
 }
 
-function ConfirmBox(Message, callback, Param1 , Param2) {
+function ConfirmBox(Message, _callback, Param1, Param2) {
     bootbox.confirm({
         message: Message,
         centerVertical: true,
@@ -128,20 +113,11 @@ function ConfirmBox(Message, callback, Param1 , Param2) {
                 label: Locations.ConfirmButton
             }
         },
-        callback: function (confirm) {
+        callback: function callback(confirm) {
             if (confirm) {
-                callback(Param1 , Param2);
+                _callback(Param1, Param2);
             }
         }
     });
 }
-
-
-
-
-
-
-
-
-
 

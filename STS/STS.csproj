@@ -244,6 +244,10 @@
     <Compile Include="Migrations\202008041002327_Migration_5.Designer.cs">
       <DependentUpon>202008041002327_Migration_5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008060426342_Migration_6.cs" />
+    <Compile Include="Migrations\202008060426342_Migration_6.Designer.cs">
+      <DependentUpon>202008060426342_Migration_6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Resources\Api\Employees.Designer.cs">
@@ -606,6 +610,12 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\AppScripts\Employees.js" />
+    <Content Include="Scripts\AppScripts\Locations.es5.js">
+      <DependentUpon>Locations.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\AppScripts\Locations.es5.min.js">
+      <DependentUpon>Locations.es5.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\bootbox.all.js" />
     <Content Include="Scripts\bootbox.all.min.js" />
     <Content Include="Scripts\bootbox.js" />
@@ -629,6 +639,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008041002327_Migration_5.resx">
       <DependentUpon>202008041002327_Migration_5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008060426342_Migration_6.resx">
+      <DependentUpon>202008060426342_Migration_6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Api\Employees.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -862,6 +875,8 @@
     <Content Include="Content\DataTables\css\common.scss" />
     <Content Include="Scripts\AppScripts\Locations.js" />
     <Content Include="Scripts\AppScripts\Main.js" />
+    <Content Include="Scripts\dist\locationpicker.jquery.js" />
+    <Content Include="Scripts\dist\locationpicker.jquery.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -883,6 +898,11 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="Scripts\dist\locationpicker.jquery.min.js.map" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Views\App\PageNotFound.cshtml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />

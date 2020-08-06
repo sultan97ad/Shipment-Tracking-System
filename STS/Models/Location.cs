@@ -14,5 +14,7 @@ namespace STS.Models
         public string City { set; get; }
         public bool CanBeDestination { set; get; }
         public bool InService { set; get; }
+        public double Latitude { set; get; }
+        public double longitude { set; get; }
     }
 }

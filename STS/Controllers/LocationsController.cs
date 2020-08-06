@@ -137,6 +137,8 @@ namespace STS.Controllers
                 LocationId = Location.Id,
                 LocationName = Location.LocationName,
                 City = Location.City,
+                Latitude = Location.Latitude.ToString(),
+                longitude = Location.longitude.ToString(),
                 CanBeDestination = Location.CanBeDestination,
                 NumberOfEmployees = GetNumberOfEmployees(Location),
                 NumberOfShipments = GetNumberOfShipments(Location)
@@ -146,7 +148,7 @@ namespace STS.Controllers
 
         private LocationFormViewModel GenerateNewLocationFormViewModel()
         {
-            return new LocationFormViewModel { LocationId = 0 };
+            return new LocationFormViewModel { LocationId = 0 , Latitude = (24.711827478013564).ToString() , longitude = (46.67447090148926).ToString() };
         }
 
 
@@ -172,6 +174,8 @@ namespace STS.Controllers
         {
             Location.LocationName = ViewModel.LocationName;
             Location.City = ViewModel.City;
+            Location.Latitude = Double.Parse(ViewModel.Latitude);
+            Location.longitude = Double.Parse(ViewModel.longitude);
             Location.CanBeDestination = ViewModel.CanBeDestination;
             return Location;
         }
@@ -183,6 +187,8 @@ namespace STS.Controllers
                 LocationId = Location.Id,
                 LocationName = Location.LocationName,
                 City = Location.City,
+                Latitude = Location.Latitude.ToString(),
+                longitude = Location.longitude.ToString(),
                 CanBeDestination = Location.CanBeDestination
             };
             return ViewModel;

@@ -16,7 +16,8 @@ namespace STS
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/datatables/datatables.bootstrap4.js",
                         "~/Scripts/bootbox.js",
-                        "~/Scripts/toastr.js"
+                        "~/Scripts/toastr.js",
+                        "~/Scripts/dist/locationpicker.jquery.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/EmployeeScripts").Include(

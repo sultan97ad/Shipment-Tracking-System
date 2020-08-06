@@ -13,7 +13,7 @@
     @Html.ValidationSummary(true, FixErrors)
     <div class="form-group">
         @Html.LabelFor(m => m.LocationName)
-        @Html.TextBoxFor(m => m.LocationName, new { @Class = "form-control" })
+        @Html.TextBoxFor(m => m.LocationName, new { @Class = "form-control", id = "LocationName" })
         @Html.ValidationMessageFor(m => m.LocationName)
     </div>
     <div class="form-group">
@@ -21,6 +21,18 @@
         @Html.TextBoxFor(m => m.City, new { @Class = "form-control" })
         @Html.ValidationMessageFor(m => m.City)
     </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Latitude)
+        @Html.TextBoxFor(m => m.Latitude, new { @Class = "form-control", id = "latitude" })
+        @Html.ValidationMessageFor(m => m.Latitude)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.longitude)
+        @Html.TextBoxFor(m => m.longitude, new { @Class = "form-control", id = "longitude" })
+        @Html.ValidationMessageFor(m => m.longitude)
+    </div>
+    <div id="FormMapPlaceHolder" style="width: 550px; height: 400px;"></div>
+    <div class="clearfix">&nbsp;</div>
     <div class="form-group">
         @Html.LabelFor(m => m.CanBeDestination)
         @Html.CheckBoxFor(m => m.CanBeDestination, new { @Class = "form-control" })

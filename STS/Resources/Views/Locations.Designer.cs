@@ -97,6 +97,15 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Latitude.
+        /// </summary>
+        public static string Latitude {
+            get {
+                return ResourceManager.GetString("Latitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Location Details.
         /// </summary>
         public static string LocationDetailsTitle {
@@ -129,6 +138,15 @@ namespace STS.Resources.Views {
         public static string LocationsTitle {
             get {
                 return ResourceManager.GetString("LocationsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to longitude.
+        /// </summary>
+        public static string longitude {
+            get {
+                return ResourceManager.GetString("longitude", resourceCulture);
             }
         }
         

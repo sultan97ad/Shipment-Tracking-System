@@ -13,6 +13,10 @@ namespace STS.ViewModels
         [StringLength(30, ErrorMessageResourceName = "StringLength", ErrorMessageResourceType = typeof(Resources.Views.Locations))]
         [Display(Name = "City", ResourceType = typeof(Resources.Views.Locations))]
         public string City { set; get; }
+        [Display(Name = "Latitude", ResourceType = typeof(Resources.Views.Locations))]
+        public string Latitude { set; get; }
+        [Display(Name = "longitude", ResourceType = typeof(Resources.Views.Locations))]
+        public string longitude { set; get; }
         [Display(Name = "CanBeDestination", ResourceType = typeof(Resources.Views.Locations))]
         public bool CanBeDestination { set; get; }
     }
@@ -25,6 +29,10 @@ namespace STS.ViewModels
         public string LocationName { set; get; }
         [Display(Name = "City", ResourceType = typeof(Resources.Views.Locations))]
         public string City { set; get; }
+        [Display(Name = "Latitude", ResourceType = typeof(Resources.Views.Locations))]
+        public string Latitude { set; get; }
+        [Display(Name = "longitude", ResourceType = typeof(Resources.Views.Locations))]
+        public string longitude { set; get; }
         [Display(Name = "CanBeDestination", ResourceType = typeof(Resources.Views.Locations))]
         public bool CanBeDestination { set; get; }
         [Display(Name = "NumberOfShipments", ResourceType = typeof(Resources.Views.Locations))]

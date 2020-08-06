@@ -129,6 +129,9 @@
   <data name="FixErrors" xml:space="preserve">
     <value>من فضلك صحح الأخطاء التالية</value>
   </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>خط العرض</value>
+  </data>
   <data name="LocationDetailsTitle" xml:space="preserve">
     <value>تفاصيل موقع</value>
   </data>
@@ -140,6 +143,9 @@
   </data>
   <data name="LocationsTitle" xml:space="preserve">
     <value>المواقع</value>
+  </data>
+  <data name="longitude" xml:space="preserve">
+    <value>خط الطول</value>
   </data>
   <data name="NewLocationButtonText" xml:space="preserve">
     <value>ادرج</value>
