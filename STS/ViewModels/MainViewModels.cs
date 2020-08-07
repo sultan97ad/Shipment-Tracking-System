@@ -23,5 +23,8 @@ namespace STS.ViewModels
         public string Source { set; get; }
         [Display(Name = "Destination", ResourceType = typeof(Resources.Views.Main))]
         public string Destination { set; get; }
+        [Display(Name = "DistanceToDestination", ResourceType = typeof(Resources.Views.Main))]
+        public string DistanceToDestination { set; get; }
+
     }
 }

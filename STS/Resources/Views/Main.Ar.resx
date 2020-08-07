@@ -162,4 +162,7 @@
   <data name="InvalidTrackingNumber" xml:space="preserve">
     <value>رقم التتبع غير صحيح</value>
   </data>
+  <data name="DistanceToDestination" xml:space="preserve">
+    <value>(المسافة إلى الوجهة النهائية (كم</value>
+  </data>
 </root>

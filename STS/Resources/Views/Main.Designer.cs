@@ -115,6 +115,15 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Distance To Destination (km).
+        /// </summary>
+        public static string DistanceToDestination {
+            get {
+                return ResourceManager.GetString("DistanceToDestination", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid Tracking Number.
         /// </summary>
         public static string InvalidTrackingNumber {

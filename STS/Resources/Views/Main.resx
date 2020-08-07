@@ -162,4 +162,7 @@
   <data name="InvalidTrackingNumber" xml:space="preserve">
     <value>Invalid Tracking Number</value>
   </data>
+  <data name="DistanceToDestination" xml:space="preserve">
+    <value>Distance To Destination (km)</value>
+  </data>
 </root>

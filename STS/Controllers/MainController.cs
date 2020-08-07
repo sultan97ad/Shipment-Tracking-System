@@ -125,13 +125,33 @@ namespace STS.Controllers
                 TrackingNumber = Shipment.TrackingNumber,
                 Status = StatusCodeToString((Status)Shipment.Status),
                 Source = LocationToString(Shipment.Source),
-                Destination = LocationToString(Shipment.Destination)
+                Destination = LocationToString(Shipment.Destination),
             };
             if (Shipment.Status == (byte)Status.WaitingCollection || Shipment.Status == (byte)Status.WaitingShipping)
             {
                 ViewModel.CurrentLocation = LocationToString(Shipment.CurrentLocation);
+                ViewModel.DistanceToDestination = CalculateDistance(Shipment.Source, Shipment.Destination).ToString();
             }
             return ViewModel;
+        }
+
+        public int CalculateDistance(Location L1 , Location L2)
+        {
+            double lat1 = L1.Latitude;
+            double lon1 = L1.longitude;
+            double lat2 = L2.Latitude;
+            double lon2 = L2.longitude;
+            double rlat1 = Math.PI * lat1 / 180;
+            double rlat2 = Math.PI * lat2 / 180;
+            double theta = lon1 - lon2;
+            double rtheta = Math.PI * theta / 180;
+            double dist =
+                Math.Sin(rlat1) * Math.Sin(rlat2) + Math.Cos(rlat1) *
+                Math.Cos(rlat2) * Math.Cos(rtheta);
+            dist = Math.Acos(dist);
+            dist = dist * 180 / Math.PI;
+            dist = dist * 60 * 1.1515;
+            return Convert.ToInt32(dist * 1.609344);
         }
 
         private IEnumerable<TrackingRecordDto> GetShipmentTrackingRecords(Shipment Shipment)
