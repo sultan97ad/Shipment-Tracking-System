@@ -25,6 +25,7 @@ namespace STS.ViewModels
         public string Destination { set; get; }
         [Display(Name = "DistanceToDestination", ResourceType = typeof(Resources.Views.Main))]
         public string DistanceToDestination { set; get; }
-
+        [Display(Name = "EstimatedDeliveryDate", ResourceType = typeof(Resources.Views.Main))]
+        public string EstimatedDeliveryDate { set; get; }
     }
 }

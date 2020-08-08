@@ -124,6 +124,15 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Estimated Delivery Date.
+        /// </summary>
+        public static string EstimatedDeliveryDate {
+            get {
+                return ResourceManager.GetString("EstimatedDeliveryDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid Tracking Number.
         /// </summary>
         public static string InvalidTrackingNumber {

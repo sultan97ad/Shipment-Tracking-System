@@ -126,6 +126,7 @@ namespace STS.Controllers
                 Status = StatusCodeToString((Status)Shipment.Status),
                 Source = LocationToString(Shipment.Source),
                 Destination = LocationToString(Shipment.Destination),
+                EstimatedDeliveryDate = GetEstimatedDeliveryDate(Shipment)
             };
             if (Shipment.Status == (byte)Status.WaitingCollection || Shipment.Status == (byte)Status.WaitingShipping)
             {
@@ -133,6 +134,30 @@ namespace STS.Controllers
                 ViewModel.DistanceToDestination = CalculateDistance(Shipment.Source, Shipment.Destination).ToString();
             }
             return ViewModel;
+        }
+
+        private string GetEstimatedDeliveryDate(Shipment Shipment)
+        {
+            var LastDelivery = LastDeliveryBetween(Shipment.Source, Shipment.Destination);
+            if (LastDelivery != null)
+            {
+                var LastDeliveryNumberOfDays = (LastDelivery.DateTime - LastDelivery.Shipment.DateAdded).TotalDays;
+                var MinDeliveryDate = Shipment.DateAdded.AddDays(LastDeliveryNumberOfDays);
+                var MaxDeliveryDate = MinDeliveryDate.AddDays(3);
+                return MinDeliveryDate.ToShortDateString() + " - " + MaxDeliveryDate.ToShortDateString();
+            }
+            return "Unknown";
+        }
+
+        private TrackingRecord LastDeliveryBetween(Location source, Location destination)
+        {
+            var LastDelivery = DbContext.TrackingRecords
+                .Include(TrackingRecord => TrackingRecord.Shipment)
+                .Include(TrackingRecord => TrackingRecord.Shipment.Source)
+                .Include(TrackingRecord => TrackingRecord.Shipment.Destination)
+                .Where(TrackingRecord => TrackingRecord.Type == (byte)TrackingRecordType.Collected && TrackingRecord.Shipment.Source.Id == source.Id && TrackingRecord.Shipment.Destination.Id == destination.Id)
+                .FirstOrDefault();
+            return LastDelivery;
         }
 
         public int CalculateDistance(Location L1 , Location L2)

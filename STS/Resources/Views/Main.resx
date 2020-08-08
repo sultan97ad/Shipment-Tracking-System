@@ -165,4 +165,7 @@
   <data name="DistanceToDestination" xml:space="preserve">
     <value>Distance To Destination (km)</value>
   </data>
+  <data name="EstimatedDeliveryDate" xml:space="preserve">
+    <value>Estimated Delivery Date</value>
+  </data>
 </root>

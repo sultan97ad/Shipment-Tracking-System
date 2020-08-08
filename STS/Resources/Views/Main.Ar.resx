@@ -151,7 +151,7 @@
     <value>_LocationName_ الشحنة غادرت</value>
   </data>
   <data name="RegisteredTrackingStatement" xml:space="preserve">
-    <value>تم تسجيل الشحتة</value>
+    <value>تم تسجيل الشحنة</value>
   </data>
   <data name="UpdatedTrackingStatement" xml:space="preserve">
     <value>تم تحديث بيانات الشحنة</value>
@@ -164,5 +164,8 @@
   </data>
   <data name="DistanceToDestination" xml:space="preserve">
     <value>(المسافة إلى الوجهة النهائية (كم</value>
+  </data>
+  <data name="EstimatedDeliveryDate" xml:space="preserve">
+    <value>تاريخ الوصول المتوقع</value>
   </data>
 </root>
