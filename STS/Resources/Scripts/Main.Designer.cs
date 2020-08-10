@@ -63,27 +63,27 @@ namespace STS.Resources.Scripts {
         /// <summary>
         ///   Looks up a localized string similar to No Tracking Records.
         /// </summary>
-        public static string TrackingRecordsEmptyTable {
+        public static string ReportsEmptyTable {
             get {
-                return ResourceManager.GetString("TrackingRecordsEmptyTable", resourceCulture);
+                return ResourceManager.GetString("ReportsEmptyTable", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Loading....
         /// </summary>
-        public static string TrackingRecordsTableLoadingRecords {
+        public static string ReportsTableLoadingRecords {
             get {
-                return ResourceManager.GetString("TrackingRecordsTableLoadingRecords", resourceCulture);
+                return ResourceManager.GetString("ReportsTableLoadingRecords", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Processing....
         /// </summary>
-        public static string TrackingRecordsTableProcessing {
+        public static string ReportsTableProcessing {
             get {
-                return ResourceManager.GetString("TrackingRecordsTableProcessing", resourceCulture);
+                return ResourceManager.GetString("ReportsTableProcessing", resourceCulture);
             }
         }
     }

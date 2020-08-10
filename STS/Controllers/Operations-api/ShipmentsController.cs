@@ -29,7 +29,7 @@ namespace STS.Controllers.Operations_api
             {
                 if(SameLocation(Shipment , GetEmployeeInformation(User.Identity.GetUserId())) && IsWaitingShipping(Shipment))
                 {
-                    DbContext.TrackingRecords.Add(GenerateTrackingRecord(Shipment, TrackingRecordType.Departed));
+                    DbContext.Reports.Add(GenerateReport(Shipment, Event.Departed));
                     Shipment.CurrentLocation = null;
                     Shipment.Status = (byte)Status.Shipping;
                     DbContext.SaveChanges();
@@ -49,7 +49,7 @@ namespace STS.Controllers.Operations_api
             {
                 if (SameLocation(Shipment, GetEmployeeInformation(User.Identity.GetUserId())) && IsWaitingCollection(Shipment))
                 {
-                        DbContext.TrackingRecords.Add(GenerateTrackingRecord(Shipment, TrackingRecordType.Collected, CollectorName));
+                        DbContext.Reports.Add(GenerateReport(Shipment, Event.Collected, CollectorName));
                         Shipment.CurrentLocation = null;
                         Shipment.Status = (byte)Status.Collected;
                         DbContext.SaveChanges();
@@ -91,10 +91,10 @@ namespace STS.Controllers.Operations_api
                     Shipment.CurrentLocation = EmployeeLocation;
                     Shipment.ArrivalDate = DateTime.Now;
                     Shipment.Status = (byte)UpdateArrivedShipmentStatus(Shipment, EmployeeLocation);
-                    DbContext.TrackingRecords.Add(GenerateTrackingRecord(Shipment , TrackingRecordType.Arrived));
+                    DbContext.Reports.Add(GenerateReport(Shipment , Event.Arrived));
                     if (IsWaitingCollection(Shipment))
                     {
-                        DbContext.TrackingRecords.Add(GenerateTrackingRecord(Shipment, TrackingRecordType.WaitingCollection));
+                        DbContext.Reports.Add(GenerateReport(Shipment, Event.WaitingCollection));
                     }
                     DbContext.SaveChanges();
                     return Ok(Shipments.ShipmentOperationSuccess);
@@ -126,16 +126,16 @@ namespace STS.Controllers.Operations_api
             return new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(DbContext)).FindById(UserId);
         }
 
-        private TrackingRecord GenerateTrackingRecord(Shipment Shipment, TrackingRecordType Type , string CollectorName = null)
+        private Report GenerateReport(Shipment Shipment, Event Event, string CollectorName = null)
         {
-            var TrackingRecord = new TrackingRecord
+            var TrackingRecord = new Report
             {
                 Shipment = Shipment,
                 Location = Shipment.CurrentLocation,
                 DateTime = DateTime.Now,
-                Type = (byte)Type
+                Event = (byte)Event
             };
-            if (Type == TrackingRecordType.Collected)
+            if (Event == Event.Collected)
             {
                 TrackingRecord.SignedBy = CollectorName;
             }
@@ -210,7 +210,7 @@ namespace STS.Controllers.Operations_api
             Collected
         }
 
-        enum TrackingRecordType
+        enum Event
         {
             Registered,
             Departed,

@@ -52,13 +52,13 @@ namespace STS.Controllers
             return HttpNotFound();
         }
 
-        [Route("Main/TrackShipment/GetTrackingRecords/{TrackingNumber}")]
-        public ActionResult GetTrackingRecords(string TrackingNumber)
+        [Route("Main/TrackShipment/GetReports/{TrackingNumber}")]
+        public ActionResult GetReports(string TrackingNumber)
         {
             var Shipment = GetShipmentByTrackingNumber(TrackingNumber);
             if (IsExist(Shipment))
             {
-                return Json(GetShipmentTrackingRecords(Shipment));
+                return Json(GetShipmentReports(Shipment));
             }
              return HttpNotFound();
         }
@@ -97,21 +97,21 @@ namespace STS.Controllers
             return Shipment != null;
         }
 
-        private string TrackingRecordToStatement(TrackingRecord TrackingRecord)
+        private string ReportToStatement(Report Report)
         {
-            switch ((TrackingRecordType)TrackingRecord.Type)
+            switch ((Event)Report.Event)
             {
-                case TrackingRecordType.Registered:
+                case Event.Registered:
                     return Resources.Views.Main.RegisteredTrackingStatement;
-                case TrackingRecordType.Departed:
-                    return Resources.Views.Main.DepartedTrackingStatement.Replace("_LocationName_", TrackingRecord.Location.LocationName);
-                case TrackingRecordType.Arrived:
-                    return Resources.Views.Main.ArrivedTrackingStatement.Replace("_LocationName_", TrackingRecord.Location.LocationName);
-                case TrackingRecordType.WaitingCollection:
+                case Event.Departed:
+                    return Resources.Views.Main.DepartedTrackingStatement.Replace("_LocationName_", Report.Location.LocationName);
+                case Event.Arrived:
+                    return Resources.Views.Main.ArrivedTrackingStatement.Replace("_LocationName_", Report.Location.LocationName);
+                case Event.WaitingCollection:
                     return Resources.Views.Main.WaitingCollectionTrackingStatement;
-                case TrackingRecordType.Collected:
-                    return Resources.Views.Main.CollectedTrackingStatement.Replace("_SignedBy_", TrackingRecord.SignedBy);
-                case TrackingRecordType.Updated:
+                case Event.Collected:
+                    return Resources.Views.Main.CollectedTrackingStatement.Replace("_SignedBy_", Report.SignedBy);
+                case Event.Updated:
                     return Resources.Views.Main.UpdatedTrackingStatement;
                 default:
                     return null;
@@ -149,13 +149,13 @@ namespace STS.Controllers
             return "Unknown";
         }
 
-        private TrackingRecord LastDeliveryBetween(Location source, Location destination)
+        private Report LastDeliveryBetween(Location source, Location destination)
         {
-            var LastDelivery = DbContext.TrackingRecords
-                .Include(TrackingRecord => TrackingRecord.Shipment)
-                .Include(TrackingRecord => TrackingRecord.Shipment.Source)
-                .Include(TrackingRecord => TrackingRecord.Shipment.Destination)
-                .Where(TrackingRecord => TrackingRecord.Type == (byte)TrackingRecordType.Collected && TrackingRecord.Shipment.Source.Id == source.Id && TrackingRecord.Shipment.Destination.Id == destination.Id)
+            var LastDelivery = DbContext.Reports
+                .Include(Report => Report.Shipment)
+                .Include(Report => Report.Shipment.Source)
+                .Include(Report => Report.Shipment.Destination)
+                .Where(Report => Report.Event == (byte)Event.Collected && Report.Shipment.Source.Id == source.Id && Report.Shipment.Destination.Id == destination.Id)
                 .FirstOrDefault();
             return LastDelivery;
         }
@@ -179,14 +179,14 @@ namespace STS.Controllers
             return Convert.ToInt32(dist * 1.609344);
         }
 
-        private IEnumerable<TrackingRecordDto> GetShipmentTrackingRecords(Shipment Shipment)
+        private IEnumerable<TrackingRecordDto> GetShipmentReports(Shipment Shipment)
         {
-            var ShipmentTrackingRecords = DbContext.TrackingRecords.Include(TrackingRecord => TrackingRecord.Shipment).Include(TrackingRecord => TrackingRecord.Location).Where(TrackingRecord => TrackingRecord.Shipment.TrackingNumber == Shipment.TrackingNumber).ToList()
-                    .Select(TrackingRecord => new TrackingRecordDto
+            var ShipmentTrackingRecords = DbContext.Reports.Include(Report => Report.Shipment).Include(Report => Report.Location).Where(Report => Report.Shipment.TrackingNumber == Shipment.TrackingNumber).ToList()
+                    .Select(Report => new TrackingRecordDto
                     {
-                        DateTime = TrackingRecord.DateTime.ToString(),
-                        Location = TrackingRecord.Location.City,
-                        Statement = TrackingRecordToStatement(TrackingRecord)
+                        DateTime = Report.DateTime.ToString(),
+                        Location = Report.Location.City,
+                        Statement = ReportToStatement(Report)
                     });
             return ShipmentTrackingRecords;
         }
@@ -199,7 +199,7 @@ namespace STS.Controllers
             Collected
         }
 
-        enum TrackingRecordType
+        enum Event
         {
             Registered,
             Departed,

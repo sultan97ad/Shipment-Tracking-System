@@ -95,13 +95,13 @@ namespace STS.Controllers
             {
                 Shipment = GenerateNewShipment(ViewModel, EmployeeLocation);
                 DbContext.Shipments.Add(Shipment);
-                DbContext.TrackingRecords.Add(GenerateTrackingRecord(Shipment, TrackingRecordType.Registered));
+                DbContext.Reports.Add(GenerateReport(Shipment, Event.Registered));
             }
             else
             {
                 Shipment = GetShipmentByTrackingNumber(ViewModel.TrackingNumber);
                 Shipment = UpdateShipment(Shipment, ViewModel);
-                DbContext.TrackingRecords.Add(GenerateTrackingRecord(Shipment, TrackingRecordType.Updated));
+                DbContext.Reports.Add(GenerateReport(Shipment, Event.Updated));
             }
             DbContext.SaveChanges();
             return Redirect("Details/" + Shipment.TrackingNumber);
@@ -256,14 +256,14 @@ namespace STS.Controllers
             return Shipment;
         }
 
-        private TrackingRecord GenerateTrackingRecord(Shipment Shipment, TrackingRecordType Type)
+        private Report GenerateReport(Shipment Shipment, Event Event)
         {
-            var TrackingRecord = new TrackingRecord
+            var TrackingRecord = new Report
             {
                 Shipment = Shipment,
                 Location = Shipment.CurrentLocation,
                 DateTime = DateTime.Now,
-                Type = (byte)Type
+                Event = (byte)Event
             };
             return TrackingRecord;
         }
@@ -353,7 +353,7 @@ namespace STS.Controllers
         Collected
         }
 
-        enum TrackingRecordType
+        enum Event
         {
         Registered,
         Departed,

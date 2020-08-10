@@ -1,13 +1,13 @@
 ﻿$(document).ready(function () {
     var MainDataTableLocale = {
-        emptyTable: Main.TrackingRecordsEmptyTable,
-        loadingRecords: Main.TrackingRecordsTableLoadingRecords,
-        processing: Main.TrackingRecordsTableProcessing,
-        zeroRecords: Main.TrackingRecordsEmptyTable,
+        emptyTable: Main.ReportsEmptyTable,
+        loadingRecords: Main.ReportsTableLoadingRecords,
+        processing: Main.ReportsTableProcessing,
+        zeroRecords: Main.ReportsEmptyTable,
     };
 
     var MainDataTableAjaxInfo = {
-        url: "GetTrackingRecords/" + $("#TrackingRecords").attr("TrackingNumber"),
+        url: "GetReports/" + $("#Reports").attr("TrackingNumber"),
         type: 'POST',
         datatype: "json",
         dataSrc: "[]"
@@ -27,7 +27,7 @@
         }
     ];
 
-        $("#TrackingRecords").DataTable({
+    $("#Reports").DataTable({
             language: MainDataTableLocale,
             searching: false,
             paging: false,
@@ -39,8 +39,8 @@
         });
 });
 
-function MainDataTableRenderFunction(data, type, TrackingRecord) {
-    Col = TrackingRecord.DateTime + '<br>' + TrackingRecord.Location + '<br>' + TrackingRecord.Statement;
+function MainDataTableRenderFunction(data, type, Report) {
+    Col = Report.DateTime + '<br>' + Report.Location + '<br>' + Report.Statement;
     return Col;
 }
 

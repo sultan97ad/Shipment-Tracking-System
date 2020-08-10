@@ -248,8 +248,17 @@
     <Compile Include="Migrations\202008060426342_Migration_6.Designer.cs">
       <DependentUpon>202008060426342_Migration_6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008100954295_Migration_7.cs" />
+    <Compile Include="Migrations\202008100954295_Migration_7.Designer.cs">
+      <DependentUpon>202008100954295_Migration_7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008101016482_Migration_8.cs" />
+    <Compile Include="Migrations\202008101016482_Migration_8.Designer.cs">
+      <DependentUpon>202008101016482_Migration_8.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Report.cs" />
     <Compile Include="Resources\Api\Employees.Designer.cs">
       <DependentUpon>Employees.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -423,7 +432,6 @@
     <Compile Include="ViewModels\MainViewModels.cs" />
     <Compile Include="ViewModels\EmployeesViewModels.cs" />
     <Compile Include="Models\Shipment.cs" />
-    <Compile Include="Models\TrackingRecord.cs" />
     <Compile Include="App_Data\AssemblyInfo.cs" />
     <Compile Include="Resources\Views\Shipments.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -642,6 +650,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008060426342_Migration_6.resx">
       <DependentUpon>202008060426342_Migration_6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008100954295_Migration_7.resx">
+      <DependentUpon>202008100954295_Migration_7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008101016482_Migration_8.resx">
+      <DependentUpon>202008101016482_Migration_8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Api\Employees.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

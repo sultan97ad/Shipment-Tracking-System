@@ -11,8 +11,8 @@ namespace STS.Models
         {
             public DbSet<Shipment> Shipments { set; get; }
             public DbSet<Location> Locations { set; get; }
-            public DbSet<TrackingRecord> TrackingRecords { set; get; }
-            public ApplicationDbContext()
+            public DbSet<Report> Reports { set; get; }
+        public ApplicationDbContext()
                 : base("DefaultConnection", throwIfV1Schema: false)
             {
             }
