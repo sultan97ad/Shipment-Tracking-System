@@ -92,11 +92,12 @@ namespace STS.Controllers.Operations_api
                     Shipment.ArrivalDate = DateTime.Now;
                     Shipment.Status = (byte)UpdateArrivedShipmentStatus(Shipment, EmployeeLocation);
                     DbContext.Reports.Add(GenerateReport(Shipment , Event.Arrived));
-                    if (IsWaitingCollection(Shipment))
+                    if (IsWaitingCollection(Shipment) && Shipment.CollectionMethod == (byte)CollectionMethod.Pickup)
                     {
                         DbContext.Reports.Add(GenerateReport(Shipment, Event.WaitingCollection));
                     }
                     DbContext.SaveChanges();
+                    SendSMS(Shipment);
                     return Ok(Shipments.ShipmentOperationSuccess);
                 }
                 return BadRequest(Shipments.IsNotShipping);
@@ -104,7 +105,28 @@ namespace STS.Controllers.Operations_api
             return NotFound();
         }
 
+        
+
         #region Helpers
+
+        private void SendSMS(Shipment shipment)
+        {
+            switch ((CollectionMethod)shipment.CollectionMethod)
+            {
+                case CollectionMethod.Pickup : SendPickUpSMS(shipment); break;
+                case CollectionMethod.Delivery : SendDeliverySMS(shipment); break;
+            }
+        }
+
+        private void SendDeliverySMS(Shipment shipment)
+        {
+            
+        }
+
+        private void SendPickUpSMS(Shipment shipment)
+        {
+            
+        }
 
         private Shipment GetShipmentByTrackingNumber(string TrackingNumber)
         {
@@ -218,6 +240,12 @@ namespace STS.Controllers.Operations_api
             WaitingCollection,
             Collected,
             Updated
+        }
+
+        enum CollectionMethod
+        {
+            Pickup,
+            Delivery
         }
 
         #endregion

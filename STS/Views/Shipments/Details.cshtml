@@ -49,6 +49,23 @@
     @Html.LabelFor(m => m.Destination) <br />
     @Html.DisplayFor(m => m.Destination, new { @Class = "form-control" })
 </div>
+<div class="form-group">
+    @Html.LabelFor(m => m.CollectionMethod) <br />
+    @Html.DisplayFor(m => m.CollectionMethod, new { @Class = "form-control" })
+</div>
+@if(Model.CollectionMethod == Shipments.Delivery) {
+<div class="form-group">
+    @Html.LabelFor(m => m.DeliveryLocationUrl) <br />
+    @if (Model.DeliveryLocationUrl != null)
+    {
+        <a href="@Model.DeliveryLocationUrl" target="_blank">@Shipments.OpenLocation</a>
+    }
+    else
+    {
+        <a>@Shipments.HasNotBeenAssignedYet</a>
+    }
+</div>
+}
 @Html.ActionLink(Shipments.BackToShipmentsButton, "Index", "Shipments", new { @class = "btn btn-primary" })
 <button class="btn btn-primary" onclick=Print('BarcodeLabel')>@Shipments.PrintBarcode</button>
 <div id="BarcodeLabel" style="display:none;">

@@ -256,6 +256,18 @@
     <Compile Include="Migrations\202008101016482_Migration_8.Designer.cs">
       <DependentUpon>202008101016482_Migration_8.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008111001489_Migration_9.cs" />
+    <Compile Include="Migrations\202008111001489_Migration_9.Designer.cs">
+      <DependentUpon>202008111001489_Migration_9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008111008462_Migration_10.cs" />
+    <Compile Include="Migrations\202008111008462_Migration_10.Designer.cs">
+      <DependentUpon>202008111008462_Migration_10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008111848027_Migration_11.cs" />
+    <Compile Include="Migrations\202008111848027_Migration_11.Designer.cs">
+      <DependentUpon>202008111848027_Migration_11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Report.cs" />
@@ -656,6 +668,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008101016482_Migration_8.resx">
       <DependentUpon>202008101016482_Migration_8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008111001489_Migration_9.resx">
+      <DependentUpon>202008111001489_Migration_9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008111008462_Migration_10.resx">
+      <DependentUpon>202008111008462_Migration_10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008111848027_Migration_11.resx">
+      <DependentUpon>202008111848027_Migration_11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Api\Employees.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

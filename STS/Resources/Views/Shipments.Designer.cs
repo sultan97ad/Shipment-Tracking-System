@@ -79,11 +79,38 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Method.
+        /// </summary>
+        public static string CollectionMethod {
+            get {
+                return ResourceManager.GetString("CollectionMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Date Added.
         /// </summary>
         public static string DateAdded {
             get {
                 return ResourceManager.GetString("DateAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delivery.
+        /// </summary>
+        public static string Delivery {
+            get {
+                return ResourceManager.GetString("Delivery", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delivery Location.
+        /// </summary>
+        public static string DeliveryLocation {
+            get {
+                return ResourceManager.GetString("DeliveryLocation", resourceCulture);
             }
         }
         
@@ -151,6 +178,15 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Has Not Been Assigned Yet.
+        /// </summary>
+        public static string HasNotBeenAssignedYet {
+            get {
+                return ResourceManager.GetString("HasNotBeenAssignedYet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} is not a valid phone number.
         /// </summary>
         public static string IsPhone {
@@ -174,6 +210,24 @@ namespace STS.Resources.Views {
         public static string NewShipmentTitle {
             get {
                 return ResourceManager.GetString("NewShipmentTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open Location.
+        /// </summary>
+        public static string OpenLocation {
+            get {
+                return ResourceManager.GetString("OpenLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pick Up.
+        /// </summary>
+        public static string PickUp {
+            get {
+                return ResourceManager.GetString("PickUp", resourceCulture);
             }
         }
         

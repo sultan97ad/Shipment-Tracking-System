@@ -11,6 +11,7 @@ namespace STS.ViewModels
     public class ShipmentFormViewModel
     {
         public IEnumerable<SelectListItem> Locations { get; set; }
+        public IEnumerable<SelectListItem> CollectionMethods { get; set; }
         public string TrackingNumber { set; get; }
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.Views.Shipments))]
         [StringLength(90, ErrorMessageResourceName = "StringLength", ErrorMessageResourceType = typeof(Resources.Views.Shipments))]
@@ -38,6 +39,8 @@ namespace STS.ViewModels
         [Required(ErrorMessageResourceName = "DestinationRequired", ErrorMessageResourceType = typeof(Resources.Views.Shipments))]
         [Display(Name = "Destination", ResourceType = typeof(Resources.Views.Shipments))]
         public int DestinationLocationId { get; set; }
+        [Display(Name = "CollectionMethod", ResourceType = typeof(Resources.Views.Shipments))]
+        public byte CollectionMethod { get; set; }
     }
 
     public class ShipmentDetailsViewModel
@@ -53,7 +56,7 @@ namespace STS.ViewModels
         [Display(Name = "ReceiverPhoneNumber", ResourceType = typeof(Resources.Views.Shipments))]
         public string ReceiverPhoneNumber { set; get; }
         [Display(Name = "WeightKG", ResourceType = typeof(Resources.Views.Shipments))]
-        public float WeightKG { set; get; }
+        public string WeightKG { set; get; }
         [Display(Name = "Description", ResourceType = typeof(Resources.Views.Shipments))]
         public string Description { set; get; }
         [Display(Name = "DateAdded", ResourceType = typeof(Resources.Views.Shipments))]
@@ -64,5 +67,9 @@ namespace STS.ViewModels
         public string Destination { set; get; }
         [Display(Name = "ArrivalDate", ResourceType = typeof(Resources.Views.Shipments))]
         public string ArrivalDate { set; get; }
+        [Display(Name = "CollectionMethod", ResourceType = typeof(Resources.Views.Shipments))]
+        public string CollectionMethod { get; set; }
+        [Display(Name = "DeliveryLocation", ResourceType = typeof(Resources.Views.Shipments))]
+        public string DeliveryLocationUrl { set; get; }
     }
 }

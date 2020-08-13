@@ -213,4 +213,22 @@
   <data name="ArrivalDate" xml:space="preserve">
     <value>Arrival Date</value>
   </data>
+  <data name="CollectionMethod" xml:space="preserve">
+    <value>Method</value>
+  </data>
+  <data name="Delivery" xml:space="preserve">
+    <value>Delivery</value>
+  </data>
+  <data name="PickUp" xml:space="preserve">
+    <value>Pick Up</value>
+  </data>
+  <data name="DeliveryLocation" xml:space="preserve">
+    <value>Delivery Location</value>
+  </data>
+  <data name="HasNotBeenAssignedYet" xml:space="preserve">
+    <value>Has Not Been Assigned Yet</value>
+  </data>
+  <data name="OpenLocation" xml:space="preserve">
+    <value>Open Location</value>
+  </data>
 </root>

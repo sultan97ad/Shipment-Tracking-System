@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using STS.Dtos;
 using IronBarCode;
+using STS.Resources.Views;
 
 namespace STS.Controllers
 {
@@ -196,6 +197,15 @@ namespace STS.Controllers
             return Locations;
         }
 
+        private List<SelectListItem> GetCollectionMethodsList()
+        {
+             var Methods = new List<SelectListItem> {
+                new SelectListItem { Text = Shipments.PickUp , Value = "0" , Selected = true},
+                new SelectListItem { Text = Shipments.Delivery , Value = "1"},
+            };
+            return Methods;
+        }
+
         private string LocationToString(Location Location)
         {
             return Location.City + " - " + Location.LocationName;
@@ -212,17 +222,38 @@ namespace STS.Controllers
                 ReceiverPhoneNumber = Shipment.ReceiverPhoneNumber,
                 SenderName = Shipment.SenderName,
                 SenderPhoneNumber = Shipment.SenderPhoneNumber,
-                WeightKG = Shipment.WeightKG,
+                WeightKG = Shipment.WeightKG.ToString(),
                 Description = Shipment.Description,
                 Source = LocationToString(Shipment.Source),
-                Destination = LocationToString(Shipment.Destination)
+                Destination = LocationToString(Shipment.Destination),
+                CollectionMethod = CollectionMethodToString((CollectionMethod)Shipment.CollectionMethod),
+                DeliveryLocationUrl = GetDeliveryLocationUrl(Shipment)
             };
             return ViewModel;
         }
 
+        private string GetDeliveryLocationUrl(Shipment shipment)
+        {
+            if(shipment.DeliveryLocationLatitude != 0 && shipment.DeliveryLocationlongitude != 0)
+            {
+                return "https://www.google.com/maps?q=Lat,Long".Replace("Lat", shipment.DeliveryLocationLatitude.ToString()).Replace("Long", shipment.DeliveryLocationlongitude.ToString());
+            }
+            return null;
+        }
+
+        private string CollectionMethodToString(CollectionMethod collectionMethod)
+        {
+            switch(collectionMethod)
+            {
+                case CollectionMethod.Pickup: return Shipments.PickUp;
+                case CollectionMethod.Delivery: return Shipments.Delivery;
+                default : return null; 
+            }
+        }
+
         private ShipmentFormViewModel GenerateNewShipmentFormViewModel()
         {
-            return new ShipmentFormViewModel { Locations = GetLocationsList(), TrackingNumber = null };
+            return new ShipmentFormViewModel { CollectionMethods = GetCollectionMethodsList() , Locations = GetLocationsList(), TrackingNumber = null };
         }
 
         private Location GetEmployeeLocation()
@@ -252,7 +283,7 @@ namespace STS.Controllers
             Shipment.Destination = DbContext.Locations.SingleOrDefault(Location => Location.Id == ViewModel.DestinationLocationId);
             Shipment.CurrentLocation = EmployeeLocation;
             Shipment.Source = EmployeeLocation;
-
+            Shipment.CollectionMethod = ViewModel.CollectionMethod;
             return Shipment;
         }
 
@@ -271,6 +302,7 @@ namespace STS.Controllers
         private ShipmentFormViewModel UpdateShipmentFormViewModel(ShipmentFormViewModel ViewModel)
         {
             ViewModel.Locations = GetLocationsList();
+            ViewModel.CollectionMethods = GetCollectionMethodsList();
             return ViewModel;
         }
 
@@ -283,6 +315,7 @@ namespace STS.Controllers
             Shipment.WeightKG = ViewModel.WeightKG;
             Shipment.Destination = DbContext.Locations.SingleOrDefault(Location => Location.Id == ViewModel.DestinationLocationId);
             Shipment.Description = ViewModel.Description;
+            Shipment.CollectionMethod = ViewModel.CollectionMethod;
             return Shipment;
         }
 
@@ -292,13 +325,15 @@ namespace STS.Controllers
             {
                 TrackingNumber = Shipment.TrackingNumber,
                 Locations = GetLocationsList(),
+                CollectionMethods = GetCollectionMethodsList(),
                 ReceiverName = Shipment.ReceiverName,
                 ReceiverPhoneNumber = Shipment.ReceiverPhoneNumber,
                 SenderName = Shipment.SenderName,
                 SenderPhoneNumber = Shipment.SenderPhoneNumber,
                 WeightKG = Shipment.WeightKG,
                 Description = Shipment.Description,
-                DestinationLocationId = Shipment.Destination.Id
+                DestinationLocationId = Shipment.Destination.Id,
+                CollectionMethod = Shipment.CollectionMethod
             };
             return ViewModel;
         }
@@ -361,6 +396,12 @@ namespace STS.Controllers
         WaitingCollection,
         Collected,
         Updated
+        }
+
+        enum CollectionMethod
+        {
+            Pickup,
+            Delivery
         }
 
         #endregion

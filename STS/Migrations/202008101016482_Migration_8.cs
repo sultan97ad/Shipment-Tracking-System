@@ -28,7 +28,6 @@ namespace STS.Migrations
                         Shipment_TrackingNumber = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id);
-            
             CreateIndex("dbo.TrackingRecords", "Shipment_TrackingNumber");
             CreateIndex("dbo.TrackingRecords", "Location_Id");
             AddForeignKey("dbo.TrackingRecords", "Shipment_TrackingNumber", "dbo.Shipments", "TrackingNumber");

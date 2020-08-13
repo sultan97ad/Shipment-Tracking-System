@@ -7,9 +7,7 @@ namespace STS.Dtos
 {
     public class LocationDto
     {
-
         public string LocationId { set; get; }
         public string Address { set; get; }
-
     }
 }

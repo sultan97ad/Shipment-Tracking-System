@@ -28,5 +28,8 @@ namespace STS.Models
         public Location CurrentLocation { set; get; }
         public Location Source { set; get; }
         public Location Destination { set; get; }
+        public byte CollectionMethod { set; get; }
+        public double DeliveryLocationLatitude { set; get; }
+        public double DeliveryLocationlongitude { set; get; }
     }
 }

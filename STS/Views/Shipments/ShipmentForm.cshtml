@@ -42,6 +42,12 @@
         @Html.ValidationMessageFor(m => m.DestinationLocationId)
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.CollectionMethod)
+        @Html.DropDownListFor(m => m.CollectionMethod, new SelectList(Model.CollectionMethods, "Value", "Text"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CollectionMethod)
+    </div>
+
+    <div class="form-group">
         @Html.LabelFor(m => m.Description)
         @Html.TextAreaFor(m => m.Description, new { @Class = "form-control" })
         @Html.ValidationMessageFor(m => m.Description)
