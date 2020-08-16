@@ -14,7 +14,6 @@
             next: Shipments.ShipmentsTableNext,
             previous: Shipments.ShipmentsTablePrevious
         }
-
     };
 
     var ShipmentsDataTableAjaxInfo = {

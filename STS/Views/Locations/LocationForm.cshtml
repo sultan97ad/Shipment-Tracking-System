@@ -34,6 +34,11 @@
     <div id="FormMapPlaceHolder" style="width: 550px; height: 400px;"></div>
     <div class="clearfix">&nbsp;</div>
     <div class="form-group">
+        @Html.LabelFor(m => m.DeliveryRange)
+        @Html.TextBoxFor(m => m.DeliveryRange, new { @Class = "form-control"})
+        @Html.ValidationMessageFor(m => m.DeliveryRange)
+    </div>
+    <div class="form-group">
         @Html.LabelFor(m => m.CanBeDestination)
         @Html.CheckBoxFor(m => m.CanBeDestination, new { @Class = "form-control" })
         @Html.ValidationMessageFor(m => m.CanBeDestination)

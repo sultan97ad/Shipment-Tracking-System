@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using STS.Validators;
+using System.ComponentModel.DataAnnotations;
 
 namespace STS.ViewModels
 {
@@ -13,10 +14,18 @@ namespace STS.ViewModels
         [StringLength(30, ErrorMessageResourceName = "StringLength", ErrorMessageResourceType = typeof(Resources.Views.Locations))]
         [Display(Name = "City", ResourceType = typeof(Resources.Views.Locations))]
         public string City { set; get; }
+        [Latitude]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.Views.Locations))]
         [Display(Name = "Latitude", ResourceType = typeof(Resources.Views.Locations))]
         public string Latitude { set; get; }
+        [Longitude]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.Views.Locations))]
         [Display(Name = "longitude", ResourceType = typeof(Resources.Views.Locations))]
         public string longitude { set; get; }
+        [Range(0,500 , ErrorMessageResourceName = "Range", ErrorMessageResourceType = typeof(Resources.Views.Locations))]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.Views.Locations))]
+        [Display(Name = "DeliveryRange", ResourceType = typeof(Resources.Views.Locations))]
+        public string DeliveryRange { set; get; }
         [Display(Name = "CanBeDestination", ResourceType = typeof(Resources.Views.Locations))]
         public bool CanBeDestination { set; get; }
     }
@@ -33,6 +42,8 @@ namespace STS.ViewModels
         public string Latitude { set; get; }
         [Display(Name = "longitude", ResourceType = typeof(Resources.Views.Locations))]
         public string longitude { set; get; }
+        [Display(Name = "DeliveryRange", ResourceType = typeof(Resources.Views.Locations))]
+        public string DeliveryRange { set; get; }
         [Display(Name = "CanBeDestination", ResourceType = typeof(Resources.Views.Locations))]
         public bool CanBeDestination { set; get; }
         [Display(Name = "NumberOfShipments", ResourceType = typeof(Resources.Views.Locations))]

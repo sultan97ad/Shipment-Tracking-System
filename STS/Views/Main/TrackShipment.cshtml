@@ -18,25 +18,27 @@
     @Html.LabelFor(m => m.Destination) <br />
     @Html.DisplayFor(m => m.Destination, new { @Class = "form-control" })
 </div>
-
-
 <div class="form-group">
     @Html.LabelFor(m => m.Status) <br />
     @Html.DisplayFor(m => m.Status, new { @Class = "form-control" })
 </div>
-@if (Model.Status != Shipments.ShipmentCollected)
+@if (Model.Status != Shipments.ShipmentWaitingCollection && Model.Status != Shipments.ShipmentCollected)
 {
     <div class="form-group">
         @Html.LabelFor(m => m.EstimatedDeliveryDate) <br />
         @Html.DisplayFor(m => m.EstimatedDeliveryDate, new { @Class = "form-control" })
     </div>
- }
+
+}
 @if (Model.CurrentLocation != null)
 {
     <div class="form-group">
         @Html.LabelFor(m => m.CurrentLocation) <br />
         @Html.DisplayFor(m => m.CurrentLocation, new { @Class = "form-control" })
     </div>
+}
+@if (Model.CurrentLocation != null && Model.Status != Shipments.ShipmentWaitingCollection && Model.Status != Shipments.ShipmentCollected)
+{
     <div class="form-group">
         @Html.LabelFor(m => m.DistanceToDestination) <br />
         @Html.DisplayFor(m => m.DistanceToDestination, new { @Class = "form-control" })

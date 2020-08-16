@@ -11,6 +11,25 @@ namespace STS.ViewModels
         public string TrackingNumber { set; get; }
     }
 
+    
+    public class SetDeliveryLocationViewModel
+    {
+        [Display(Name = "TrackingNumber", ResourceType = typeof(Resources.Views.Main))]
+        public string TrackingNumber { set; get; }
+        [Display(Name = "ReceiverPhoneNumber", ResourceType = typeof(Resources.Views.Main))]
+        public string ReceiverPhoneNumber { set; get; }
+        [Latitude]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.Views.Main))]
+        [Display(Name = "Latitude", ResourceType = typeof(Resources.Views.Main))]
+        public string Latitude { set; get; }
+        [Longitude]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resources.Views.Main))]
+        [Display(Name = "longitude", ResourceType = typeof(Resources.Views.Main))]
+        public string longitude { set; get; }
+        [DeliveryRangeValidation]
+        public string DeliveryRange { set; get; }
+    }
+
     public class TrackShipmentViewModel
     {
         [Display(Name = "TrackingNumber", ResourceType = typeof(Resources.Views.Main))]

@@ -168,4 +168,31 @@
   <data name="EstimatedDeliveryDate" xml:space="preserve">
     <value>تاريخ الوصول المتوقع</value>
   </data>
+  <data name="FixErrors" xml:space="preserve">
+    <value>من فضلك صحح الأخطاء التالية</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>خط العرض</value>
+  </data>
+  <data name="longitude" xml:space="preserve">
+    <value>خط الطول</value>
+  </data>
+  <data name="ReceiverPhoneNumber" xml:space="preserve">
+    <value>رقم جوال المستلم</value>
+  </data>
+  <data name="Set" xml:space="preserve">
+    <value>تعيين</value>
+  </data>
+  <data name="SetDeliveryLocationTitle" xml:space="preserve">
+    <value>تعيين موقع التوصيل</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>{0} مطلوب/ ـة</value>
+  </data>
+  <data name="NewDeliverylocationStatement" xml:space="preserve">
+    <value>تم تعيين موقع توصيل جديد</value>
+  </data>
+  <data name="OutOfDeliveryRange" xml:space="preserve">
+    <value>الموقع المعطى خارج نطاق التوصيل</value>
+  </data>
 </root>

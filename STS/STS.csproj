@@ -216,7 +216,7 @@
     <Compile Include="Dtos\EmployeeDto.cs" />
     <Compile Include="Dtos\LocationDto.cs" />
     <Compile Include="Dtos\ShipmentDto.cs" />
-    <Compile Include="Dtos\TrackingRecordDto.cs" />
+    <Compile Include="Dtos\ReportDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -267,6 +267,10 @@
     <Compile Include="Migrations\202008111848027_Migration_11.cs" />
     <Compile Include="Migrations\202008111848027_Migration_11.Designer.cs">
       <DependentUpon>202008111848027_Migration_11.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008151044120_Migration_101.cs" />
+    <Compile Include="Migrations\202008151044120_Migration_101.Designer.cs">
+      <DependentUpon>202008151044120_Migration_101.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -436,7 +440,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Validators\DeliveryRangeValidation.cs" />
     <Compile Include="Validators\EmployeeEmailValidation.cs" />
+    <Compile Include="Validators\Longitude.cs" />
+    <Compile Include="Validators\Latitude.cs" />
     <Compile Include="Validators\TrackingNumberValidation.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\Location.cs" />
@@ -677,6 +684,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008111848027_Migration_11.resx">
       <DependentUpon>202008111848027_Migration_11.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008151044120_Migration_101.resx">
+      <DependentUpon>202008151044120_Migration_101.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Api\Employees.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -1076,6 +1086,7 @@
     <Content Include="Views\Employees\EmployeeForm.cshtml" />
     <Content Include="Views\App\EmployeesScriptLocale.cshtml" />
     <Content Include="Views\Shared\Account_Layout.cshtml" />
+    <Content Include="Views\Main\SetDeliveryLocation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

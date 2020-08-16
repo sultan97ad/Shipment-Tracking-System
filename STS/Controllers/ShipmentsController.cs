@@ -395,7 +395,8 @@ namespace STS.Controllers
         Arrived,
         WaitingCollection,
         Collected,
-        Updated
+        Updated,
+        NewDeliverylocation
         }
 
         enum CollectionMethod

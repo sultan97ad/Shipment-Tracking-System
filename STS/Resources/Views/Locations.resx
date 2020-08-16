@@ -171,4 +171,16 @@
   <data name="UpdateLocationTitle" xml:space="preserve">
     <value>Update Location</value>
   </data>
+  <data name="DeliveryRange" xml:space="preserve">
+    <value>Delivery Range (km)</value>
+  </data>
+  <data name="InvalidLatitude" xml:space="preserve">
+    <value>Latitude must be between -90 and 90 degrees inclusive.</value>
+  </data>
+  <data name="InvalidLongitude" xml:space="preserve">
+    <value>Longitude must be between -180 and 180  degrees inclusive.</value>
+  </data>
+  <data name="Range" xml:space="preserve">
+    <value> must be Between {1} and  {2}</value>
+  </data>
 </root>

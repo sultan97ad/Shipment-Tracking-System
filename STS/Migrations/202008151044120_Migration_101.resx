@@ -117,82 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CurrentLocation" xml:space="preserve">
-    <value>Current Location</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="DateTime" xml:space="preserve">
-    <value>Date &amp; Time</value>
-  </data>
-  <data name="Destination" xml:space="preserve">
-    <value>Destination</value>
-  </data>
-  <data name="Location" xml:space="preserve">
-    <value>Location</value>
-  </data>
-  <data name="Source" xml:space="preserve">
-    <value>Source</value>
-  </data>
-  <data name="Status" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="TrackingNumber" xml:space="preserve">
-    <value>Tracking Number</value>
-  </data>
-  <data name="TrackShipmentTitle" xml:space="preserve">
-    <value>Track Shipment</value>
-  </data>
-  <data name="ArrivedTrackingStatement" xml:space="preserve">
-    <value>Arrived _LocationName_</value>
-  </data>
-  <data name="CollectedTrackingStatement" xml:space="preserve">
-    <value>Shipment Has Been Collected , Signed By _SignedBy_</value>
-  </data>
-  <data name="DepartedTrackingStatement" xml:space="preserve">
-    <value>Shipment Departed _LocationName_</value>
-  </data>
-  <data name="RegisteredTrackingStatement" xml:space="preserve">
-    <value>Shipment Registered</value>
-  </data>
-  <data name="UpdatedTrackingStatement" xml:space="preserve">
-    <value>Shipment Inforamtion Updated</value>
-  </data>
-  <data name="WaitingCollectionTrackingStatement" xml:space="preserve">
-    <value>Waiting Collection</value>
-  </data>
-  <data name="InvalidTrackingNumber" xml:space="preserve">
-    <value>Invalid Tracking Number</value>
-  </data>
-  <data name="DistanceToDestination" xml:space="preserve">
-    <value>Distance To Destination (km)</value>
-  </data>
-  <data name="EstimatedDeliveryDate" xml:space="preserve">
-    <value>Estimated Delivery Date</value>
-  </data>
-  <data name="FixErrors" xml:space="preserve">
-    <value>Please fix the folowing errors</value>
-  </data>
-  <data name="Latitude" xml:space="preserve">
-    <value>Latitude</value>
-  </data>
-  <data name="longitude" xml:space="preserve">
-    <value>Longitude</value>
-  </data>
-  <data name="ReceiverPhoneNumber" xml:space="preserve">
-    <value>Receiver Phone Number</value>
-  </data>
-  <data name="Set" xml:space="preserve">
-    <value>Set</value>
-  </data>
-  <data name="SetDeliveryLocationTitle" xml:space="preserve">
-    <value>Set Delivery Location</value>
-  </data>
-  <data name="Required" xml:space="preserve">
-    <value>{0} is Required</value>
-  </data>
-  <data name="NewDeliverylocationStatement" xml:space="preserve">
-    <value>New Delivery Location Has Been Assigned</value>
-  </data>
-  <data name="OutOfDeliveryRange" xml:space="preserve">
-    <value>Given Location is Out Of Delivery Range</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

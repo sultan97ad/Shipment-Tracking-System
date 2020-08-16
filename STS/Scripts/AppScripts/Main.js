@@ -36,7 +36,24 @@
             ajax: MainDataTableAjaxInfo,
             columnDefs: MainDataTableColumnDefinition,
             columns: MainDataTableColumn
-        });
+    });
+
+    var InitialLocation = {
+        latitude: $('#latitude').val(),
+        longitude: $('#longitude').val()
+    };
+
+    var inputBinding = {
+        latitudeInput: $('#latitude'),
+        longitudeInput: $('#longitude')
+    };
+
+    $('#DeliveryLocationMapPlaceHolder').locationpicker({
+        location: InitialLocation,
+        radius: 20,
+        inputBinding: inputBinding,
+        enableAutocomplete: true
+    });
 });
 
 function MainDataTableRenderFunction(data, type, Report) {

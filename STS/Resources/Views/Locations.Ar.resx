@@ -171,4 +171,16 @@
   <data name="UpdateLocationTitle" xml:space="preserve">
     <value>تحديث موقع</value>
   </data>
+  <data name="DeliveryRange" xml:space="preserve">
+    <value>(نطاق التوصيل (كم</value>
+  </data>
+  <data name="InvalidLatitude" xml:space="preserve">
+    <value>يجب أن تكون قيمة خط العرض أكبر من -90 و أصغر من 90</value>
+  </data>
+  <data name="InvalidLongitude" xml:space="preserve">
+    <value>يجب أن تكون قيمة خط الطول أكبر من -180 و أصغر من 180</value>
+  </data>
+  <data name="Range" xml:space="preserve">
+    <value>يجب أن تكون القيمة أكبر من {1} و أصغر من {2}</value>
+  </data>
 </root>

@@ -23,6 +23,7 @@
         @Html.Partial("_FooterPartial")
     </div>
     <script src="/Language/ScriptsLocale/Main"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=@Credentials.GoogleMapsApiKey"></script>
     @Scripts.Render("~/bundles/Scripts")
     @Scripts.Render("~/bundles/MainScripts")
     @RenderSection("scripts", required: false)

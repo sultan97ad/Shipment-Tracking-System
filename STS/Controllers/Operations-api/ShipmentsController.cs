@@ -194,6 +194,8 @@ namespace STS.Controllers.Operations_api
 
         private Status UpdateArrivedShipmentStatus(Shipment Shipment , Location EmployeeLocation)
         {
+            Shipment.DeliveryLocationLatitude = 0;
+            Shipment.DeliveryLocationlongitude = 0;
             return EmployeeLocation == Shipment.Destination ? Status.WaitingCollection : Status.WaitingShipping;
         }
 
@@ -239,7 +241,8 @@ namespace STS.Controllers.Operations_api
             Arrived,
             WaitingCollection,
             Collected,
-            Updated
+            Updated,
+            NewDeliverylocation
         }
 
         enum CollectionMethod

@@ -16,5 +16,6 @@ namespace STS.Models
         public bool InService { set; get; }
         public double Latitude { set; get; }
         public double longitude { set; get; }
+        public int DeliveryRange { set; get; }
     }
 }

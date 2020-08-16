@@ -133,11 +133,29 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please fix the folowing errors.
+        /// </summary>
+        public static string FixErrors {
+            get {
+                return ResourceManager.GetString("FixErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid Tracking Number.
         /// </summary>
         public static string InvalidTrackingNumber {
             get {
                 return ResourceManager.GetString("InvalidTrackingNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latitude.
+        /// </summary>
+        public static string Latitude {
+            get {
+                return ResourceManager.GetString("Latitude", resourceCulture);
             }
         }
         
@@ -151,11 +169,74 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Longitude.
+        /// </summary>
+        public static string longitude {
+            get {
+                return ResourceManager.GetString("longitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Delivery Location Has Been Assigned.
+        /// </summary>
+        public static string NewDeliverylocationStatement {
+            get {
+                return ResourceManager.GetString("NewDeliverylocationStatement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given Location is Out Of Delivery Range.
+        /// </summary>
+        public static string OutOfDeliveryRange {
+            get {
+                return ResourceManager.GetString("OutOfDeliveryRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receiver Phone Number.
+        /// </summary>
+        public static string ReceiverPhoneNumber {
+            get {
+                return ResourceManager.GetString("ReceiverPhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shipment Registered.
         /// </summary>
         public static string RegisteredTrackingStatement {
             get {
                 return ResourceManager.GetString("RegisteredTrackingStatement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} is Required.
+        /// </summary>
+        public static string Required {
+            get {
+                return ResourceManager.GetString("Required", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set.
+        /// </summary>
+        public static string Set {
+            get {
+                return ResourceManager.GetString("Set", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set Delivery Location.
+        /// </summary>
+        public static string SetDeliveryLocationTitle {
+            get {
+                return ResourceManager.GetString("SetDeliveryLocationTitle", resourceCulture);
             }
         }
         

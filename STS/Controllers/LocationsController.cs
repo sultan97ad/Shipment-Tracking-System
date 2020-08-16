@@ -139,6 +139,7 @@ namespace STS.Controllers
                 City = Location.City,
                 Latitude = Location.Latitude.ToString(),
                 longitude = Location.longitude.ToString(),
+                DeliveryRange = Location.DeliveryRange.ToString(),
                 CanBeDestination = Location.CanBeDestination,
                 NumberOfEmployees = GetNumberOfEmployees(Location),
                 NumberOfShipments = GetNumberOfShipments(Location)
@@ -148,7 +149,7 @@ namespace STS.Controllers
 
         private LocationFormViewModel GenerateNewLocationFormViewModel()
         {
-            return new LocationFormViewModel { LocationId = 0 , Latitude = (24.711827478013564).ToString() , longitude = (46.67447090148926).ToString() };
+            return new LocationFormViewModel { LocationId = 0 , Latitude = (24.711827478013564).ToString() , longitude = (46.67447090148926).ToString() , DeliveryRange = "0" };
         }
 
 
@@ -165,6 +166,7 @@ namespace STS.Controllers
             Location.City = ViewModel.City;
             Location.CanBeDestination = ViewModel.CanBeDestination;
             Location.InService = true;
+            Location.DeliveryRange = Int32.Parse(ViewModel.DeliveryRange);
             return Location;
         }
 
@@ -177,6 +179,7 @@ namespace STS.Controllers
             Location.Latitude = Double.Parse(ViewModel.Latitude);
             Location.longitude = Double.Parse(ViewModel.longitude);
             Location.CanBeDestination = ViewModel.CanBeDestination;
+            Location.DeliveryRange = Int32.Parse(ViewModel.DeliveryRange);
             return Location;
         }
 
@@ -189,8 +192,9 @@ namespace STS.Controllers
                 City = Location.City,
                 Latitude = Location.Latitude.ToString(),
                 longitude = Location.longitude.ToString(),
-                CanBeDestination = Location.CanBeDestination
-            };
+                CanBeDestination = Location.CanBeDestination,
+                DeliveryRange = Location.DeliveryRange.ToString()
+        };
             return ViewModel;
         }
 

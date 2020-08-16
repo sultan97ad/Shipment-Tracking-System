@@ -63,7 +63,73 @@ namespace STS.Controllers
              return HttpNotFound();
         }
 
+        public ActionResult SetDeliveryLocation(string TrackingNumber , string ReceiverPhoneNumber)
+        {
+            var Shipment = GetShipmentToSetDeliveryLocation(TrackingNumber , ReceiverPhoneNumber);
+            if (Shipment != null)
+            {
+                return View(GenerateSetDeliveryLocationViewModel(Shipment));
+            }
+            return HttpNotFound();
+        }
+
+        // Post: Main/Set
+        [HttpPost]
+        public ActionResult Set(SetDeliveryLocationViewModel ViewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("SetDeliveryLocation", ViewModel);
+            }
+            var Shipment = GetShipmentToSetDeliveryLocation(ViewModel.TrackingNumber, ViewModel.ReceiverPhoneNumber);
+            if(Shipment != null)
+            {
+                Shipment = SetNewDeliveryLocation(Shipment , ViewModel);
+                DbContext.Reports.Add(GenerateReport(Shipment, Event.NewDeliverylocation));
+                DbContext.SaveChanges();
+                return Redirect("TrackShipment/" + ViewModel.TrackingNumber);
+            }
+            return HttpNotFound();
+        }
+
         #region Helpers
+
+        private Shipment SetNewDeliveryLocation(Shipment shipment, SetDeliveryLocationViewModel viewModel)
+        {
+            shipment.DeliveryLocationLatitude = Double.Parse(viewModel.Latitude);
+            shipment.DeliveryLocationlongitude = Double.Parse(viewModel.longitude);
+            return shipment;
+        }
+
+        private Shipment GetShipmentToSetDeliveryLocation(string trackingNumber , string ReceiverPhoneNumber)
+        {
+            var Shipment = GetShipmentByTrackingNumber(trackingNumber);
+            if (IsExist(Shipment))
+            {
+                if (Shipment.Status == (byte)Status.WaitingCollection && Shipment.CollectionMethod == (byte)CollectionMethod.Delivery && Shipment.ReceiverPhoneNumber == ReceiverPhoneNumber)
+                {
+                    return Shipment;
+                }
+            }
+            return null;
+        }
+
+        private SetDeliveryLocationViewModel GenerateSetDeliveryLocationViewModel(Shipment shipment)
+        {
+            var ViewModel = new SetDeliveryLocationViewModel
+            {
+                TrackingNumber = shipment.TrackingNumber,
+                ReceiverPhoneNumber = shipment.ReceiverPhoneNumber,
+                Latitude = shipment.CurrentLocation.Latitude.ToString(),
+                longitude = shipment.CurrentLocation.longitude.ToString()
+            };
+            if (shipment.DeliveryLocationLatitude != 0 && shipment.DeliveryLocationlongitude != 0)
+            {
+                ViewModel.Latitude = shipment.DeliveryLocationLatitude.ToString();
+                ViewModel.longitude = shipment.DeliveryLocationlongitude.ToString();
+            }
+            return ViewModel;
+        }
 
         private string StatusCodeToString(Status StatusCode)
         {
@@ -113,6 +179,8 @@ namespace STS.Controllers
                     return Resources.Views.Main.CollectedTrackingStatement.Replace("_SignedBy_", Report.SignedBy);
                 case Event.Updated:
                     return Resources.Views.Main.UpdatedTrackingStatement;
+                case Event.NewDeliverylocation:
+                    return Resources.Views.Main.NewDeliverylocationStatement;
                 default:
                     return null;
             };
@@ -191,6 +259,18 @@ namespace STS.Controllers
             return ShipmentTrackingRecords;
         }
 
+        private Report GenerateReport(Shipment Shipment, Event Event)
+        {
+            var TrackingRecord = new Report
+            {
+                Shipment = Shipment,
+                Location = Shipment.CurrentLocation,
+                DateTime = DateTime.Now,
+                Event = (byte)Event
+            };
+            return TrackingRecord;
+        }
+
         enum Status
         {
             WaitingShipping,
@@ -206,7 +286,14 @@ namespace STS.Controllers
             Arrived,
             WaitingCollection,
             Collected,
-            Updated
+            Updated,
+            NewDeliverylocation
+        }
+
+        enum CollectionMethod
+        {
+            Pickup,
+            Delivery
         }
 
         #endregion

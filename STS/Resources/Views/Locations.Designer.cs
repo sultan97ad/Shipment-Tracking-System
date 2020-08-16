@@ -88,11 +88,38 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delivery Range (km).
+        /// </summary>
+        public static string DeliveryRange {
+            get {
+                return ResourceManager.GetString("DeliveryRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please fix the folowing errors.
         /// </summary>
         public static string FixErrors {
             get {
                 return ResourceManager.GetString("FixErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Latitude must be between -90 and 90 degrees inclusive..
+        /// </summary>
+        public static string InvalidLatitude {
+            get {
+                return ResourceManager.GetString("InvalidLatitude", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Longitude must be between -180 and 180  degrees inclusive..
+        /// </summary>
+        public static string InvalidLongitude {
+            get {
+                return ResourceManager.GetString("InvalidLongitude", resourceCulture);
             }
         }
         
@@ -183,6 +210,15 @@ namespace STS.Resources.Views {
         public static string NumberOfShipments {
             get {
                 return ResourceManager.GetString("NumberOfShipments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to  must be Between {1} and  {2}.
+        /// </summary>
+        public static string Range {
+            get {
+                return ResourceManager.GetString("Range", resourceCulture);
             }
         }
         
