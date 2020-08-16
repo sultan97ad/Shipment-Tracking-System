@@ -7,20 +7,20 @@ namespace STS.Migrations
     {
         public override void Up()
         {
-            DropForeignKey("dbo.TrackingRecords", "Location_Id", "dbo.Locations");
-            DropIndex("dbo.TrackingRecords", new[] { "Location_Id" });
-            AlterColumn("dbo.TrackingRecords", "Location_Id", c => c.Int());
-            CreateIndex("dbo.TrackingRecords", "Location_Id");
-            AddForeignKey("dbo.TrackingRecords", "Location_Id", "dbo.Locations", "Id");
+            DropForeignKey("dbo.Reports", "Location_Id", "dbo.Locations");
+            DropIndex("dbo.Reports", new[] { "Location_Id" });
+            AlterColumn("dbo.Reports", "Location_Id", c => c.Int());
+            CreateIndex("dbo.Reports", "Location_Id");
+            AddForeignKey("dbo.Reports", "Location_Id", "dbo.Locations", "Id");
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.TrackingRecords", "Location_Id", "dbo.Locations");
-            DropIndex("dbo.TrackingRecords", new[] { "Location_Id" });
-            AlterColumn("dbo.TrackingRecords", "Location_Id", c => c.Int(nullable: false));
-            CreateIndex("dbo.TrackingRecords", "Location_Id");
-            AddForeignKey("dbo.TrackingRecords", "Location_Id", "dbo.Locations", "Id", cascadeDelete: true);
+            DropForeignKey("dbo.Reports", "Location_Id", "dbo.Locations");
+            DropIndex("dbo.Reports", new[] { "Location_Id" });
+            AlterColumn("dbo.Reports", "Location_Id", c => c.Int(nullable: false));
+            CreateIndex("dbo.Reports", "Location_Id");
+            AddForeignKey("dbo.Reports", "Location_Id", "dbo.Locations", "Id", cascadeDelete: true);
         }
     }
 }

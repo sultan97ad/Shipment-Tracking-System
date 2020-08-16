@@ -5,7 +5,7 @@ using System.Web;
 
 namespace STS.Dtos
 {
-    public class TrackingRecordDto
+    public class ReportDto
     {
         public string DateTime { set; get; }
         public string Location { set; get; }

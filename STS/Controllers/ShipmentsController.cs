@@ -289,14 +289,14 @@ namespace STS.Controllers
 
         private Report GenerateReport(Shipment Shipment, Event Event)
         {
-            var TrackingRecord = new Report
+            var Report = new Report
             {
                 Shipment = Shipment,
                 Location = Shipment.CurrentLocation,
                 DateTime = DateTime.Now,
                 Event = (byte)Event
             };
-            return TrackingRecord;
+            return Report;
         }
 
         private ShipmentFormViewModel UpdateShipmentFormViewModel(ShipmentFormViewModel ViewModel)

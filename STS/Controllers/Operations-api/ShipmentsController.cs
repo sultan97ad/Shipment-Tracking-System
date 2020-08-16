@@ -150,7 +150,7 @@ namespace STS.Controllers.Operations_api
 
         private Report GenerateReport(Shipment Shipment, Event Event, string CollectorName = null)
         {
-            var TrackingRecord = new Report
+            var Report = new Report
             {
                 Shipment = Shipment,
                 Location = Shipment.CurrentLocation,
@@ -159,9 +159,9 @@ namespace STS.Controllers.Operations_api
             };
             if (Event == Event.Collected)
             {
-                TrackingRecord.SignedBy = CollectorName;
+                Report.SignedBy = CollectorName;
             }
-            return TrackingRecord;
+            return Report;
         }
 
         private bool IsShipping(Shipment Shipment)

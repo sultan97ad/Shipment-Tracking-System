@@ -247,28 +247,28 @@ namespace STS.Controllers
             return Convert.ToInt32(dist * 1.609344);
         }
 
-        private IEnumerable<TrackingRecordDto> GetShipmentReports(Shipment Shipment)
+        private IEnumerable<ReportDto> GetShipmentReports(Shipment Shipment)
         {
-            var ShipmentTrackingRecords = DbContext.Reports.Include(Report => Report.Shipment).Include(Report => Report.Location).Where(Report => Report.Shipment.TrackingNumber == Shipment.TrackingNumber).ToList()
-                    .Select(Report => new TrackingRecordDto
+            var ShipmentReports = DbContext.Reports.Include(Report => Report.Shipment).Include(Report => Report.Location).Where(Report => Report.Shipment.TrackingNumber == Shipment.TrackingNumber).ToList()
+                    .Select(Report => new ReportDto
                     {
                         DateTime = Report.DateTime.ToString(),
                         Location = Report.Location.City,
                         Statement = ReportToStatement(Report)
                     });
-            return ShipmentTrackingRecords;
+            return ShipmentReports;
         }
 
         private Report GenerateReport(Shipment Shipment, Event Event)
         {
-            var TrackingRecord = new Report
+            var Report = new Report
             {
                 Shipment = Shipment,
                 Location = Shipment.CurrentLocation,
                 DateTime = DateTime.Now,
                 Event = (byte)Event
             };
-            return TrackingRecord;
+            return Report;
         }
 
         enum Status

@@ -7,17 +7,17 @@ namespace STS.Migrations
     {
         public override void Up()
         {
-            DropForeignKey("dbo.TrackingRecords", "Location_Id", "dbo.Locations");
-            DropForeignKey("dbo.TrackingRecords", "Shipment_TrackingNumber", "dbo.Shipments");
-            DropIndex("dbo.TrackingRecords", new[] { "Location_Id" });
-            DropIndex("dbo.TrackingRecords", new[] { "Shipment_TrackingNumber" });
-            DropTable("dbo.TrackingRecords");
+            DropForeignKey("dbo.Reports", "Location_Id", "dbo.Locations");
+            DropForeignKey("dbo.Reports", "Shipment_TrackingNumber", "dbo.Shipments");
+            DropIndex("dbo.Reports", new[] { "Location_Id" });
+            DropIndex("dbo.Reports", new[] { "Shipment_TrackingNumber" });
+            DropTable("dbo.Reports");
         }
         
         public override void Down()
         {
             CreateTable(
-                "dbo.TrackingRecords",
+                "dbo.Reports",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -28,10 +28,10 @@ namespace STS.Migrations
                         Shipment_TrackingNumber = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id);
-            CreateIndex("dbo.TrackingRecords", "Shipment_TrackingNumber");
-            CreateIndex("dbo.TrackingRecords", "Location_Id");
-            AddForeignKey("dbo.TrackingRecords", "Shipment_TrackingNumber", "dbo.Shipments", "TrackingNumber");
-            AddForeignKey("dbo.TrackingRecords", "Location_Id", "dbo.Locations", "Id");
+            CreateIndex("dbo.Reports", "Shipment_TrackingNumber");
+            CreateIndex("dbo.Reports", "Location_Id");
+            AddForeignKey("dbo.Reports", "Shipment_TrackingNumber", "dbo.Shipments", "TrackingNumber");
+            AddForeignKey("dbo.Reports", "Location_Id", "dbo.Locations", "Id");
         }
     }
 }

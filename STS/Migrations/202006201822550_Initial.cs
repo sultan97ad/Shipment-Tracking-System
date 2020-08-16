@@ -67,7 +67,7 @@ namespace STS.Migrations
                 .Index(t => t.Source_Id);
             
             CreateTable(
-                "dbo.TrackingRecords",
+                "dbo.Reports",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -143,8 +143,8 @@ namespace STS.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.TrackingRecords", "Shipment_TrackingNumber", "dbo.Shipments");
-            DropForeignKey("dbo.TrackingRecords", "Location_Id", "dbo.Locations");
+            DropForeignKey("dbo.Reports", "Shipment_TrackingNumber", "dbo.Shipments");
+            DropForeignKey("dbo.Reports", "Location_Id", "dbo.Locations");
             DropForeignKey("dbo.Shipments", "Source_Id", "dbo.Locations");
             DropForeignKey("dbo.Shipments", "Destination_Id", "dbo.Locations");
             DropForeignKey("dbo.Shipments", "CurrentLocation_Id", "dbo.Locations");
@@ -152,8 +152,8 @@ namespace STS.Migrations
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.TrackingRecords", new[] { "Shipment_TrackingNumber" });
-            DropIndex("dbo.TrackingRecords", new[] { "Location_Id" });
+            DropIndex("dbo.Reports", new[] { "Shipment_TrackingNumber" });
+            DropIndex("dbo.Reports", new[] { "Location_Id" });
             DropIndex("dbo.Shipments", new[] { "Source_Id" });
             DropIndex("dbo.Shipments", new[] { "Destination_Id" });
             DropIndex("dbo.Shipments", new[] { "CurrentLocation_Id" });
@@ -163,7 +163,7 @@ namespace STS.Migrations
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.TrackingRecords");
+            DropTable("dbo.Reports");
             DropTable("dbo.Shipments");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
