@@ -212,6 +212,7 @@
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\ShipmentsController.cs" />
     <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
     <Compile Include="Credentials.cs" />
     <Compile Include="Dtos\EmployeeDto.cs" />
     <Compile Include="Dtos\LocationDto.cs" />
@@ -420,6 +421,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Shipments.resx</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Views\Statistics.Designer.cs">
+      <DependentUpon>Statistics.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Views\Statistics.Ar.Designer.cs">
+      <DependentUpon>Statistics.Ar.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\Views\Main.Ar.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -448,6 +459,7 @@
     <Compile Include="ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="ViewModels\StatisticsViewModels.cs" />
     <Compile Include="ViewModels\MainViewModels.cs" />
     <Compile Include="ViewModels\EmployeesViewModels.cs" />
     <Compile Include="Models\Shipment.cs" />
@@ -809,6 +821,15 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Shipments.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Statistics.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Statistics.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Views\Statistics.Ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Statistics.Ar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Views\Main.Ar.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Main.Ar.Designer.cs</LastGenOutput>
@@ -1087,6 +1108,7 @@
     <Content Include="Views\App\EmployeesScriptLocale.cshtml" />
     <Content Include="Views\Shared\Account_Layout.cshtml" />
     <Content Include="Views\Main\SetDeliveryLocation.cshtml" />
+    <Content Include="Views\Statistics\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
