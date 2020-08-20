@@ -70,11 +70,29 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Shipments.
+        /// </summary>
+        public static string NewShipments {
+            get {
+                return ResourceManager.GetString("NewShipments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Registered Shipments.
         /// </summary>
         public static string RegisteredShipments {
             get {
                 return ResourceManager.GetString("RegisteredShipments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shipments Collection.
+        /// </summary>
+        public static string ShipmentsCollection {
+            get {
+                return ResourceManager.GetString("ShipmentsCollection", resourceCulture);
             }
         }
         

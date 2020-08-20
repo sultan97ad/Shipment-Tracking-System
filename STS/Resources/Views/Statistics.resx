@@ -120,8 +120,14 @@
   <data name="CollectedShipments" xml:space="preserve">
     <value>Collected Shipments</value>
   </data>
+  <data name="NewShipments" xml:space="preserve">
+    <value>New Shipments</value>
+  </data>
   <data name="RegisteredShipments" xml:space="preserve">
     <value>Registered Shipments</value>
+  </data>
+  <data name="ShipmentsCollection" xml:space="preserve">
+    <value>Shipments Collection</value>
   </data>
   <data name="ShipmentsWaitingCollection" xml:space="preserve">
     <value>Shipments Waiting Collection</value>

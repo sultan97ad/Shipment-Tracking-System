@@ -120,8 +120,14 @@
   <data name="CollectedShipments" xml:space="preserve">
     <value>شحنات تم تسليمها</value>
   </data>
+  <data name="NewShipments" xml:space="preserve">
+    <value>الشحنات الجديدة</value>
+  </data>
   <data name="RegisteredShipments" xml:space="preserve">
     <value>الشحنات المسجلة</value>
+  </data>
+  <data name="ShipmentsCollection" xml:space="preserve">
+    <value>تسليم الشحنات</value>
   </data>
   <data name="ShipmentsWaitingCollection" xml:space="preserve">
     <value>شحنات بانتظار التسليم</value>

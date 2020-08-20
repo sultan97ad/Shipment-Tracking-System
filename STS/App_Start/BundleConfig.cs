@@ -8,7 +8,6 @@ namespace STS
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-
             bundles.Add(new ScriptBundle("~/bundles/Scripts").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/datatables/jquery.datatables.js",
@@ -30,7 +29,8 @@ namespace STS
 
             bundles.Add(new ScriptBundle("~/bundles/AdminScripts").Include(
                         "~/Scripts/AppScripts/Locations.js",
-                        "~/Scripts/AppScripts/Employees.js"
+                        "~/Scripts/AppScripts/Employees.js",
+                        "~/Scripts/AppScripts/Statistics.js"
                         ));
 
             bundles.Add(new StyleBundle("~/bundles/Styles").Include(
@@ -47,7 +47,7 @@ namespace STS
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-          //  BundleTable.EnableOptimizations = true;
+          // BundleTable.EnableOptimizations = true;
 
 
         }

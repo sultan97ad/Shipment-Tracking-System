@@ -9,6 +9,7 @@
     @Html.LabelFor(m => m.RegisteredShipments) <br />
     @Html.DisplayFor(m => m.RegisteredShipments, new { @Class = "form-control" })
 </div>
+
 <div class="form-group">
     @Html.LabelFor(m => m.ShipmentsWaitingShipping) <br />
     @Html.DisplayFor(m => m.ShipmentsWaitingShipping, new { @Class = "form-control" })
@@ -21,6 +22,16 @@
     @Html.LabelFor(m => m.CollectedShipments) <br />
     @Html.DisplayFor(m => m.CollectedShipments, new { @Class = "form-control" })
 </div>
+<br />
+<div class="form-group">
+    @Html.LabelFor(m => m.NewShipments) <br /><br />
+    <div id="NewShipments" style="width: 100%;height: 500px;"></div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.ShipmentsCollection) <br /><br />
+    <div id="ShipmentsCollection" style="width: 100%;height: 500px;"></div>
+</div>
+
 
 
 

@@ -216,6 +216,7 @@
     <Compile Include="Credentials.cs" />
     <Compile Include="Dtos\EmployeeDto.cs" />
     <Compile Include="Dtos\LocationDto.cs" />
+    <Compile Include="Dtos\ChartPointDto.cs" />
     <Compile Include="Dtos\ShipmentDto.cs" />
     <Compile Include="Dtos\ReportDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -648,6 +649,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\AppScripts\Statistics.js" />
     <Content Include="Scripts\AppScripts\Employees.js" />
     <Content Include="Scripts\AppScripts\Locations.es5.js">
       <DependentUpon>Locations.js</DependentUpon>
