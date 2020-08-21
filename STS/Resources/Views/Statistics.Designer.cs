@@ -61,6 +61,15 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Employees / Locations.
+        /// </summary>
+        public static string AverageEmployeesPerLocation {
+            get {
+                return ResourceManager.GetString("AverageEmployeesPerLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Collected Shipments.
         /// </summary>
         public static string CollectedShipments {
@@ -75,6 +84,24 @@ namespace STS.Resources.Views {
         public static string NewShipments {
             get {
                 return ResourceManager.GetString("NewShipments", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number Of Employees.
+        /// </summary>
+        public static string NumberOfEmployees {
+            get {
+                return ResourceManager.GetString("NumberOfEmployees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Number Of Locations.
+        /// </summary>
+        public static string NumberOfLocations {
+            get {
+                return ResourceManager.GetString("NumberOfLocations", resourceCulture);
             }
         }
         

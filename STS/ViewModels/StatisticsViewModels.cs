@@ -18,5 +18,11 @@ namespace STS.ViewModels
         public string NewShipments { set; get; }
         [Display(Name = "ShipmentsCollection", ResourceType = typeof(Resources.Views.Statistics))]
         public string ShipmentsCollection { set; get; }
+        [Display(Name = "NumberOfLocations", ResourceType = typeof(Resources.Views.Statistics))]
+        public string NumberOfLocations { set; get; }
+        [Display(Name = "NumberOfEmployees", ResourceType = typeof(Resources.Views.Statistics))]
+        public string NumberOfEmployees { set; get; }
+        [Display(Name = "AverageEmployeesPerLocation", ResourceType = typeof(Resources.Views.Statistics))]
+        public string AverageEmployeesPerLocation { set; get; }
     }
 }

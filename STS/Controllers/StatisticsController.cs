@@ -48,9 +48,27 @@ namespace STS.Controllers
                 RegisteredShipments = GetRegisteredShipments(),
                 ShipmentsWaitingShipping = GetShipmentsWaitingShipping(),
                 ShipmentsWaitingCollection = GetShipmentsWaitingCollection(),
-                CollectedShipments = GetCollectedShipments()
+                CollectedShipments = GetCollectedShipments(),
+                NumberOfLocations = GetNumberOfLocations().ToString(),
+                NumberOfEmployees = GetNumberOfEmployees().ToString(),
+                AverageEmployeesPerLocation = GetAverageEmployeesPerLocation().ToString()
             };
             return ViewModel;
+        }
+
+        private double GetAverageEmployeesPerLocation()
+        {
+            return GetNumberOfEmployees() / GetNumberOfLocations();
+        }
+
+        private int GetNumberOfEmployees()
+        {
+            return (DbContext.Users.Count() - 1);
+        }
+
+        private int GetNumberOfLocations()
+        {
+            return DbContext.Locations.Where(Location => Location.InService).Count();
         }
 
         private string GetCollectedShipments()

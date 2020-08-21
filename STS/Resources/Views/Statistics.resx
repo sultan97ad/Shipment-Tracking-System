@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AverageEmployeesPerLocation" xml:space="preserve">
+    <value>Employees / Locations</value>
+  </data>
   <data name="CollectedShipments" xml:space="preserve">
     <value>Collected Shipments</value>
   </data>
   <data name="NewShipments" xml:space="preserve">
     <value>New Shipments</value>
+  </data>
+  <data name="NumberOfEmployees" xml:space="preserve">
+    <value>Number Of Employees</value>
+  </data>
+  <data name="NumberOfLocations" xml:space="preserve">
+    <value>Number Of Locations</value>
   </data>
   <data name="RegisteredShipments" xml:space="preserve">
     <value>Registered Shipments</value>
