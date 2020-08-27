@@ -5,10 +5,10 @@
 }
 @if (CurrentCulture == "en-US")
 {
-    @Html.ActionLink("عربي", "change", "Language", new { Language = "Ar", RtnUrl = Request.Path.ToString() }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("عربي", "change", "Language", new { Language = "Ar", RtnUrl = Request.Path.ToString() }, new { @class = "d-inline text-light" })
 }
 else
 {
-    @Html.ActionLink("English", "change", "Language", new { Language = "En", RtnUrl = Request.Path.ToString() }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("English", "change", "Language", new { Language = "En", RtnUrl = Request.Path.ToString() }, new { @class = "d-inline text-light" })
 }
 

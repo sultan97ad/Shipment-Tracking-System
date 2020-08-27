@@ -79,6 +79,15 @@ namespace STS.Resources.Layouts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Profile.
+        /// </summary>
+        public static string Profile {
+            get {
+                return ResourceManager.GetString("Profile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Right Reserved - Sultan Albusaymi.
         /// </summary>
         public static string Rights {

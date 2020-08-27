@@ -6,29 +6,36 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - STS</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+          crossorigin="anonymous">
     @Styles.Render("~/bundles/Styles")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <!-- Brand/logo -->
-        <a class="navbar-brand" href="#">
-            <img src="@Url.Content("~/Content/logo.png")" alt="logo" style="width:90px;">
-        </a>
-        <!-- Links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="/Shipments">@EmployeeLayout.Shipments</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Shipments/New">@EmployeeLayout.RegisterNewShipment</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="ShipmentArrival" href="#">@EmployeeLayout.RegisterShipmentArrival</a>
-            </li>
-        </ul>
-        @Html.Partial("_LoginPartial")
-        @Html.Partial("_ChangeLanguagePartial")
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+            <a class="navbar-brand " href="#">
+                <img src="@Url.Content("~/Content/logo.png")" alt="logo" style="width:90px;">
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Shipments"><i class='fas fa-clipboard-list'></i> @EmployeeLayout.Shipments</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Shipments/New"><i class='fas fa-clipboard-check'></i> @EmployeeLayout.RegisterNewShipment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="ShipmentArrival" href="#"><i class='fas fa-pallet'></i> @EmployeeLayout.RegisterShipmentArrival</a>
+                    </li>
+                </ul>
+                <div class="ml-auto form-inline">
+                    @Html.Partial("_ChangeLanguagePartial")
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
     </nav>
     <div class="container body-content">
         @RenderBody()

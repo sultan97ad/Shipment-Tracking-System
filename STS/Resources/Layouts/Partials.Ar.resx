@@ -123,6 +123,9 @@
   <data name="LogOff" xml:space="preserve">
     <value>تسجيل الخروج</value>
   </data>
+  <data name="Profile" xml:space="preserve">
+    <value>الملف الشخصي</value>
+  </data>
   <data name="Rights" xml:space="preserve">
     <value>جميع الحقوق محفوظة - سلطان البسيمي</value>
   </data>
