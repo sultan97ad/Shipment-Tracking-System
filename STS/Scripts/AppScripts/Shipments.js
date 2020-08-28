@@ -175,7 +175,6 @@ function ConfirmBox(Message, callback, Param) {
 }
 
 function PromptBox(Title, NoInputcallback, callback, Param = null) {
-
     bootbox.prompt({
         title: Title,
         buttons: {
@@ -190,32 +189,22 @@ function PromptBox(Title, NoInputcallback, callback, Param = null) {
         callback: function (Input) {
             if (Input != null) {
                 if (Input == '') {
-
                     NoInputcallback()
-
                 } else {
-
                     if (Param != null) {
-
                         callback(Input, Param)
-
                     } else {
-
                         callback(Input)
-
                     }
 
                 }
             }
         }
     });
-
 }
 
-    function IsWaitingShipping(Shipment) {
-
+function IsWaitingShipping(Shipment) {
         return Shipment.Status == Shipments.WaitingShipping;
-
 }
 
 function Print(printSectionId) {

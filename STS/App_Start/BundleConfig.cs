@@ -13,6 +13,7 @@ namespace STS
                         "~/Scripts/datatables/jquery.datatables.js",
                         "~/Scripts/umd/popper.js",
                         "~/Scripts/bootstrap.js",
+                        "~/Scripts/paper-kit.js",
                         "~/Scripts/datatables/datatables.bootstrap4.js",
                         "~/Scripts/bootbox.js",
                         "~/Scripts/toastr.js",
@@ -35,6 +36,7 @@ namespace STS
 
             bundles.Add(new StyleBundle("~/bundles/Styles").Include(
                         "~/Content/bootstrap.css",
+                        "~/Content/paper-kit.css",
                         "~/Content/site.css",
                         "~/Content/datatables/css/jquery.datatables.css",
                         "~/Content/datatables/css/dataTables.bootstrap4.css",
