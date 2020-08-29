@@ -81,7 +81,7 @@
     '</div>',
     header:
     '<div class="modal-header">' +
-    '<h5 class="modal-title"></h5>' +
+    '<h5 class="modal-title d-inline"></h5>' +
     '</div>',
     footer:
     '<div class="modal-footer"></div>',

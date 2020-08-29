@@ -1,4 +1,8 @@
 ﻿$(document).ready(function () {
+    toastr.options = {
+        "positionClass" : "toast-bottom-full-width"
+    }
+
     var ShipmentsDataTableLocale = {
         emptyTable: Shipments.ShipmentsEmptyTable,
         sInfo: Shipments.ShipmentsTableInfo,

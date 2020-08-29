@@ -2,17 +2,19 @@
 @using STS.Resources.Layouts
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "form-inline ml-4" }))
-    {
         @Html.AntiForgeryToken()
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">@User.Identity.GetUserName()</a>
-            <div class="dropdown-menu mt-2">
-            @Html.ActionLink(Partials.Profile, "Profile", "Account", routeValues: null, htmlAttributes: new { title = "Profile", @class = "dropdown-item" })
-            <a href="javascript:document.getElementById('logoutForm').submit()" class="dropdown-item">@Partials.LogOff</a>
-        </div>
+        <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="@Partials.Profile" data-placement="bottom" href="/Account/Profile">
+                <i class="far fa-user-circle"></i>
+                <p class="d-lg-none">@Partials.Profile</p>
+            </a>
         </li>
-    }
+        <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="@Partials.LogOff" data-placement="bottom" href="Account/logoff">
+                <i class="fas fa-sign-out-alt"></i>
+                <p class="d-lg-none">@Partials.LogOff</p>
+            </a>
+        </li>
 }
 else
 {

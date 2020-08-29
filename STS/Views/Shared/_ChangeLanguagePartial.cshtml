@@ -2,13 +2,23 @@
 @using System.Threading;
 @{
     string CurrentCulture = Thread.CurrentThread.CurrentUICulture.Name;
+    string Language = null;
+    string LangText = null;
 }
 @if (CurrentCulture == "en-US")
 {
-    @Html.ActionLink("عربي", "change", "Language", new { Language = "Ar", RtnUrl = Request.Path.ToString() }, new { @class = "d-inline text-light" })
+    Language = "Ar";
+    LangText = "عربي";
 }
 else
 {
-    @Html.ActionLink("English", "change", "Language", new { Language = "En", RtnUrl = Request.Path.ToString() }, new { @class = "d-inline text-light" })
+    Language = "En";
+    LangText = "English";
 }
+<li class="nav-item">
+    <a class="nav-link" rel="tooltip" title="@LangText" data-placement="bottom" href="/Language/change?Language=@Language&RtnUrl=@Request.Path.ToString()">
+        <p>@LangText</p>
+    </a>
+</li>
+
 
