@@ -1,31 +1,54 @@
 ﻿@using STS.Resources.Layouts
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>@ViewBag.Title - STS</title>
+    <script src="https://kit.fontawesome.com/4717f928a6.js" crossorigin="anonymous"></script>
     @Styles.Render("~/bundles/Styles")
-    @Scripts.Render("~/bundles/modernizr")
 
 </head>
-
-<body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-
-        <!-- Links -->
-        @Html.Partial("_LoginPartial")
-        @Html.Partial("_ChangeLanguagePartial")
+<body class="index-page sidebar-collapse">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" style="font-size:40px;" href="/Main" rel="tooltip" title="STS" data-placement="bottom">
+                    STS
+                </a>
+                <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                <ul class="navbar-nav">
+                    @Html.Partial("_ChangeLanguagePartial")
+                    @Html.Partial("_MainNavPartial")
+                    @Html.Partial("_LoginPartial")
+                </ul>
+            </div>
+        </div>
     </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        @Html.Partial("_FooterPartial")
+    <div class="page-header section-dark" style="background-image: url('https://cdn.drivingline.com/media/2295026/suzuki_keivan-31.jpg')">
+        <div class="filter"></div>
     </div>
-    <script src="/Language/ScriptsLocale/Main"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=@Credentials.GoogleMapsApiKey"></script>
-    @Scripts.Render("~/bundles/Scripts")
-    @Scripts.Render("~/bundles/MainScripts")
-    @RenderSection("scripts", required: false)
+    <div class="main">
+        <div class="container body-content">
+            @RenderBody()
+            <br />
+            <br />
+            <hr />
+            @Html.Partial("_FooterPartial")
+        </div>
+    </div>
+<script src="/Language/ScriptsLocale/Main"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=@Credentials.GoogleMapsApiKey"></script>
+@Scripts.Render("~/bundles/Scripts")
+@Scripts.Render("~/bundles/MainScripts")
+@RenderSection("scripts", required: false)
 </body>
 </html>

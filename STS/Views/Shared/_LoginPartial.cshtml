@@ -2,23 +2,25 @@
 @using STS.Resources.Layouts
 @if (Request.IsAuthenticated)
 {
-        @Html.AntiForgeryToken()
-        <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="@Partials.Profile" data-placement="bottom" href="/Account/Profile">
-                <i class="far fa-user-circle"></i>
-                <p class="d-lg-none">@Partials.Profile</p>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="@Partials.LogOff" data-placement="bottom" href="/Account/logoff">
-                <i class="fas fa-sign-out-alt"></i>
-                <p class="d-lg-none">@Partials.LogOff</p>
-            </a>
-        </li>
+    <li class="nav-item">
+        <a class="nav-link" rel="tooltip" title="@Partials.Profile" data-placement="bottom" href="/Account/Profile">
+            <i class="far fa-user-circle"></i>
+            <p class="d-lg-none">@Partials.Profile</p>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" rel="tooltip" title="@Partials.LogOff" data-placement="bottom" href="/Account/logoff">
+            <i class="fas fa-sign-out-alt"></i>
+            <p class="d-lg-none">@Partials.LogOff</p>
+        </a>
+    </li>
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink(Partials.LogIn, "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+    <li class="nav-item">
+        <a class="nav-link" rel="tooltip" title="@Partials.LogIn" data-placement="bottom" href="/Account/Login">
+            <i class="fas fa-sign-in-alt"></i>
+            <p class="d-lg-none">@Partials.LogIn</p>
+        </a>
+    </li>
 }

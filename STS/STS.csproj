@@ -1122,6 +1122,7 @@
     <Content Include="Views\Shared\Account_Layout.cshtml" />
     <Content Include="Views\Main\SetDeliveryLocation.cshtml" />
     <Content Include="Views\Statistics\Index.cshtml" />
+    <Content Include="Views\Shared\_MainNavPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

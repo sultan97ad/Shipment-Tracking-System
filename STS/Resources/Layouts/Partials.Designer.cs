@@ -61,6 +61,15 @@ namespace STS.Resources.Layouts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dashboard.
+        /// </summary>
+        public static string Dashboard {
+            get {
+                return ResourceManager.GetString("Dashboard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Log In.
         /// </summary>
         public static string LogIn {
@@ -93,6 +102,15 @@ namespace STS.Resources.Layouts {
         public static string Rights {
             get {
                 return ResourceManager.GetString("Rights", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Workplace.
+        /// </summary>
+        public static string Workplace {
+            get {
+                return ResourceManager.GetString("Workplace", resourceCulture);
             }
         }
     }

@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNet.Identity
+@using STS.Resources.Layouts
+@if (Request.IsAuthenticated)
+{
+    if (User.IsInRole("Employee"))
+    {
+        <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="@Partials.Workplace" data-placement="bottom" href="/Shipments">
+                <i class="fas fa-briefcase"></i>
+                <p class="d-lg-none">@Partials.Workplace</p>
+            </a>
+        </li>
+    }
+    if (User.IsInRole("Admin"))
+    {
+        <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="@Partials.Dashboard" data-placement="bottom" href="/Employees">
+                <i class="fas fa-sliders-h"></i>
+                <p class="d-lg-none">@Partials.Dashboard</p>
+            </a>
+        </li>
+    }
+}
+
