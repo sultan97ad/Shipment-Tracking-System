@@ -61,6 +61,15 @@ namespace STS.Resources.Layouts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Employees.
+        /// </summary>
+        public static string Employees {
+            get {
+                return ResourceManager.GetString("Employees", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Locations.
         /// </summary>
         public static string Locations {
@@ -84,6 +93,15 @@ namespace STS.Resources.Layouts {
         public static string NewLocation {
             get {
                 return ResourceManager.GetString("NewLocation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics.
+        /// </summary>
+        public static string Statistics {
+            get {
+                return ResourceManager.GetString("Statistics", resourceCulture);
             }
         }
     }

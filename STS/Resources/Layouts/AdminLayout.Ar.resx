@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Employees" xml:space="preserve">
+    <value>الموظفيين</value>
+  </data>
   <data name="Locations" xml:space="preserve">
     <value>المواقع</value>
   </data>
@@ -125,5 +128,8 @@
   </data>
   <data name="NewLocation" xml:space="preserve">
     <value>موقع جديد</value>
+  </data>
+  <data name="Statistics" xml:space="preserve">
+    <value>إحصائيات</value>
   </data>
 </root>
