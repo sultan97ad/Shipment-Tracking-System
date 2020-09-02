@@ -5,54 +5,55 @@
 }
 <h2>@ViewBag.Title</h2>
 <br />
+<br />
 <div class="form-group">
     @Html.LabelFor(m => m.TrackingNumber) <br />
-    @Html.DisplayFor(m => m.TrackingNumber, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.TrackingNumber</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.DateAdded) <br />
-    @Html.DisplayFor(m => m.DateAdded, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.DateAdded</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.ArrivalDate) <br />
-    @Html.DisplayFor(m => m.ArrivalDate, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.ArrivalDate</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.SenderName) <br />
-    @Html.DisplayFor(m => m.SenderName, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.SenderName</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.SenderPhoneNumber) <br />
-    @Html.DisplayFor(m => m.SenderPhoneNumber, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.SenderPhoneNumber</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.ReceiverName) <br />
-    @Html.DisplayFor(m => m.ReceiverName, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.ReceiverName</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.ReceiverPhoneNumber) <br />
-    @Html.DisplayFor(m => m.ReceiverPhoneNumber, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.ReceiverPhoneNumber</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.WeightKG) <br />
-    @Html.DisplayFor(m => m.WeightKG, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.WeightKG</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.Description) <br />
-    @Html.DisplayFor(m => m.Description, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.Description</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.Source) <br />
-    @Html.DisplayFor(m => m.Source, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.Source</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.Destination) <br />
-    @Html.DisplayFor(m => m.Destination, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.Destination</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.CollectionMethod) <br />
-    @Html.DisplayFor(m => m.CollectionMethod, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.CollectionMethod</text>
+</div><br />
 @if(Model.CollectionMethod == Shipments.Delivery) {
 <div class="form-group">
     @Html.LabelFor(m => m.DeliveryLocationUrl) <br />
@@ -64,7 +65,7 @@
     {
         <a>@Shipments.HasNotBeenAssignedYet</a>
     }
-</div>
+</div><br />
 }
 @Html.ActionLink(Shipments.BackToShipmentsButton, "Index", "Shipments", new { @class = "btn btn-primary" })
 <button class="btn btn-primary" onclick=Print('BarcodeLabel')>@Shipments.PrintBarcode</button>

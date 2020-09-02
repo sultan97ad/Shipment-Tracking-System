@@ -9,13 +9,13 @@
 {
     @Html.AntiForgeryToken()
     <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(m => m.TrackingNumber, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.TrackingNumber, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.TrackingNumber)
         </div>
-    </div>
+    </div><br />
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="@Main.TrackShipmentTitle" class="btn btn-primary" />

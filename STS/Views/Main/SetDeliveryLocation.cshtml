@@ -13,18 +13,18 @@
         @Html.LabelFor(m => m.Latitude)
         @Html.TextBoxFor(m => m.Latitude, new { @Class = "form-control", id = "latitude" })
         @Html.ValidationMessageFor(m => m.Latitude)
-    </div>
+    </div><br />
     <div class="form-group">
         @Html.LabelFor(m => m.longitude)
         @Html.TextBoxFor(m => m.longitude, new { @Class = "form-control", id = "longitude" })
         @Html.ValidationMessageFor(m => m.longitude)
-    </div>
-    <div id="DeliveryLocationMapPlaceHolder" style="width: 550px; height: 400px;"></div>
-    <div class="clearfix">&nbsp;</div>
+    </div><br />
+    <div id="DeliveryLocationMapPlaceHolder" style="width: 450px; height: 400px;"></div>
+    <div class="clearfix">&nbsp;</div><br />
     @Html.HiddenFor(c => c.TrackingNumber)
     @Html.HiddenFor(c => c.ReceiverPhoneNumber)
     <div class="form-group">
         @Html.ValidationMessageFor(m => m.DeliveryRange)
-    </div>
+    </div><br />
     <button type="submit" class="btn btn-primary">@Main.Set</button>
 }

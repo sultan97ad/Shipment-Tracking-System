@@ -200,8 +200,8 @@ namespace STS.Controllers
         private List<SelectListItem> GetCollectionMethodsList()
         {
              var Methods = new List<SelectListItem> {
-                new SelectListItem { Text = Shipments.PickUp , Value = "0" , Selected = true},
-                new SelectListItem { Text = Shipments.Delivery , Value = "1"},
+                new SelectListItem { Text = Shipments.PickUp , Value = ((byte)CollectionMethod.Pickup).ToString() , Selected = true},
+                new SelectListItem { Text = Shipments.Delivery , Value = ((byte)CollectionMethod.Delivery).ToString()},
             };
             return Methods;
         }

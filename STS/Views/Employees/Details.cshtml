@@ -4,31 +4,31 @@
     ViewBag.Title = Employees.EmployeeDetailsTitle;
 }
 <h2>@ViewBag.Title</h2>
-<br />
+<br /><br />
 <div class="form-group">
-    @Html.LabelFor(m => m.EmployeeName) <br />
-    @Html.DisplayFor(m => m.EmployeeName, new { @Class = "form-control" })
-</div>
+    @Html.LabelFor(m => m.EmployeeName)<br />
+    <text class="text-muted">@Model.EmployeeName</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.Email) <br />
-    @Html.DisplayFor(m => m.Email, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.Email</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.DateAdded) <br />
-    @Html.DisplayFor(m => m.DateAdded, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.DateAdded</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.PhoneNumber) <br />
-    @Html.DisplayFor(m => m.PhoneNumber, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.PhoneNumber</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.Location) <br />
-    @Html.DisplayFor(m => m.Location, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.Location</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.Status) <br />
-    @Html.DisplayFor(m => m.Status, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.Status</text>
+</div><br />
 @Html.ActionLink(Employees.BackToEmployeesButton, "Index", "Employees", new { @class = "btn btn-primary" })
 
 

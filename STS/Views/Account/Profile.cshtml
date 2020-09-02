@@ -7,37 +7,37 @@
 <h2>@ViewBag.Title</h2>
 <p class="text-success">@ViewBag.StatusMessage</p>
 <div>
-    <h4></h4>
     <hr />
+    <br />
     @if (User.IsInRole("Employee"))
     {
         <div class="form-group">
             @Html.LabelFor(m => m.EmployeeName) <br />
-            @Html.DisplayFor(m => m.EmployeeName, new { @Class = "form-control" })
-        </div>
+            <text class="text-muted">@Model.EmployeeName</text>
+        </div><br />
     }
     <div class="form-group">
         @Html.LabelFor(m => m.UserEmail) <br />
-        @Html.DisplayFor(m => m.UserEmail, new { @Class = "form-control" })
-    </div>
+        <text class="text-muted">@Model.UserEmail</text>
+    </div><br />
     @if (User.IsInRole("Employee"))
     {
         <div class="form-group">
             @Html.LabelFor(m => m.EmployeePhoneNumber) <br />
-            @Html.DisplayFor(m => m.EmployeePhoneNumber, new { @Class = "form-control" })
-        </div>
+            <text class="text-muted">@Model.EmployeePhoneNumber</text>
+        </div><br />
         <div class="form-group">
             @Html.LabelFor(m => m.EmployeeLocation) <br />
-            @Html.DisplayFor(m => m.EmployeeLocation, new { @Class = "form-control" })
-        </div>
+            <text class="text-muted">@Model.EmployeeLocation</text>
+        </div><br />
         <div class="form-group">
             @Html.LabelFor(m => m.EmployeeDateAdded) <br />
-            @Html.DisplayFor(m => m.EmployeeDateAdded, new { @Class = "form-control" })
-        </div>
+            <text class="text-muted">@Model.EmployeeDateAdded</text>
+        </div><br />
     }
     <dl class="dl-horizontal">
         <dd>
-                @Html.ActionLink(Account.ChangePassword, "ChangePassword")
+            @Html.ActionLink(Account.ChangePassword, "ChangePassword")
         </dd>
     </dl>
 </div>

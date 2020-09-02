@@ -349,7 +349,7 @@ namespace STS.Resources.Views {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SendLink.
+        ///   Looks up a localized string similar to Send Link.
         /// </summary>
         public static string SendLink {
             get {

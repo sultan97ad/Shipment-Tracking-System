@@ -4,41 +4,41 @@
     ViewBag.Title = Locations.LocationDetailsTitle;
 }
 <h2>@ViewBag.Title</h2>
-<br />
+<br /><br />
 <div class="form-group">
     @Html.LabelFor(m => m.LocationName) <br />
-    @Html.DisplayFor(m => m.LocationName, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.LocationName</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.City) <br />
-    @Html.DisplayFor(m => m.City, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.City</text>
+</div><br />
 <div class="form-group">
-    @Html.LabelFor(m => m.Latitude) <br />
-    @Html.TextBoxFor(m => m.Latitude, new { @Class = "form-control", id = "latitude" , Disabled = true })
-</div>
+    @Html.LabelFor(m => m.Latitude)
+    @Html.TextBoxFor(m => m.Latitude, new { @Class = "form-control", id = "latitude", Disabled = true })
+</div><br />
 <div class="form-group">
-    @Html.LabelFor(m => m.longitude) <br />
-    @Html.TextBoxFor(m => m.longitude, new { @Class = "form-control", id = "longitude" , Disabled = true })
-</div>
+    @Html.LabelFor(m => m.longitude)
+    @Html.TextBoxFor(m => m.longitude, new { @Class = "form-control", id = "longitude", Disabled = true })
+</div><br />
 <div id="DetailsMapPlaceHolder" style="width: 550px; height: 400px;"></div>
-<div class="clearfix">&nbsp;</div>
+<div class="clearfix">&nbsp;</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.DeliveryRange) <br />
-    @Html.DisplayFor(m => m.DeliveryRange, new { @Class = "form-control"})
-</div>
+    <text class="text-muted">@Model.DeliveryRange</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.CanBeDestination) <br />
-    @Html.DisplayFor(m => m.CanBeDestination, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.CanBeDestination</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.NumberOfEmployees) <br />
-    @Html.DisplayFor(m => m.NumberOfEmployees, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.NumberOfEmployees</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.NumberOfShipments) <br />
-    @Html.DisplayFor(m => m.NumberOfShipments, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.NumberOfShipments</text>
+</div><br />
 @Html.ActionLink(Locations.BackToLocationsButton, "Index", "Shipments", new { @class = "btn btn-primary" })
 
 

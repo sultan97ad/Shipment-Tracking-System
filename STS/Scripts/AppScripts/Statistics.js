@@ -51,7 +51,7 @@ function GenerateChart(DivId , DataSource) {
     chart.scrollbarX = new am4charts.XYChartScrollbar();
     chart.scrollbarX.series.push(series);
     chart.scrollbarX.parent = chart.bottomAxesContainer;
-    dateAxis.start = 0.79;
+    dateAxis.start = 0;
     dateAxis.keepSelection = true;
     return chart;
 }

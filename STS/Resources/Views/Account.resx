@@ -214,7 +214,7 @@
     <value>Reset Password</value>
   </data>
   <data name="SendLink" xml:space="preserve">
-    <value>SendLink</value>
+    <value>Send Link</value>
   </data>
   <data name="StringLength" xml:space="preserve">
     <value>{0} Must Be At least  {2} Characters Long</value>

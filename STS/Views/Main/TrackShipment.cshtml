@@ -8,46 +8,46 @@
 <br />
 <div class="form-group">
     @Html.LabelFor(m => m.TrackingNumber) <br />
-    @Html.DisplayFor(m => m.TrackingNumber, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.TrackingNumber</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.Source) <br />
-    @Html.DisplayFor(m => m.Source, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.Source</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.Destination) <br />
-    @Html.DisplayFor(m => m.Destination, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.Destination</text>
+</div><br />
 <div class="form-group">
     @Html.LabelFor(m => m.Status) <br />
-    @Html.DisplayFor(m => m.Status, new { @Class = "form-control" })
-</div>
+    <text class="text-muted">@Model.Status</text>
+</div><br />
 @if (Model.Status != Shipments.ShipmentWaitingCollection && Model.Status != Shipments.ShipmentCollected)
 {
     <div class="form-group">
         @Html.LabelFor(m => m.EstimatedDeliveryDate) <br />
-        @Html.DisplayFor(m => m.EstimatedDeliveryDate, new { @Class = "form-control" })
-    </div>
+        <text class="text-muted">@Model.EstimatedDeliveryDate</text>
+    </div><br />
 
 }
 @if (Model.CurrentLocation != null)
 {
     <div class="form-group">
         @Html.LabelFor(m => m.CurrentLocation) <br />
-        @Html.DisplayFor(m => m.CurrentLocation, new { @Class = "form-control" })
-    </div>
+        <text class="text-muted">@Model.CurrentLocation</text>
+    </div><br />
 }
 @if (Model.CurrentLocation != null && Model.Status != Shipments.ShipmentWaitingCollection && Model.Status != Shipments.ShipmentCollected)
 {
     <div class="form-group">
         @Html.LabelFor(m => m.DistanceToDestination) <br />
-        @Html.DisplayFor(m => m.DistanceToDestination, new { @Class = "form-control" })
-    </div>
+        <text class="text-muted">@Model.DistanceToDestination</text>
+    </div><br />
 }
 <table id="Reports" TrackingNumber="@Model.TrackingNumber" class="table table-bordered table-hover ">
     <thead>
         <tr>
-            <th>-</th>
+            <th></th>
         </tr>
     </thead>
     <tbody></tbody>
