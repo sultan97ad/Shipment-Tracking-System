@@ -43,6 +43,7 @@
         language: EmployeesDataTableLocale,
         proccessing: true,
         serverSide: true,
+        bSort: false,
         ajax: EmployeesDataTableAjaxInfo,
         columnDefs:EmployeesDataTableColumnDefinition,
         columns: EmployeesDataTableColumn
@@ -57,13 +58,18 @@
 });
 
 function EmployeesDataTableRenderFunction(data, type, Employee) {
-    Col = Employee.Name + '<br>' + Employee.Email + '<br>' + Employee.Location + '<br>' +
-        '<div class="btn-group drop" >' +
+  Col = '<div class="p-3">' + 
+        '<div class="pb-3"><i class="fas fa-user "></i></div>' +
+        '<label>' + Employees.EmployeeName + ':</label><text class="text-muted"> ' + Employee.Name + '</text><br>' +
+        '<label>' + Employees.Email + ':</label><text class="text-muted"> ' + Employee.Email + '</text><br>' +
+        '<label>' + Employees.EmployeeLocationId + ':</label><text class="text-muted"> ' + Employee.Location + '</text><br>' +
+        '<div class="btn-group drop mt-3" >' +
         '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' +
-        '<div class="dropdown-menu">' +
-        '<a class="dropdown-item" href="/Employees/Update/' + Employee.id + '">' + Employees.EmployeesTableUpdateInformationLabel + '</a>' +
-        '<a class="dropdown-item" href="/Employees/Details/' + Employee.id + '">' + Employees.EmployeesTableDetailsLabel + '</a>' +
-        '<a class="dropdown-item Remove" href="#" Id="' + Employee.id + '" Email="' + Employee.Email + '" >' + Employees.EmployeesTableRemoveEmployeeLabel + '</a>' +
+        '<div class="dropdown-menu border">' +
+        '<a class="dropdown-item" href="/Employees/Update/' + Employee.id + '"><i class="fas fa-pen-square px-2"></i><text>' + Employees.EmployeesTableUpdateInformationLabel + '</text></a>' +
+        '<a class="dropdown-item" href="/Employees/Details/' + Employee.id + '"><i class="fas fa-file-alt px-2"></i><text>' + Employees.EmployeesTableDetailsLabel + '</text></a>' +
+        '<a class="dropdown-item Remove" Id="' + Employee.id + '" Email="' + Employee.Email + '" type="button"><i class="fas fa-trash-alt px-2"></i><text>' + Employees.EmployeesTableRemoveEmployeeLabel + '</text></a>' +
+        '</div>' +
         '</div>' +
         '</div>';
     return Col;

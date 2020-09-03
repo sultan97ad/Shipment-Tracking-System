@@ -168,4 +168,13 @@
   <data name="RemoveEmployeeMessage" xml:space="preserve">
     <value>ها انت متأكد انك تريد حذف الموظف  بالبريد الإلكتروني  _Email_</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الالكتروني</value>
+  </data>
+  <data name="EmployeeLocationId" xml:space="preserve">
+    <value>الموقع</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>اسم الموظف</value>
+  </data>
 </root>

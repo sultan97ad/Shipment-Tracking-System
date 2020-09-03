@@ -41,6 +41,7 @@
         language: LocationsDataTableLocale,
         proccessing: true,
         serverSide: true,
+        bSort: false,
         ajax: LocationsDataTableAjaxInfo,
         columnDefs:LocationsDataTableColumnDefinition,
         columns: LocationsDataTableColumn
@@ -77,16 +78,18 @@
 });
 
 function LocationsDataTableRenderFunction(data, type, Location) {
-  Col = Locations.LocationId + ' : ' + Location.LocationId + '<br>' +
-        Locations.Address + ' : ' + Location.Address + '<br>' +
-        '<br>' +
-        '<div class="btn-group drop" >' +
+  Col = '<div class="p-3">' +
+        '<div class="pb-3"><i class="fas fa-map-marker-alt"></i></div>' +
+        '<label>' + Locations.LocationId + ':</label><text class="text-muted"> ' + Location.LocationId + '</text><br>' +
+        '<label>' + Locations.Address + ':</label><text class="text-muted"> ' + Location.Address + '</text><br>' +
+        '<div class="btn-group drop mt-3" >' +
         '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' +
-        '<div class="dropdown-menu">' +
-        '<a class="dropdown-item" href="/Locations/Update/' + Location.LocationId + '">' + Locations.LocationsTableUpdateInformationLabel + '</a>' +
-        '<a class="dropdown-item" href="/Locations/Details/' + Location.LocationId + '">' + Locations.LocationsTableDetailsLabel + '</a>' +
-        '<a class="dropdown-item" href="Employees?LocationId=' + Location.LocationId + '">' + Locations.LocationsTableEmployeesLabel + '</a>' +
-        '<a class="dropdown-item Remove" href="#" LocationId="' + Location.LocationId + '" Address="' + Location.Address + '" >' + Locations.LocationsTableRemoveLocationLabel + '</a>' +
+        '<div class="dropdown-menu border">' +
+        '<a class="dropdown-item" href="/Locations/Update/' + Location.LocationId + '"><i class="fas fa-pen-square px-2"></i><text>' + Locations.LocationsTableUpdateInformationLabel + '</text></a>' +
+        '<a class="dropdown-item" href="/Locations/Details/' + Location.LocationId + '"><i class="fas fa-file-alt px-2"></i><text>' + Locations.LocationsTableDetailsLabel + '</text></a>' +
+        '<a class="dropdown-item" href="Employees?LocationId=' + Location.LocationId + '"><i class="fas fa-users px-2"></i><text>' + Locations.LocationsTableEmployeesLabel + '</text></a>' +
+        '<a class="dropdown-item Remove" LocationId="' + Location.LocationId + '" Address="' + Location.Address + '" type="button"><i class="fas fa-trash-alt px-2"></i><text>' + Locations.LocationsTableRemoveLocationLabel + '</text></a>' +
+        '</div>' +
         '</div>' +
         '</div>';
     return Col;

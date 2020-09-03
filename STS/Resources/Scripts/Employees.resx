@@ -123,6 +123,15 @@
   <data name="ConfirmButton" xml:space="preserve">
     <value>Confirm</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EmployeeLocationId" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="EmployeeName" xml:space="preserve">
+    <value>Employee Name</value>
+  </data>
   <data name="EmployeesEmptyTable" xml:space="preserve">
     <value>No Employees</value>
   </data>

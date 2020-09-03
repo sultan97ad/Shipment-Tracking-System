@@ -38,14 +38,12 @@ namespace STS.Controllers
                 var draw = Request.Form.GetValues("draw").FirstOrDefault();
                 var start = Request.Form.GetValues("start").FirstOrDefault();
                 var length = Request.Form.GetValues("length").FirstOrDefault();
-                var sortColumn = Request.Form.GetValues("columns[" + Request.Form.GetValues("order[0][column]").FirstOrDefault() + "][name]").FirstOrDefault();
-                var sortColumnDir = Request.Form.GetValues("order[0][dir]").FirstOrDefault();
                 var searchValue = Request.Form.GetValues("search[value]").FirstOrDefault();
                 int pageSize = length != null ? Convert.ToInt32(length) : 0;
                 int skip = start != null ? Convert.ToInt32(start) : 0;
                 int recordsTotal = 0;
                 var ShipmentsData = GetShipmentsData();
-                ShipmentsData = SortShipmentsData(ShipmentsData, sortColumn, sortColumnDir);
+                ShipmentsData = SortShipmentsData(ShipmentsData);
                 ShipmentsData = SearchShipmentsData(ShipmentsData, searchValue);
                 recordsTotal = ShipmentsData.Count();
                 IEnumerable<ShipmentDto> FilteredShipmentsData = FilterShipmentsData(ShipmentsData, pageSize, skip);
@@ -344,12 +342,9 @@ namespace STS.Controllers
             return DbContext.Shipments.Include(Shipment => Shipment.Destination).Where(Shipment => Shipment.CurrentLocation.Id == EmployeeLocation.Id).AsQueryable();
         }
 
-        private IQueryable<Shipment> SortShipmentsData(IQueryable<Shipment> ShipmentsData, string sortColumn, string sortColumnDir)
+        private IQueryable<Shipment> SortShipmentsData(IQueryable<Shipment> ShipmentsData)
         {
-            if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
-            {
-                ShipmentsData = ShipmentsData.OrderBy(Shipment => Shipment.TrackingNumber);
-            }
+            ShipmentsData = ShipmentsData.OrderBy(Shipment => Shipment.TrackingNumber);
             return ShipmentsData;
         }
 

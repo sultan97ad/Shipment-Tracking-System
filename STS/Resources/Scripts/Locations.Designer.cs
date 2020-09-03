@@ -88,7 +88,7 @@ namespace STS.Resources.Scripts {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Id.
+        ///   Looks up a localized string similar to ID.
         /// </summary>
         public static string LocationId {
             get {

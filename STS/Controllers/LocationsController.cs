@@ -34,14 +34,12 @@ namespace STS.Controllers
                 var draw = Request.Form.GetValues("draw").FirstOrDefault();
                 var start = Request.Form.GetValues("start").FirstOrDefault();
                 var length = Request.Form.GetValues("length").FirstOrDefault();
-                var sortColumn = Request.Form.GetValues("columns[" + Request.Form.GetValues("order[0][column]").FirstOrDefault() + "][name]").FirstOrDefault();
-                var sortColumnDir = Request.Form.GetValues("order[0][dir]").FirstOrDefault();
                 var searchValue = Request.Form.GetValues("search[value]").FirstOrDefault();
                 int pageSize = length != null ? Convert.ToInt32(length) : 0;
                 int skip = start != null ? Convert.ToInt32(start) : 0;
                 int recordsTotal = 0;
                 var LocationsData = GetLocationsData();
-                LocationsData = SortLocationsData(LocationsData, sortColumn, sortColumnDir);
+                LocationsData = SortLocationsData(LocationsData);
                 LocationsData = SearchLocationsData(LocationsData, searchValue);
                 recordsTotal = LocationsData.Count();
                 IEnumerable<LocationDto> FilteredLocationsData = FilterLocationsData(LocationsData, pageSize, skip);
@@ -203,12 +201,9 @@ namespace STS.Controllers
             return DbContext.Locations.Where(Location => Location.InService).AsQueryable();
         }
 
-        private IQueryable<Location> SortLocationsData(IQueryable<Location> LocationsData, string sortColumn, string sortColumnDir)
+        private IQueryable<Location> SortLocationsData(IQueryable<Location> LocationsData)
         {
-            if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDir)))
-            {
-                LocationsData = LocationsData.OrderBy(Location => Location.Id);
-            }
+            LocationsData = LocationsData.OrderBy(Location => Location.Id);
             return LocationsData;
         }
 

@@ -4,11 +4,10 @@
     ViewBag.Title = Main.TrackShipmentTitle;
     Layout = "~/Views/Shared/Main_Layout.cshtml";
 }
-
+<br /><br />
 @using (Html.BeginForm("Track", "Main", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
-    <hr />
     <div class="form-group">
         @Html.LabelFor(m => m.TrackingNumber, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">

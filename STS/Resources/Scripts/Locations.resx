@@ -127,7 +127,7 @@
     <value>Confirm</value>
   </data>
   <data name="LocationId" xml:space="preserve">
-    <value>Id</value>
+    <value>ID</value>
   </data>
   <data name="LocationsEmptyTable" xml:space="preserve">
     <value>No Locations</value>

@@ -45,6 +45,7 @@
         language: ShipmentsDataTableLocale,
         proccessing: true,
         serverSide: true,
+        bSort: false,
         ajax: ShipmentsDataTableAjaxInfo,
         columnDefs: ShipmentsDataTableColumnDefinition,
         columns: ShipmentsDataTableColumn
@@ -72,25 +73,27 @@
 
 
 function ShipmentsDataTableRenderFunction(data, type, Shipment) {
-    Col =    Shipments.TrackingNumber + ' : ' + Shipment.TrackingNumber + '<br>' +
-             Shipments.ReceiverName + ' : ' + Shipment.ReceiverName + '<br>' +
-             Shipments.Destination + ' : ' + Shipment.Destination + '<br>' +
-             Shipments.Status + ' : ' + Shipment.Status + '<br>' +
-             Shipments.HoldSince + ' : ' + Shipment.HoldSince + ' ' + Shipments.Days + '<br>' +
-            '<br>' +
-            '<div class="btn-group drop">' +
-            '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' +
-            '<div class="dropdown-menu">' +
-            '<a class="dropdown-item" href="/Shipments/Update/' + Shipment.TrackingNumber + '">' + Shipments.ShipmentsTableUpdateInformationLabel + '</a>' +
-            '<a class="dropdown-item" href="/Shipments/Details/' + Shipment.TrackingNumber + '">' + Shipments.ShipmentsTableDetailsLabel + '</a>';
-        if (IsWaitingShipping(Shipment)) {
-            Col += '<a class="dropdown-item Departed" TrackingNumber="' + Shipment.TrackingNumber + '" href="#">' + Shipments.ShipmentsTableDepartedLabel + '</a>';
-        } else {
-            Col += '<a class="dropdown-item Collected" TrackingNumber="' + Shipment.TrackingNumber + '" href="#">' + Shipments.ShipmentsTableCollectedLabel + '</a>' +
-                   '<a class="dropdown-item SendSMS" TrackingNumber="' + Shipment.TrackingNumber + '" href="#">' + Shipments.ShipmentsTableSendSMSLabel + '</a>';
-        }
-        Col += '</div>' +
-               '</div>';
+  Col = '<div class="p-3">' +
+        '<div class="pb-3"><i class="fas fa-box"></i></div>' +
+        '<label>' + Shipments.TrackingNumber + ':</label><text class="text-muted"> ' + Shipment.TrackingNumber + '</text><br>' +
+        '<label>' + Shipments.ReceiverName + ':</label><text class="text-muted"> ' + Shipment.ReceiverName + '</text><br>' +
+        '<label>' + Shipments.Destination + ':</label><text class="text-muted"> ' + Shipment.Destination + '</text><br>' +
+        '<label>' + Shipments.Status + ':</label><text class="text-muted"> ' + Shipment.Status + '</text><br>' +
+        '<label>' + Shipments.HoldSince + ':</label><text class="text-muted"> ' + Shipment.HoldSince + ' ' + Shipments.Days + '</text><br>' +
+        '<div class="btn-group drop mt-3" >' +
+        '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' +
+        '<div class="dropdown-menu border">' +
+        '<a class="dropdown-item" href="/Shipments/Update/' + Shipment.TrackingNumber + '"><i class="fas fa-pen-square px-3"></i><text>' + Shipments.ShipmentsTableUpdateInformationLabel + '</text></a>' +
+        '<a class="dropdown-item" href="/Shipments/Details/' + Shipment.TrackingNumber + '"><i class="fas fa-file-alt px-3"></i><text>' + Shipments.ShipmentsTableDetailsLabel + '</text></a>'
+         if (IsWaitingShipping(Shipment)) {
+             Col += '<a class="dropdown-item Departed" TrackingNumber="' + Shipment.TrackingNumber + '" type="button"><i class="fas fa-dolly px-3"></i><text>' + Shipments.ShipmentsTableDepartedLabel + '</text></a>'
+         } else {
+             Col += '<a class="dropdown-item link Collected" TrackingNumber="' + Shipment.TrackingNumber + '" type="button"><i class="fas fa-clipboard-check px-3"></i><text>' + Shipments.ShipmentsTableCollectedLabel + '</text></a>' +
+                 '<a class="dropdown-item SendSMS" TrackingNumber="' + Shipment.TrackingNumber + '" type="button"><i class="fas fa-mobile-alt px-3"></i><text>' + Shipments.ShipmentsTableSendSMSLabel + '</text></a>'
+         }
+        '</div>' +
+        '</div>' +
+        '</div>';
         return Col;
 }
 
