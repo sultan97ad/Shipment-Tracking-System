@@ -365,6 +365,7 @@ namespace STS.Controllers
                 ReceiverName = Shipment.ReceiverName,
                 Destination = Shipment.Destination.City,
                 Status = StatusToString((Status)Shipment.Status),
+                CollectionMethod = CollectionMethodToString((CollectionMethod)Shipment.CollectionMethod),
                 HoldSince = (DateTime.Now - Shipment.ArrivalDate).Days.ToString()
             });
             return FilteredShipmentsData;

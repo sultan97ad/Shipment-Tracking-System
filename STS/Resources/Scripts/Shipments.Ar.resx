@@ -216,4 +216,7 @@
   <data name="HoldSince" xml:space="preserve">
     <value>متواجدة منذ</value>
   </data>
+  <data name="CollectionMethod" xml:space="preserve">
+    <value>الطريقة</value>
+  </data>
 </root>

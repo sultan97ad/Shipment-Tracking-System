@@ -70,6 +70,15 @@ namespace STS.Resources.Scripts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Method.
+        /// </summary>
+        public static string CollectionMethod {
+            get {
+                return ResourceManager.GetString("CollectionMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Collector Name is Required.
         /// </summary>
         public static string CollectorNameRequired {

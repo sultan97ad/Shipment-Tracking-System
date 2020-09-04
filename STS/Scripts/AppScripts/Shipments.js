@@ -78,7 +78,11 @@ function ShipmentsDataTableRenderFunction(data, type, Shipment) {
         '<label>' + Shipments.TrackingNumber + ':</label><text class="text-muted"> ' + Shipment.TrackingNumber + '</text><br>' +
         '<label>' + Shipments.ReceiverName + ':</label><text class="text-muted"> ' + Shipment.ReceiverName + '</text><br>' +
         '<label>' + Shipments.Destination + ':</label><text class="text-muted"> ' + Shipment.Destination + '</text><br>' +
-        '<label>' + Shipments.Status + ':</label><text class="text-muted"> ' + Shipment.Status + '</text><br>' +
+        '<label>' + Shipments.Status + ':</label><text class="text-muted"> ' + Shipment.Status + '</text><br>';
+        if (IsWaitingCollection(Shipment)) {
+            Col += '<label>' + Shipments.CollectionMethod + ':</label><text class="text-muted"> ' + Shipment.CollectionMethod + '</text><br>';
+        }
+        Col += '' +
         '<label>' + Shipments.HoldSince + ':</label><text class="text-muted"> ' + Shipment.HoldSince + ' ' + Shipments.Days + '</text><br>' +
         '<div class="btn-group drop mt-3" >' +
         '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' +
@@ -89,7 +93,7 @@ function ShipmentsDataTableRenderFunction(data, type, Shipment) {
              Col += '<a class="dropdown-item Departed" TrackingNumber="' + Shipment.TrackingNumber + '" type="button"><i class="fas fa-dolly px-3"></i><text>' + Shipments.ShipmentsTableDepartedLabel + '</text></a>'
          } else {
              Col += '<a class="dropdown-item link Collected" TrackingNumber="' + Shipment.TrackingNumber + '" type="button"><i class="fas fa-clipboard-check px-3"></i><text>' + Shipments.ShipmentsTableCollectedLabel + '</text></a>' +
-                 '<a class="dropdown-item SendSMS" TrackingNumber="' + Shipment.TrackingNumber + '" type="button"><i class="fas fa-mobile-alt px-3"></i><text>' + Shipments.ShipmentsTableSendSMSLabel + '</text></a>'
+                    '<a class="dropdown-item SendSMS" TrackingNumber="' + Shipment.TrackingNumber + '" type="button"><i class="fas fa-mobile-alt px-3"></i><text>' + Shipments.ShipmentsTableSendSMSLabel + '</text></a>'
          }
         '</div>' +
         '</div>' +
@@ -212,6 +216,10 @@ function PromptBox(Title, NoInputcallback, callback, Param = null) {
 
 function IsWaitingShipping(Shipment) {
         return Shipment.Status == Shipments.WaitingShipping;
+}
+
+function IsWaitingCollection(Shipment) {
+    return Shipment.Status != Shipments.WaitingShipping;
 }
 
 function Print(printSectionId) {
