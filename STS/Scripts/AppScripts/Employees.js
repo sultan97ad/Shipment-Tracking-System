@@ -52,7 +52,7 @@
     $("#Employees").on("click", ".Remove", function () {
         var Id = $(this).attr('Id');
         var Email = $(this).attr('Email');
-        ConfirmBox(Employees.RemoveEmployeeMessage.replace(/_Email_/g, Email), EmployeeRemoveAjaxRequest, Id, Email);
+        ConfirmBox(Employees.RemoveEmployeeMessage.replace(/_Email_/g, '<text class="text-muted">' + Email + '</text>'), EmployeeRemoveAjaxRequest, Id, Email);
     });
 
 });

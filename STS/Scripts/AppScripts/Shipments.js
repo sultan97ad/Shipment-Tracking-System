@@ -53,7 +53,7 @@
 
     $("#Shipments").on("click", ".Departed", function () {
         var TrackingNumber = $(this).attr('TrackingNumber');
-        ConfirmBox(Shipments.ShipmentDepartedMessage.replace(/_TrackingNumber_/g, TrackingNumber), DepartedAjaxRequest, TrackingNumber);
+        ConfirmBox(Shipments.ShipmentDepartedMessage.replace(/_TrackingNumber_/g, '<text class="text-muted">' + TrackingNumber + '</text>'), DepartedAjaxRequest, TrackingNumber);
     });
 
     $("#Shipments").on("click", ".Collected", function () {
@@ -102,7 +102,7 @@ function ShipmentsDataTableRenderFunction(data, type, Shipment) {
 }
 
 function ShipmentPreview(Shipment) {
-    ConfirmBox(Shipments.ShipmentPreviewMessage.replace(/_TrackingNumber_/g, Shipment.TrackingNumber).replace(/_ReceiverName_/g, Shipment.ReceiverName).replace(/_Destination_/g, Shipment.Destination), ShipmentArrivedAjaxRequest, Shipment.TrackingNumber);
+    ConfirmBox(Shipments.ShipmentPreviewMessage.replace(/_TrackingNumber_/g, '<text class="text-muted">' + Shipment.TrackingNumber + '</text>').replace(/_ReceiverName_/g, '<text class="text-muted">' + Shipment.ReceiverName + '</text>').replace(/_Destination_/g, '<text class="text-muted">' + Shipment.Destination + '</text>'), ShipmentArrivedAjaxRequest, Shipment.TrackingNumber);
 }
 
 function DepartedAjaxRequest(TrackingNumber) {

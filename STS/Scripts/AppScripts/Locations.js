@@ -50,7 +50,7 @@
     $("#Locations").on("click", ".Remove", function () {
         var LocationId = $(this).attr('LocationId');
         var Address = $(this).attr('Address');
-        ConfirmBox(Locations.RemoveLocationMessage.replace(/_Address_/g, Address), RemoveLocationAjaxRequest, LocationId, Address);
+        ConfirmBox(Locations.RemoveLocationMessage.replace(/_Address_/g, '<text class="text-muted">' + Address + '</text>'), RemoveLocationAjaxRequest, LocationId, Address);
     });
 
     var InitialLocation = {
