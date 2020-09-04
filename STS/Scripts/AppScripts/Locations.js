@@ -87,7 +87,7 @@ function LocationsDataTableRenderFunction(data, type, Location) {
         '<div class="dropdown-menu border">' +
         '<a class="dropdown-item" href="/Locations/Update/' + Location.LocationId + '"><i class="fas fa-pen-square px-2"></i><text>' + Locations.LocationsTableUpdateInformationLabel + '</text></a>' +
         '<a class="dropdown-item" href="/Locations/Details/' + Location.LocationId + '"><i class="fas fa-file-alt px-2"></i><text>' + Locations.LocationsTableDetailsLabel + '</text></a>' +
-        '<a class="dropdown-item" href="Employees?LocationId=' + Location.LocationId + '"><i class="fas fa-users px-2"></i><text>' + Locations.LocationsTableEmployeesLabel + '</text></a>' +
+        '<a class="dropdown-item" href="Employees?LocationId=' + Location.LocationId + '"><i class="fas fa-address-book  px-2"></i><text>' + Locations.LocationsTableEmployeesLabel + '</text></a>' +
         '<a class="dropdown-item Remove" LocationId="' + Location.LocationId + '" Address="' + Location.Address + '" type="button"><i class="fas fa-trash-alt px-2"></i><text>' + Locations.LocationsTableRemoveLocationLabel + '</text></a>' +
         '</div>' +
         '</div>' +

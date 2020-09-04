@@ -61,6 +61,24 @@ namespace STS.Resources.Scripts {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date &amp; Time.
+        /// </summary>
+        public static string DateTime {
+            get {
+                return ResourceManager.GetString("DateTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        public static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No Tracking Records.
         /// </summary>
         public static string ReportsEmptyTable {

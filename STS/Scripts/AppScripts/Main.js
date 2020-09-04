@@ -57,7 +57,11 @@
 });
 
 function MainDataTableRenderFunction(data, type, Report) {
-    Col = Report.DateTime + '<br>' + Report.Location + '<br>' + Report.Statement;
+  Col = '<div class="p-3">' +
+        '<label>' + Main.DateTime + ':</label><text class="text-muted"> ' + Report.DateTime + '</text><br>' +
+        '<label>' + Main.Location + ':</label><text class="text-muted"> ' + Report.Location + '</text><br>' +
+        '<text class="text-muted">- ' + Report.Statement + '</text><br>' +
+        '</div>';
     return Col;
 }
 

@@ -40,7 +40,6 @@
     <div class="form-group">
         @Html.CheckBoxFor(m => m.CanBeDestination) <label>@Locations.CanBeDestination</label>
     </div><br />
-
     @Html.HiddenFor(c => c.LocationId)
     @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">@ButtonText</button>
