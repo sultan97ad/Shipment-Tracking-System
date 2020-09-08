@@ -117,16 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Dir" xml:space="preserve">
-    <value>ltl</value>
-  </data>
-  <data name="RegisterNewShipment" xml:space="preserve">
-    <value>Register New Shipment</value>
-  </data>
-  <data name="RegisterShipmentArrival" xml:space="preserve">
-    <value>Register Shipment Arrival</value>
-  </data>
-  <data name="Shipments" xml:space="preserve">
-    <value>Shipments</value>
+  <data name="dir" xml:space="preserve">
+    <value>rtl</value>
   </data>
 </root>

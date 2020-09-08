@@ -1,4 +1,9 @@
 ﻿$(document).ready(function () {
+
+    toastr.options = {
+        "positionClass": "toast-bottom-full-width",
+    }
+
     var EmployeesDataTableLocale = {
         emptyTable: Employees.EmployeesEmptyTable,
         sInfo: Employees.EmployeesTableInfo,
@@ -59,10 +64,10 @@
 
 function EmployeesDataTableRenderFunction(data, type, Employee) {
   Col = '<div class="p-3">' + 
-        '<div class="pb-3"><i class="fas fa-user "></i></div>' +
-        '<label>' + Employees.EmployeeName + ':</label><text class="text-muted"> ' + Employee.Name + '</text><br>' +
-        '<label>' + Employees.Email + ':</label><text class="text-muted"> ' + Employee.Email + '</text><br>' +
-        '<label>' + Employees.EmployeeLocationId + ':</label><text class="text-muted"> ' + Employee.Location + '</text><br>' +
+        '<div class="pb-3"><i class="fas fa-user-tie"></i></div>' +
+        '<label>' + Employees.EmployeeName + '</label><label> : </label><text class="text-muted"> ' + Employee.Name + '</text><br>' +
+        '<label>' + Employees.Email + '</label><label> : </label><text class="text-muted"> ' + Employee.Email + '</text><br>' +
+        '<label>' + Employees.EmployeeLocationId + '</label><label> : </label><text class="text-muted"> ' + Employee.Location + '</text><br>' +
         '<div class="btn-group drop mt-3" >' +
         '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' +
         '<div class="dropdown-menu border">' +

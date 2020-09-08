@@ -219,6 +219,7 @@ th {
 }
 
 label {
+  direction:ltr;
   display: inline-block;
   margin-bottom: 0.5rem;
 }
@@ -5854,6 +5855,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   color: #000;
   text-shadow: 0 1px 0 #fff;
   opacity: .5;
+  margin-left:0.5rem
 }
 
 .close:hover {
@@ -5876,7 +5878,6 @@ a.close.disabled {
 }
 
 .toast {
-  max-width: 350px;
   overflow: hidden;
   font-size: 0.875rem;
   background-color: rgba(255, 255, 255, 0.85);
@@ -6099,7 +6100,7 @@ a.close.disabled {
   -ms-flex-align: center;
   align-items: center;
   -ms-flex-pack: end;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding: 0.75rem;
   border-top: 1px solid #dee2e6;
   border-bottom-right-radius: calc(0.3rem - 1px);

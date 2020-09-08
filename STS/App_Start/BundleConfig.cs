@@ -43,6 +43,11 @@ namespace STS
                         "~/Content/toastr.css"
                         ));
 
+            bundles.Add(new StyleBundle("~/bundles/rtl").Include(
+                        "~/Content/bootstrap-rtl.css",
+                        "~/Content/Site-rtl.css"
+                        ));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 

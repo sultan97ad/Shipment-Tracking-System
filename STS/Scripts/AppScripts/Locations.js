@@ -1,4 +1,9 @@
 ﻿$(document).ready(function () {
+
+    toastr.options = {
+        "positionClass": "toast-bottom-full-width",
+    }
+
     var LocationsDataTableLocale = {
         emptyTable: Locations.LocationsEmptyTable,
         sInfo: Locations.LocationsTableInfo,
@@ -80,8 +85,8 @@
 function LocationsDataTableRenderFunction(data, type, Location) {
   Col = '<div class="p-3">' +
         '<div class="pb-3"><i class="fas fa-map-marker-alt"></i></div>' +
-        '<label>' + Locations.LocationId + ':</label><text class="text-muted"> ' + Location.LocationId + '</text><br>' +
-        '<label>' + Locations.Address + ':</label><text class="text-muted"> ' + Location.Address + '</text><br>' +
+        '<label>' + Locations.LocationId + '</label><label> : </label><text class="text-muted"> ' + Location.LocationId + '</text><br>' +
+        '<label>' + Locations.Address + '</label><label> : </label><text class="text-muted"> ' + Location.Address + '</text><br>' +
         '<div class="btn-group drop mt-3" >' +
         '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' +
         '<div class="dropdown-menu border">' +

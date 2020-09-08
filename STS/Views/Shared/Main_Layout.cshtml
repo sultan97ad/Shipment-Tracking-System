@@ -9,6 +9,10 @@
     <title>@ViewBag.Title - STS</title>
     <script src="https://kit.fontawesome.com/4717f928a6.js" crossorigin="anonymous"></script>
     @Styles.Render("~/bundles/Styles")
+    @if (STS.Resources.Lang.dir == "rtl")
+    {
+        @Styles.Render("~/bundles/rtl")
+    }
 
 </head>
 <body class="index-page sidebar-collapse">

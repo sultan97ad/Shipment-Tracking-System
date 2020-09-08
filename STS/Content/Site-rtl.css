@@ -1,0 +1,49 @@
+﻿
+@media screen and (max-width: 991px) {
+    .navbar-transparent .navbar-nav .nav-item .nav-link:not(.btn), [class*="bg"] .navbar-nav .nav-item .nav-link:not(.btn) {
+        text-align: right;
+    }
+
+    .navbar-collapse ul {
+        text-align: right;
+    }
+
+    .navbar-collapse {
+        padding-right: 40px;
+        padding-left: 0px;
+        text-align: right;
+        direction: rtl;
+    }
+
+    .navbar .navbar-nav .nav-item .nav-link p {
+        padding-right: 0.5rem;
+    }
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 10px 15px 10px 15px;
+}
+
+.modal-footer > :not(:last-child) {
+    margin-left: .25rem;
+    margin-right: .5rem;
+}
+
+.modal-footer {
+    justify-content: flex-end;
+}
+
+.close {
+    float: left;
+}
+
+.modal-body {
+    direction: rtl;
+    text-align: right;
+}
+
+#toast-container > div {
+    background-position: right 15px center;
+    padding: 15px 50px 15px 15px;
+    text-align:right;
+}

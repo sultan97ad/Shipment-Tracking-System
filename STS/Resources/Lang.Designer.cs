@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace STS.Resources.Layouts {
+namespace STS.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace STS.Resources.Layouts {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class EmployeeLayout {
+    public class Lang {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal EmployeeLayout() {
+        internal Lang() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace STS.Resources.Layouts {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("STS.Resources.Layouts.EmployeeLayout", typeof(EmployeeLayout).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("STS.Resources.Lang", typeof(Lang).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,36 +63,9 @@ namespace STS.Resources.Layouts {
         /// <summary>
         ///   Looks up a localized string similar to ltl.
         /// </summary>
-        public static string Dir {
+        public static string dir {
             get {
-                return ResourceManager.GetString("Dir", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Register New Shipment.
-        /// </summary>
-        public static string RegisterNewShipment {
-            get {
-                return ResourceManager.GetString("RegisterNewShipment", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Register Shipment Arrival.
-        /// </summary>
-        public static string RegisterShipmentArrival {
-            get {
-                return ResourceManager.GetString("RegisterShipmentArrival", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Shipments.
-        /// </summary>
-        public static string Shipments {
-            get {
-                return ResourceManager.GetString("Shipments", resourceCulture);
+                return ResourceManager.GetString("dir", resourceCulture);
             }
         }
     }

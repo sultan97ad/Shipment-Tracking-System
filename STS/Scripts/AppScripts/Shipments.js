@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
+
     toastr.options = {
-        "positionClass" : "toast-bottom-full-width"
+        "positionClass": "toast-bottom-full-width",
     }
 
     var ShipmentsDataTableLocale = {
@@ -75,15 +76,15 @@
 function ShipmentsDataTableRenderFunction(data, type, Shipment) {
   Col = '<div class="p-3">' +
         '<div class="pb-3"><i class="fas fa-box"></i></div>' +
-        '<label>' + Shipments.TrackingNumber + ':</label><text class="text-muted"> ' + Shipment.TrackingNumber + '</text><br>' +
-        '<label>' + Shipments.ReceiverName + ':</label><text class="text-muted"> ' + Shipment.ReceiverName + '</text><br>' +
-        '<label>' + Shipments.Destination + ':</label><text class="text-muted"> ' + Shipment.Destination + '</text><br>' +
-        '<label>' + Shipments.Status + ':</label><text class="text-muted"> ' + Shipment.Status + '</text><br>';
+        '<label>' + Shipments.TrackingNumber + '</label><label> : </label><text class="text-muted"> ' + Shipment.TrackingNumber + '</text><br>' +
+        '<label>' + Shipments.ReceiverName + '</label><label> : </label><text class="text-muted"> ' + Shipment.ReceiverName + '</text><br>' +
+        '<label>' + Shipments.Destination + '</label><label> : </label><text class="text-muted"> ' + Shipment.Destination + '</text><br>' +
+        '<label>' + Shipments.Status + '</label><label> : </label><text class="text-muted"> ' + Shipment.Status + '</text><br>';
         if (IsWaitingCollection(Shipment)) {
-            Col += '<label>' + Shipments.CollectionMethod + ':</label><text class="text-muted"> ' + Shipment.CollectionMethod + '</text><br>';
+            Col += '<label>' + Shipments.CollectionMethod + '</label><label> : </label><text class="text-muted"> ' + Shipment.CollectionMethod + '</text><br>';
         }
         Col += '' +
-        '<label>' + Shipments.HoldSince + ':</label><text class="text-muted"> ' + Shipment.HoldSince + ' ' + Shipments.Days + '</text><br>' +
+        '<label>' + Shipments.HoldSince + '</label><label> : </label><text class="text-muted"> ' + Shipment.HoldSince + ' ' + Shipments.Days + '</text><br>' +
         '<div class="btn-group drop mt-3" >' +
         '<button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>' +
         '<div class="dropdown-menu border">' +

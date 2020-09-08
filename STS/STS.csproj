@@ -362,6 +362,16 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Resources\Lang.Ar.Designer.cs">
+      <DependentUpon>Lang.Ar.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Lang.Designer.cs">
+      <DependentUpon>Lang.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Resources\Scripts\Employees.Designer.cs">
       <DependentUpon>Employees.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -484,6 +494,7 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-rtl.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
@@ -645,6 +656,7 @@
     <Content Include="Content\DataTables\swf\flashExport.swf" />
     <Content Include="Content\Logo.png" />
     <Content Include="Content\paper-kit.css" />
+    <Content Include="Content\Site-rtl.css" />
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
@@ -770,6 +782,14 @@
     <EmbeddedResource Include="Resources\Api\Shipments.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Shipments.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Lang.Ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.Ar.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Lang.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Scripts\Employees.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -962,8 +982,6 @@
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.bundle.min.js.map" />
     <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-reboot.min.css.map" />
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
@@ -977,6 +995,7 @@
     </None>
     <Content Include="Content\paper-kit.css.map" />
     <Content Include="Scripts\paper-kit.js.map" />
+    <Content Include="Content\fonts\Harmattan-Bold.ttf" />
     <None Include="Views\App\PageNotFound.cshtml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />

@@ -57,10 +57,10 @@
 });
 
 function MainDataTableRenderFunction(data, type, Report) {
-  Col = '<div class="p-3">' +
-        '<label>' + Main.DateTime + ':</label><text class="text-muted"> ' + Report.DateTime + '</text><br>' +
-        '<label>' + Main.Location + ':</label><text class="text-muted"> ' + Report.Location + '</text><br>' +
-        '<text class="text-muted">- ' + Report.Statement + '</text><br>' +
+  Col = '<div class="p-3" style="font-size:.8rem">' +
+        '<label>' + Main.DateTime + '</label><label> : </label><text class="text-muted"> ' + Report.DateTime + '</text><br>' +
+        '<label>' + Main.Location + '</label><label> : </label><text class="text-muted"> ' + Report.Location + '</text><br>' +
+        '<bdi class="text-muted" style="font-size:1rem">' + Report.Statement + '</bdi><br>' +
         '</div>';
     return Col;
 }

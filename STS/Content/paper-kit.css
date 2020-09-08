@@ -2295,7 +2295,6 @@ fieldset[disabled] .btn-neutral.active {
   color: #66615b;
   font-size: 14px;
   transition: background-color 0.3s ease 0s;
-  padding-right: 0 !important;
   padding: 7px 12px;
   height: 40px;
   -webkit-box-shadow: none;
@@ -3064,7 +3063,7 @@ select,
 textarea {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Montserrat", "Helvetica", Arial, sans-serif;
+  font-family: Arb,"Montserrat", "Helvetica", Arial, sans-serif;
   font-weight: 300;
 }
 
@@ -3166,7 +3165,7 @@ h3 .small {
 .footer-big h5,
 .footer-big h4,
 .media .media-heading {
-  font-family: "Montserrat", "Helvetica", Arial, sans-serif;
+    font-family: Arb,"Montserrat", "Helvetica", Arial, sans-serif;
 }
 
 .title,
@@ -3289,10 +3288,10 @@ blockquote small {
 /*     General overwrite     */
 
 body {
-  color: #66615b;
-  font-size: 14px;
-  font-weight: 300;
-  font-family: 'Montserrat', "Helvetica", Arial, sans-serif;
+    color: #66615b;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: Arb,'Montserrat', "Helvetica",Arial, sans-serif;
 }
 
 a {
@@ -3574,12 +3573,11 @@ License - nucleoapp.com/license/
 
 -------------------------------- */
 
+
 @font-face {
-  font-family: 'nucleo-icons';
-  src: url("../fonts/nucleo-icons.eot");
-  src: url("../fonts/nucleo-icons.eot") format("embedded-opentype"), url("../fonts/nucleo-icons.woff2") format("woff2"), url("../fonts/nucleo-icons.woff") format("woff"), url("../fonts/nucleo-icons.ttf") format("truetype"), url("../fonts/nucleo-icons.svg") format("svg");
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Arb';
+    src: url("fonts/Harmattan-Bold.ttf");
+    unicode-range: U+600-6FF;
 }
 
 /*------------------------
@@ -5523,13 +5521,7 @@ License - nucleoapp.com/license/
 }
 
 .modal-body {
-  padding: 20px 50px;
   color: #000;
-}
-
-.modal-footer {
-  border-top: 1px solid #DDDDDD;
-  padding: 0px;
 }
 
 .modal-footer.no-border-footer {
