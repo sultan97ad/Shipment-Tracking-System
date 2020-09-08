@@ -33,7 +33,7 @@
     <div id="FormMapPlaceHolder" style="width: 450px; height: 400px;"></div>
     <div class="clearfix">&nbsp;</div><br />
     <div class="form-group">
-        @Html.LabelFor(m => m.DeliveryRange)
+        @Html.LabelFor(m => m.DeliveryRange, new { style = "direction: ltr;" })
         @Html.TextBoxFor(m => m.DeliveryRange, new { @Class = "form-control" })
         @Html.ValidationMessageFor(m => m.DeliveryRange)
     </div><br />
