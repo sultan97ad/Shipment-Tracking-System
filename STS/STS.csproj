@@ -222,57 +222,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202006201822550_Initial.cs" />
-    <Compile Include="Migrations\202006201822550_Initial.Designer.cs">
-      <DependentUpon>202006201822550_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007091641189_Migration_1.cs" />
-    <Compile Include="Migrations\202007091641189_Migration_1.Designer.cs">
-      <DependentUpon>202007091641189_Migration_1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007092050065_Migration_2.cs" />
-    <Compile Include="Migrations\202007092050065_Migration_2.Designer.cs">
-      <DependentUpon>202007092050065_Migration_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007101036133_Migration_3.cs" />
-    <Compile Include="Migrations\202007101036133_Migration_3.Designer.cs">
-      <DependentUpon>202007101036133_Migration_3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202007101129591_Migration_4.cs" />
-    <Compile Include="Migrations\202007101129591_Migration_4.Designer.cs">
-      <DependentUpon>202007101129591_Migration_4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008041002327_Migration_5.cs" />
-    <Compile Include="Migrations\202008041002327_Migration_5.Designer.cs">
-      <DependentUpon>202008041002327_Migration_5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008060426342_Migration_6.cs" />
-    <Compile Include="Migrations\202008060426342_Migration_6.Designer.cs">
-      <DependentUpon>202008060426342_Migration_6.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008100954295_Migration_7.cs" />
-    <Compile Include="Migrations\202008100954295_Migration_7.Designer.cs">
-      <DependentUpon>202008100954295_Migration_7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008101016482_Migration_8.cs" />
-    <Compile Include="Migrations\202008101016482_Migration_8.Designer.cs">
-      <DependentUpon>202008101016482_Migration_8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008111001489_Migration_9.cs" />
-    <Compile Include="Migrations\202008111001489_Migration_9.Designer.cs">
-      <DependentUpon>202008111001489_Migration_9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008111008462_Migration_10.cs" />
-    <Compile Include="Migrations\202008111008462_Migration_10.Designer.cs">
-      <DependentUpon>202008111008462_Migration_10.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008111848027_Migration_11.cs" />
-    <Compile Include="Migrations\202008111848027_Migration_11.Designer.cs">
-      <DependentUpon>202008111848027_Migration_11.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202008151044120_Migration_101.cs" />
-    <Compile Include="Migrations\202008151044120_Migration_101.Designer.cs">
-      <DependentUpon>202008151044120_Migration_101.cs</DependentUpon>
+    <Compile Include="Migrations\202009261401238_Init.cs" />
+    <Compile Include="Migrations\202009261401238_Init.Designer.cs">
+      <DependentUpon>202009261401238_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -676,44 +628,8 @@
     <Content Include="Scripts\bootbox.locales.js" />
     <Content Include="Scripts\bootbox.locales.min.js" />
     <Content Include="Scripts\bootbox.min.js" />
-    <EmbeddedResource Include="Migrations\202006201822550_Initial.resx">
-      <DependentUpon>202006201822550_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007091641189_Migration_1.resx">
-      <DependentUpon>202007091641189_Migration_1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007092050065_Migration_2.resx">
-      <DependentUpon>202007092050065_Migration_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007101036133_Migration_3.resx">
-      <DependentUpon>202007101036133_Migration_3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202007101129591_Migration_4.resx">
-      <DependentUpon>202007101129591_Migration_4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008041002327_Migration_5.resx">
-      <DependentUpon>202008041002327_Migration_5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008060426342_Migration_6.resx">
-      <DependentUpon>202008060426342_Migration_6.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008100954295_Migration_7.resx">
-      <DependentUpon>202008100954295_Migration_7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008101016482_Migration_8.resx">
-      <DependentUpon>202008101016482_Migration_8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008111001489_Migration_9.resx">
-      <DependentUpon>202008111001489_Migration_9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008111008462_Migration_10.resx">
-      <DependentUpon>202008111008462_Migration_10.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008111848027_Migration_11.resx">
-      <DependentUpon>202008111848027_Migration_11.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202008151044120_Migration_101.resx">
-      <DependentUpon>202008151044120_Migration_101.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009261401238_Init.resx">
+      <DependentUpon>202009261401238_Init.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Api\Employees.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

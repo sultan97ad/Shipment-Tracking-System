@@ -3,7 +3,7 @@ namespace STS.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class Init : DbMigration
     {
         public override void Up()
         {
@@ -12,11 +12,61 @@ namespace STS.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        LocationName = c.String(nullable: false, maxLength: 70),
-                        City = c.String(nullable: false, maxLength: 30),
+                        LocationName = c.String(maxLength: 70),
+                        City = c.String(maxLength: 30),
                         CanBeDestination = c.Boolean(nullable: false),
+                        InService = c.Boolean(nullable: false),
+                        Latitude = c.Double(nullable: false),
+                        longitude = c.Double(nullable: false),
+                        DeliveryRange = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Reports",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Event = c.Byte(nullable: false),
+                        DateTime = c.DateTime(nullable: false),
+                        SignedBy = c.String(),
+                        Location_Id = c.Int(),
+                        Shipment_TrackingNumber = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Locations", t => t.Location_Id)
+                .ForeignKey("dbo.Shipments", t => t.Shipment_TrackingNumber)
+                .Index(t => t.Location_Id)
+                .Index(t => t.Shipment_TrackingNumber);
+            
+            CreateTable(
+                "dbo.Shipments",
+                c => new
+                    {
+                        TrackingNumber = c.String(nullable: false, maxLength: 128),
+                        SenderName = c.String(maxLength: 90),
+                        SenderPhoneNumber = c.String(),
+                        ReceiverName = c.String(maxLength: 90),
+                        ReceiverPhoneNumber = c.String(),
+                        WeightKG = c.Single(nullable: false),
+                        Description = c.String(maxLength: 255),
+                        DateAdded = c.DateTime(nullable: false),
+                        ArrivalDate = c.DateTime(nullable: false),
+                        Status = c.Byte(nullable: false),
+                        CollectionMethod = c.Byte(nullable: false),
+                        DeliveryLocationLatitude = c.Double(nullable: false),
+                        DeliveryLocationlongitude = c.Double(nullable: false),
+                        CurrentLocation_Id = c.Int(),
+                        Destination_Id = c.Int(),
+                        Source_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.TrackingNumber)
+                .ForeignKey("dbo.Locations", t => t.CurrentLocation_Id)
+                .ForeignKey("dbo.Locations", t => t.Destination_Id)
+                .ForeignKey("dbo.Locations", t => t.Source_Id)
+                .Index(t => t.CurrentLocation_Id)
+                .Index(t => t.Destination_Id)
+                .Index(t => t.Source_Id);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -40,48 +90,6 @@ namespace STS.Migrations
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
-            
-            CreateTable(
-                "dbo.Shipments",
-                c => new
-                    {
-                        TrackingNumber = c.String(nullable: false, maxLength: 128),
-                        SenderName = c.String(nullable: false, maxLength: 90),
-                        SenderPhoneNumber = c.String(nullable: false),
-                        ReceiverName = c.String(nullable: false, maxLength: 90),
-                        ReceiverPhoneNumber = c.String(nullable: false),
-                        WeightKG = c.Single(nullable: false),
-                        Description = c.String(nullable: false, maxLength: 255),
-                        DateAdded = c.DateTime(nullable: false),
-                        Status = c.Byte(nullable: false),
-                        CurrentLocation_Id = c.Int(),
-                        Destination_Id = c.Int(),
-                        Source_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.TrackingNumber)
-                .ForeignKey("dbo.Locations", t => t.CurrentLocation_Id)
-                .ForeignKey("dbo.Locations", t => t.Destination_Id)
-                .ForeignKey("dbo.Locations", t => t.Source_Id)
-                .Index(t => t.CurrentLocation_Id)
-                .Index(t => t.Destination_Id)
-                .Index(t => t.Source_Id);
-            
-            CreateTable(
-                "dbo.Reports",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Type = c.Byte(nullable: false),
-                        DateTime = c.DateTime(nullable: false),
-                        SignedBy = c.String(),
-                        Location_Id = c.Int(nullable: false),
-                        Shipment_TrackingNumber = c.String(nullable: false, maxLength: 128),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Locations", t => t.Location_Id, cascadeDelete: true)
-                .ForeignKey("dbo.Shipments", t => t.Shipment_TrackingNumber, cascadeDelete: true)
-                .Index(t => t.Location_Id)
-                .Index(t => t.Shipment_TrackingNumber);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -135,7 +143,6 @@ namespace STS.Migrations
             Sql("INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'190a0c9e-ccb7-4ee8-ad20-0c9d94bedd56', N'Admin')");
             Sql("INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'd65a5b7d-cc68-4f7e-b957-700afa5b8e38', N'Employee')");
             Sql("INSERT INTO [dbo].[AspNetUserRoles] ([UserId], [RoleId]) VALUES (N'1f1b1af4-33e3-4078-9cec-b282be2e67b0', N'190a0c9e-ccb7-4ee8-ad20-0c9d94bedd56')");
-
         }
         
         public override void Down()
@@ -143,30 +150,30 @@ namespace STS.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
+            DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropForeignKey("dbo.Reports", "Shipment_TrackingNumber", "dbo.Shipments");
-            DropForeignKey("dbo.Reports", "Location_Id", "dbo.Locations");
             DropForeignKey("dbo.Shipments", "Source_Id", "dbo.Locations");
             DropForeignKey("dbo.Shipments", "Destination_Id", "dbo.Locations");
             DropForeignKey("dbo.Shipments", "CurrentLocation_Id", "dbo.Locations");
-            DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Reports", "Location_Id", "dbo.Locations");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Reports", new[] { "Shipment_TrackingNumber" });
-            DropIndex("dbo.Reports", new[] { "Location_Id" });
-            DropIndex("dbo.Shipments", new[] { "Source_Id" });
-            DropIndex("dbo.Shipments", new[] { "Destination_Id" });
-            DropIndex("dbo.Shipments", new[] { "CurrentLocation_Id" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.Shipments", new[] { "Source_Id" });
+            DropIndex("dbo.Shipments", new[] { "Destination_Id" });
+            DropIndex("dbo.Shipments", new[] { "CurrentLocation_Id" });
+            DropIndex("dbo.Reports", new[] { "Shipment_TrackingNumber" });
+            DropIndex("dbo.Reports", new[] { "Location_Id" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.Reports");
-            DropTable("dbo.Shipments");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Shipments");
+            DropTable("dbo.Reports");
             DropTable("dbo.Locations");
         }
     }
