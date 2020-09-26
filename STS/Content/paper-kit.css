@@ -3061,10 +3061,10 @@ button,
 input,
 select,
 textarea {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-family: Arb,"Montserrat", "Helvetica", Arial, sans-serif;
-  font-weight: 300;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: Arb,Lat,"Montserrat", "Helvetica", Arial, sans-serif;
+    font-weight: 300;
 }
 
 h1,
@@ -3165,7 +3165,7 @@ h3 .small {
 .footer-big h5,
 .footer-big h4,
 .media .media-heading {
-    font-family: Arb,"Montserrat", "Helvetica", Arial, sans-serif;
+    font-family: Arb,Lat,"Montserrat", "Helvetica", Arial, sans-serif;
 }
 
 .title,
@@ -3291,7 +3291,7 @@ body {
     color: #66615b;
     font-size: 14px;
     font-weight: 300;
-    font-family: Arb,'Montserrat', "Helvetica",Arial, sans-serif;
+    font-family: Arb,Lat,'Montserrat', "Helvetica",Arial, sans-serif;
 }
 
 a {
@@ -3578,6 +3578,11 @@ License - nucleoapp.com/license/
     font-family: 'Arb';
     src: url("fonts/Harmattan-Bold.ttf");
     unicode-range: U+600-6FF;
+}
+
+@font-face {
+    font-family: 'Lat';
+    src: url("fonts/Montserrat-Regular.ttf");
 }
 
 /*------------------------
