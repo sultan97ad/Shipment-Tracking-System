@@ -4,7 +4,7 @@
 <br/>
 <img style="border-width: thin;border-color:black" src="http://Albusaymi.com/assets/img/STS-Screens/1.png">
 <br/>
-<img src="http://Albusaymi.com/assets/img/STS-Screens/2.png">
+
 <br>
 <img src="http://Albusaymi.com/assets/img/STS-Screens/3.png">
 <br>
